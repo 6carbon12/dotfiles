@@ -1,0 +1,17 @@
+[font]
+size = 12.00
+offset = { x = 1, y = 1 }
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "bold"
+
+[window]
+padding = { x = 0, y = 0 }
+decorations = "None"
+opacity = 0.5
+dynamic_padding = false
+dimensions = {columns = 30, lines = 30}
+
+[mouse]
+hide_when_typing = true

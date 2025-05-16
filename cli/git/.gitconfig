@@ -1,0 +1,12 @@
+[user]
+	name = Kiran S
+	email = kiran.shantharaju@gmail.com
+	signingkey = 787A92C3B775BAAE
+[init]
+	defaultBranch = master
+[color]
+	ui = auto
+[core]
+	editor = nvim
+[commit]
+	gpgSign = true

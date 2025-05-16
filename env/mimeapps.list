@@ -1,0 +1,11 @@
+[Added Associations]
+image/png=eog.desktop;
+
+[Default Applications]
+image/png=eog.desktop;
+text/html=chromium.desktop
+x-scheme-handler/about=chromium.desktop
+x-scheme-handler/http=chromium.desktop
+x-scheme-handler/https=chromium.desktop
+x-scheme-handler/mailto=chromium.desktop
+x-scheme-handler/unknown=chromium.desktop

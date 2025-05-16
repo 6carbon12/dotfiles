@@ -1,0 +1,8 @@
+# out files
+*.out
+
+# Backups
+*.bak 
+
+# node_modules
+node_modules/
