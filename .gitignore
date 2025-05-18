@@ -10,3 +10,6 @@ cli/tmux/plugins
 # logs
 *.logs
 *.log
+
+# Clipse history
+/cli/clipse/clipboard_history.json
