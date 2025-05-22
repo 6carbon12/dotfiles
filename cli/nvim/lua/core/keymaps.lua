@@ -20,4 +20,4 @@ keymap("n", "<leader><leader>", ":lua vim.diagnostic.open_float()<CR>", opts)
 
 -- Redo
 keymap("n", "<leader>u", ":redo<CR>", opts)
- 
+

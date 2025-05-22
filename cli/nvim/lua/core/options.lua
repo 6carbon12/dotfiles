@@ -10,6 +10,7 @@ vim.opt.cmdheight = 0                 -- Hide command line when not needed
 vim.wo.relativenumber = true         -- Show relative line numbers
 vim.o.showcmd = true                 -- Show command in statusline
 vim.o.showcmdloc = "statusline"
+vim.o.linebreak = true
 
 vim.diagnostic.config({
   virtual_text = {

@@ -1,7 +1,0 @@
-audio.play_bitrate_non_metered_migrated=true
-connect.dial_devices="[]"
-connect.mdns_devices="[]"
-audio.play_bitrate_non_metered_enumeration=3
-audio.play_bitrate_enumeration=3
-app.browser.zoom-level=-50
-audio.loudness.environment=2

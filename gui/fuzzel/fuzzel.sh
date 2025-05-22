@@ -4,11 +4,11 @@
 
 # All the shown choices, Icons are shown via NFs
 choices=$(cat <<EOF
-  Alacritty
-K  Kitty
   btop
-  Firefox
   EOG
+  Firefox
+  Kitty
+  Obsidian
   Pavucontrol
   Spotify
   VLC
@@ -20,7 +20,6 @@ selection=$(printf "%s\n" "$choices" | fuzzel --dmenu --prompt :)
 
 # Launching the apps if they are selected
 case "$selection" in
-    *Alacritty) gtk-launch Alacritty ;;
     *Kitty) gtk-launch kitty ;;
     *btop) alacritty -e btop ;;
     *Firefox) gtk-launch firefox ;;
@@ -28,5 +27,6 @@ case "$selection" in
     *Pavucontrol) gtk-launch org.pulseaudio.pavucontrol ;;
     *Spotify) gtk-launch spotify ;;
     *VLC) gtk-launch vlc ;;
+    *Obsidian) gtk-launch obsidian ;;
 esac
 

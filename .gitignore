@@ -13,3 +13,6 @@ cli/tmux/plugins
 
 # Clipse history
 /cli/clipse/clipboard_history.json
+
+# Spotify
+/gui/spotify/Users/
