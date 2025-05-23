@@ -1,6 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -16,6 +13,7 @@ unsetopt beep
 setopt append_history
 setopt sharehistory
 # End of lines configured by zsh-newuser-install
+
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/kiran/.zshrc'
 
@@ -40,10 +38,19 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 alias grep="grep --color=auto"
 alias ls="eza"
 alias cat="bat"
+alias grep="rg"
+alias find="fd"
 
 # Quality of life / most used
 alias ...="cd ../.."
 alias ....="cd ../../../"
+alias v="nvim"
+
+# git
+alias gs="git status --short"
+alias ga="git add ."
+alias gc="git commit"
+alias gd="git diff"
 
 #########################
 # ENVIRONMENT VARIABLES #
