@@ -10,3 +10,5 @@
 	editor = nvim
 [commit]
 	gpgSign = true
+[credential]
+	helper = store
