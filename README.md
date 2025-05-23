@@ -56,7 +56,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosugges
 
 ## Current Folder structure
 
-Generated with `eza -TaL 2`
+Generated with `eza -TL 2`
 
 ```
 .
@@ -74,20 +74,14 @@ Generated with `eza -TaL 2`
 ├── env
 │   ├── mimeapps.list
 │   ├── pavucontrol.ini
-│   ├── pulse
-│   ├── systemd
 │   ├── user-dirs.conf
 │   ├── user-dirs.dirs
 │   └── user-dirs.locale
 ├── gui
-│   ├── dconf
 │   ├── fuzzel
 │   ├── gtk
 │   ├── hypr
-│   ├── menus
 │   ├── qt
-│   ├── spotify
-│   ├── vlc
 │   ├── waybar
 │   └── xsettingsd
 └── README.md
