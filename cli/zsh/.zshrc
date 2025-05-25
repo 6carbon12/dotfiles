@@ -21,14 +21,14 @@ autoload -Uz compinit
 compinit -d "$HOME/.zsh/zcompdump"
 # End of lines added by compinstall
 
-source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.local/share/zsh/plugins/p10k/powerlevel10k.zsh-theme
 
 export TERM=xterm-256color
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.local/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 ###########
 # ALIASES #

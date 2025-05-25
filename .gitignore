@@ -1,8 +1,8 @@
 # Zsh plugins coz they have git repos in em
-cli/zsh/.zsh
+# cli/zsh/.zsh
 
 # Tmux plugins
-cli/tmux/plugins
+# cli/tmux/plugins
 
 # backups
 *.bak
