@@ -56,7 +56,11 @@ alias gd="git diff"
 # ENVIRONMENT VARIABLES #
 #########################
 
+# My bins
 export PATH="$HOME/bin:$PATH"
+
+# .local bin
+export PATH="$HOME/.local/bin:$PATH"
 
 ################
 # APP SPECIFIC #

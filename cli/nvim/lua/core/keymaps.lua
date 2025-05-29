@@ -6,6 +6,8 @@ local opts = { noremap = true, silent = true }
 -- Insert mode shortcuts
 keymap("i", "jj", "<Esc>", opts)
 keymap("i", "ww", "<Esc>:w<CR>", opts)
+keymap("i", "zz", "<C-o>zz", opts)
+
 
 -- File tree toggle
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
@@ -13,7 +15,7 @@ keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 -- Buffer navigation
 keymap("n", "<C-m>", ":BufferLineCycleNext<CR>", opts)
 keymap("n", "<C-n>", ":BufferLineCyclePrev<CR>", opts)
-keymap("n", "<C-x>", ":bdelete<CR>", { silent = true }) -- non-noremap version to allow command aliases
+keymap("n", "<C-x>", ":bdelete<CR>", opts) 
 
 -- Diagnostics popup
 keymap("n", "<leader><leader>", ":lua vim.diagnostic.open_float()<CR>", opts)
