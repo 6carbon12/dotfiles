@@ -91,10 +91,12 @@ Generated with `eza -TL 2`
 │   ├── fuzzel
 │   ├── gtk
 │   ├── hypr
+│   ├── mako
 │   ├── qt
 │   ├── waybar
 │   └── xsettingsd
 └── README.md
 ```
+
 
 
