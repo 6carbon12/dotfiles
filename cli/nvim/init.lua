@@ -22,5 +22,6 @@ require("core.keymaps")
 -- Plugins
 require("plugins.init")
 
--- UI configs
+-- autocmds
+require("core.autocmds")
 
