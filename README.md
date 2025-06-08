@@ -66,36 +66,35 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.local/share/zsh/pl
 
 ## Current Folder structure
 
-Generated with `eza -TL 2`
+Generated with `eza -TL 1`
 
 ```
-.
-├── cli
-│   ├── alacritty
-│   ├── btop
-│   ├── clipse
-│   ├── fastfetch
-│   ├── git
-│   ├── kitty
-│   ├── nvim
-│   ├── tmux
-│   ├── yazi
-│   └── zsh
-├── env
-│   ├── mimeapps.list
-│   ├── pavucontrol.ini
-│   ├── user-dirs.conf
-│   ├── user-dirs.dirs
-│   └── user-dirs.locale
-├── gui
-│   ├── fuzzel
-│   ├── gtk
-│   ├── hypr
-│   ├── mako
-│   ├── qt
-│   ├── waybar
-│   └── xsettingsd
-└── README.md
+cli
+├── alacritty
+├── btop
+├── clipse
+├── fastfetch
+├── git
+├── kitty
+├── nvim
+├── tmux
+├── yazi
+└── zsh
+env
+├── mimeapps.list
+├── pavucontrol.ini
+├── user-dirs.conf
+├── user-dirs.dirs
+└── user-dirs.locale
+gui
+├── fuzzel
+├── gtk
+├── hypr
+├── mako
+├── qt
+├── waybar
+└── xsettingsd
+README.md
 ```
 
 
