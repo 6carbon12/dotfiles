@@ -62,6 +62,9 @@ export PATH="$HOME/bin:$PATH"
 # .local bin
 export PATH="$HOME/.local/bin:$PATH"
 
+# TERM to make undercurl work on tmux
+export TERM="tmux-256color"
+
 ################
 # APP SPECIFIC #
 ################

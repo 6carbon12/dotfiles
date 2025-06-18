@@ -3,7 +3,7 @@ require("lazy").setup({
   require("plugins.nvimtree"),
   require("plugins.treesitter"),
   require("plugins.bufferline"),
-  -- require("plugins.lspkind"),
+  require("plugins.lspkind"),
   require("plugins.cmp"),
   require("plugins.mason"),
   require("plugins.lsp"),
