@@ -9,6 +9,7 @@ require("lazy").setup({
   require("plugins.lsp"),
   require("plugins.lualine"),
   require("plugins.comment"),
-  require("plugins.markdown_preview"),
+  require("plugins.markdown-preview"),
+  require("plugins.alpha-nvim"),
 })
 
