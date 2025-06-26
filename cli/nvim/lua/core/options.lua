@@ -13,8 +13,8 @@ vim.o.linebreak = true
 -- Colored line number with undercurl for diagnostics
 vim.diagnostic.config({
   virtual_text = false,
-  signs = true,      -- enable signs
-  underline = true, -- we skip underline now
+  signs = true,
+  underline = true,
   update_in_insert = false,
   severity_sort = true,
 })
