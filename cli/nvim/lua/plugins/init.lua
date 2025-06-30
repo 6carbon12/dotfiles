@@ -11,5 +11,6 @@ require("lazy").setup({
   require("plugins.comment"),
   require("plugins.markdown-preview"),
   require("plugins.alpha-nvim"),
+  require("plugins.luasnip"),
 })
 
