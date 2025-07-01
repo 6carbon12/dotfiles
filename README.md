@@ -91,7 +91,6 @@ gui
 ├── gtk
 ├── hypr
 ├── mako
-├── qt
 ├── waybar
 └── xsettingsd
 README.md
