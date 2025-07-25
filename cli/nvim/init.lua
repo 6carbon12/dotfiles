@@ -31,3 +31,5 @@ require("plugins.init")
 vim.api.nvim_set_hl(0, "BufferLineBufferSelected", { sp = "#7aa2f7", underline = true, bold = true})
 vim.api.nvim_set_hl(0, "BufferLineIndicatorSelected", { sp = "#7aa2f7", underline = true })
 vim.api.nvim_set_hl(0, "BufferLineModifiedSelected", { fg = "#f7768e", sp = "#7aa2f7",underline = true })     -- The ● icon
+vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#7aa2f7", italic = true })
+

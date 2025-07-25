@@ -27,7 +27,11 @@ return {
           },
         },
         lualine_c = { "filename", "%s" },
-        lualine_x = { "encoding", "fileformat", "filetype" },
+        lualine_x = {
+          "encoding",
+          "fileformat",
+          "filetype"
+        },
         lualine_y = { "progress", "location" },
         lualine_z = {},
       },
