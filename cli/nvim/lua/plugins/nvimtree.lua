@@ -10,6 +10,9 @@ return {
           quit_on_open = true,
         },
       },
+      view = {
+        side = "right",
+      }
     })
   end,
 }
