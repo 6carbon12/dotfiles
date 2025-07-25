@@ -13,5 +13,6 @@ require("lazy").setup({
   require("plugins.alpha-nvim"),
   require("plugins.luasnip"),
   require("plugins.conform"),
+  require("plugins.persistance"),
 })
 
