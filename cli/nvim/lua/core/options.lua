@@ -9,6 +9,7 @@ vim.o.autoindent = true
 vim.opt.cmdheight = 0                 -- Hide command line when not needed
 vim.wo.relativenumber = true         -- Show relative line numbers
 vim.o.linebreak = true
+vim.o.termguicolors = true
 
 -- Colored line number with undercurl for diagnostics
 vim.diagnostic.config({

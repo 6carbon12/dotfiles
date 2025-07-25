@@ -19,9 +19,12 @@ vim.g.mapleader = " "
 require("core.options")
 require("core.keymaps")
 
--- Plugins
-require("plugins.init")
-
 -- autocmds
 require("core.autocmds")
 
+-- Plugins
+require("plugins.init")
+
+vim.api.nvim_set_hl(0, "BufferLineBufferSelected", { sp = "#7aa2f7", underline = true, bold = true})
+vim.api.nvim_set_hl(0, "BufferLineIndicatorSelected", { sp = "#7aa2f7", underline = true })
+vim.api.nvim_set_hl(0, "BufferLineModifiedSelected", { fg = "#f7768e", sp = "#7aa2f7",underline = true })     -- The ● icon
