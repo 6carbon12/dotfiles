@@ -28,7 +28,6 @@ return {
         },
         lualine_c = { "filename", "%s" },
         lualine_x = {
-          "encoding",
           "fileformat",
           "filetype"
         },
