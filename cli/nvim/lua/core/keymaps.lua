@@ -15,7 +15,7 @@ keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 -- Buffer navigation
 keymap("n", "<C-m>", ":BufferLineCycleNext<CR>", opts)
 keymap("n", "<C-n>", ":BufferLineCyclePrev<CR>", opts)
-keymap("n", "<C-x>", ":bdelete<CR>", opts)
+keymap("n", "<C-x>", ":BD<CR>", opts)
 -- instant buffer nav 
 for i = 1, 9 do
   vim.keymap.set('n', '<leader>' .. i, function()

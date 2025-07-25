@@ -14,27 +14,7 @@ vim.api.nvim_create_autocmd("User", {
   end,
 })
 
-vim.api.nvim_create_autocmd("User", {
-  pattern = "NvimTreeOpen",
-  callback = function()
-    -- Loop through buffers and nuke the `[No Name]` one if it's hanging around
-    for _, buf in ipairs(vim.api.nvim_list_bufs()) do
-      local name = vim.api.nvim_buf_get_name(buf)
-      local ft = vim.api.nvim_buf_get_option(buf, "filetype")
-      local listed = vim.api.nvim_buf_get_option(buf, "buflisted")
-
-      if name == "" and listed and ft == "" then
-        -- This is the ghost `[No Name]` buffer. Wipe it.
-        vim.schedule(function()
-          pcall(vim.cmd, "bwipeout " .. buf)
-        end)
-      end
-    end
-  end
-})
-
 local open_buffers = {}
-
 -- Helper to remove buffer from list
 local function remove_buf(bufnr)
   for i, v in ipairs(open_buffers) do
