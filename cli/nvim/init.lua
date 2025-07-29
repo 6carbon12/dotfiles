@@ -17,7 +17,6 @@ vim.g.mapleader = " "
 
 -- Core config
 require("core.options")
-require("core.keymaps")
 
 -- autocmds
 require("core.autocmds")
@@ -27,6 +26,9 @@ require("core.commands")
 
 -- Plugins
 require("plugins.init")
+
+-- Keymaps
+require("core.keymaps")
 
 vim.api.nvim_set_hl(0, "BufferLineBufferSelected", { sp = "#7aa2f7", underline = true, bold = true})
 vim.api.nvim_set_hl(0, "BufferLineIndicatorSelected", { sp = "#7aa2f7", underline = true })

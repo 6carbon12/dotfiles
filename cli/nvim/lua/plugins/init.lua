@@ -14,5 +14,6 @@ require("lazy").setup({
   require("plugins.luasnip"),
   require("plugins.conform"),
   require("plugins.persistance"),
+  require("plugins.telescope"),
 })
 
