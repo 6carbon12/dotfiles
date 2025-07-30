@@ -19,11 +19,7 @@ Anything that is controlling any hardware, or files that controls system activit
 
 All things with a gui that don't fall in env are here, most everyday use app configs are here.
 
-
-## Setup 
-
-
-### Linking
+## Rules
 
 - No folders except the above three in the root
 - There must be no stray config files in either root or any of the categories(except env)
@@ -33,36 +29,18 @@ All things with a gui that don't fall in env are here, most everyday use app con
 - All plugins, themes must be cloned into `~/.local/share/<app-name>/plugins/`  
 - No external repo should be cloned into  `~/.dotfiles/`
 
-### Plugins
+## Setup 
 
-⚠️**DO THIS ONLY AFTER LINKING**  
-Plugins with repos inside of them are ignored. So some plugins must be installed manually
-
-#### tmux
-
-After linking run
-
-```
-git clone https://github.com/tmux-plugins/tpm ~/.local/share/tmux/plugins/tpm
-```
-
-Then `C-Space`+`I` to install all the plugins when inside a tmux session 
-
-#### zsh
-
-Due to minimal plugins in zsh, a plugin manager is ommited and the needed plugins are manually cloned
-
-##### p10k
-
-```
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.local/share/zsh/plugins/p10k
-```
-
-##### zsh-autosuggestion
-
-```
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.local/share/zsh/plugins/zsh-autosuggestions
-```
+- Install git: <br>
+`sudo pacman -S git`
+- Clone this repo: <br>
+`git clone https://github.com/6carbon12/dotfiles.git ~/.dotfiles`
+- Go into .dotfiles dir <br>
+`cd .dotfiles`
+- Install packages <br>
+`./install.sh`
+- Setup the .dotfiles <br>
+`./setup.sh`
 
 ## Current Folder structure
 
