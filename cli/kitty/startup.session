@@ -1,2 +1,3 @@
 new_tab
-launch --hold tmux
+launch /bin/zsh --login -c "~/.dotfiles/cli/kitty/tmux-session-mgr.sh"
+
