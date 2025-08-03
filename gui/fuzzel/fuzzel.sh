@@ -7,8 +7,9 @@ choices=$(cat <<EOF
   BTOP
   Firefox
   Kitty
+󰏆  LibreOffice
+󰑓  OBS
   Pavucontrol
-  VLC
 󰵆  VirtualBox
 EOF
 )
@@ -22,7 +23,8 @@ case "$selection" in
     *btop) kitty -e btop ;;
     *Firefox) gtk-launch firefox ;;
     *Pavucontrol) gtk-launch org.pulseaudio.pavucontrol ;;
-    *VLC) gtk-launch vlc ;;
     *VirtualBox) gtk-launch virtualbox ;;
+    *OBS) obs ;;
+    *LibreOffice) libreoffice ;;
 esac
 
