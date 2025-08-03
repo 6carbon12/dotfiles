@@ -72,6 +72,3 @@ export TERM="tmux-256color"
 # ZOXIDE
 eval "$(zoxide init zsh)"
 alias cd="z"
-
-# Node Version Manager 
-source /usr/share/nvm/init-nvm.sh
