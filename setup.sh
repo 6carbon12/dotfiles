@@ -41,6 +41,7 @@ declare -A ROOT_DOTFILES_MAP=(
   [.gtkrc-2.0]="$DOTFILES_DIR/gui/gtk/.gtkrc-2.0"
   [.p10k.zsh]="$DOTFILES_DIR/cli/zsh/.p10k.zsh"
   [.zshrc]="$DOTFILES_DIR/cli/zsh/.zshrc"
+  [.zprofile]="$DOTFILES_DIR/cli/zsh/.zprofile"
 +)
 
 link_dotfiles() {
