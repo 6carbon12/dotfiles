@@ -3,7 +3,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.zshis
+HISTFILE=~/.local/share/zsh/.history
 HISTSIZE=65536 # 2^16
 SAVEHIST=1048576 # 2^20
 export MANPAGER='nvim +Man!'
@@ -22,8 +22,6 @@ compinit -d "$HOME/.zsh/zcompdump"
 # End of lines added by compinstall
 
 source ~/.local/share/zsh/plugins/p10k/powerlevel10k.zsh-theme
-
-export TERM=xterm-256color
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -56,14 +54,15 @@ alias gd="git diff"
 # ENVIRONMENT VARIABLES #
 #########################
 
-# My bins
-export PATH="$HOME/bin:$PATH"
-
 # .local bin
 export PATH="$HOME/.local/bin:$PATH"
 
 # TERM to make undercurl work on tmux
 export TERM="tmux-256color"
+
+# Cutome HOMEs
+export npm_config_cache="~/.local/share/npm"
+export GNUPGHOME="~/.local/share/gnupg"
 
 ################
 # APP SPECIFIC #
