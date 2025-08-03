@@ -8,6 +8,7 @@
 	ui = auto
 [core]
 	editor = nvim
+  excludesfile = ~/.dotfiles/cli/git/.gitignore
 [commit]
 	gpgSign = true
 [credential]

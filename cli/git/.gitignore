@@ -7,3 +7,5 @@
 # node_modules
 node_modules/
 
+# shell.nix file for isolated build pkgs
+shell.nix
