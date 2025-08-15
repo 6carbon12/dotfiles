@@ -16,5 +16,6 @@ require("lazy").setup({
   require("plugins.persistance"),
   require("plugins.telescope"),
   require("plugins.indentmini"),
+  require("plugins.mini-pairs"),
 })
 
