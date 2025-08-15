@@ -3,7 +3,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.local/share/zsh/.history
+HISTFILE=~/.local/share/zsh/.zshis
 HISTSIZE=65536 # 2^16
 SAVEHIST=1048576 # 2^20
 export MANPAGER='nvim +Man!'
