@@ -27,7 +27,11 @@ for i = 1, 9 do
 end
 
 -- Diagnostics popup
-keymap("n", "<leader>d", vim.diagnostic.open_float, with_desc("Open diagnostics floating"))
+keymap("n", "<leader>d", function ()
+  vim.diagnostic.open_float { border = 'rounded' }
+end, with_desc("Open diagnostics floating"))
+
+-- Info popup
 keymap("n", "K", function ()
   vim.lsp.buf.hover { border = 'rounded' }
 end, with_desc("Styled details"))
