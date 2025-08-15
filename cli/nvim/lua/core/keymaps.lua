@@ -16,9 +16,9 @@ keymap("n", "<leader>e", ":NvimTreeToggle<CR>", with_desc("Toggle File Explorer"
 
 -- Buffer navigation
 -- Relative 
-keymap("n", "<M-m>", ":BufferLineCycleNext<CR>", with_desc("Go to next buff"))
-keymap("n", "<M-n>", ":BufferLineCyclePrev<CR>", with_desc("Go to previous buff"))
-keymap("n", "<M-k>", ":BD<CR>", with_desc("Close current buff"))
+keymap("n", "<M-k>", ":BufferLineCycleNext<CR>", with_desc("Go to next buff"))
+keymap("n", "<M-j>", ":BufferLineCyclePrev<CR>", with_desc("Go to previous buff"))
+keymap("n", "<M-l>", ":BD<CR>", with_desc("Close current buff"))
 -- Absolute
 for i = 1, 9 do
   keymap('n', '<leader>' .. i, function()
