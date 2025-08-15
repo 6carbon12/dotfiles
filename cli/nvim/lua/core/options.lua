@@ -1,3 +1,14 @@
+-- Good to have
+vim.o.ignorecase = true         -- ignore case in search...
+vim.o.smartcase = true          -- ...unless capital letter is in search
+vim.o.scrolloff = 8             -- keep 8 lines visible above/below cursor
+vim.o.sidescrolloff = 8         -- keep 8 columns visible side-to-side
+vim.o.undofile = true           -- persistent undo across sessions
+vim.o.swapfile = false          -- disable swap files
+vim.o.backup = false            -- disable backup
+vim.o.writebackup = false       -- disable backup before overwrite
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
+
 -- Indentation settings
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
@@ -33,6 +44,11 @@ vim.api.nvim_set_hl(0, "DiagnosticUnderlineError", { undercurl=true, sp="#ff5c57
 vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn",  { undercurl=true, sp="#f3f99d" })
 vim.api.nvim_set_hl(0, "DiagnosticUnderlineInfo",  { undercurl=true, sp="#57c7ff" })
 vim.api.nvim_set_hl(0, "DiagnosticUnderlineHint",  { undercurl=true, sp="#9aedfe" })
+
+-- bufferline higlights
+vim.api.nvim_set_hl(0, "BufferLineBufferSelected", { sp = "#7aa2f7", underline = true, bold = true})
+vim.api.nvim_set_hl(0, "BufferLineIndicatorSelected", { sp = "#7aa2f7", underline = true })
+vim.api.nvim_set_hl(0, "BufferLineModifiedSelected", { fg = "#f7768e", sp = "#7aa2f7",underline = true })     -- The ● icon
 
 -- Making folds work
 vim.o.foldenable = true
