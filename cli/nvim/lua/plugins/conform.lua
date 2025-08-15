@@ -5,22 +5,24 @@ return {
     require("conform").setup({
       formatters_by_ft = {
         javascript = { "prettier" },
-        javascriptreact = { "prettier" },
         typescript = { "prettier" },
-        typescriptreact = { "prettier" },
-        html = { "prettier" },
-        css = { "prettier" },
+        javascriptreact = { "prettier_tailwind" },
+        typescriptreact = { "prettier_tailwind" },
+        html = { "prettier_tailwind" },
+        css = { "prettier_tailwind" },
         json = { "prettier" },
         markdown = { "prettier" },
         yaml = { "prettier" },
         lua = { "stylua" },
       },
       formatters = {
-        prettier = {
+        prettier_tailwind = {
           command = "prettier",
-          prepend_args = {
+          args = {
             "--plugin", "prettier-plugin-tailwindcss",
+            "--stdin-filepath", "$FILENAME",
           },
+          stdin = true,
         },
       },
     })
