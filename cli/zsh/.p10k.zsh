@@ -45,7 +45,7 @@
     status                  # exit code of the last command
     command_execution_time  # duration of the last command
     background_jobs         # presence of background jobs
-    direnv                  # direnv status (https://direnv.net/)
+    nix_shell
     asdf                    # asdf version manager (https://github.com/asdf-vm/asdf)
     virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
     anaconda                # conda environment (https://conda.io/)
@@ -90,7 +90,6 @@
     xplr                    # xplr shell (https://github.com/sayanarijit/xplr)
     vim_shell               # vim shell indicator (:sh)
     midnight_commander      # midnight commander shell (https://midnight-commander.org/)
-    nix_shell               # nix shell (https://nixos.org/nixos/nix-pills/developing-with-nix-shell.html)
     chezmoi_shell           # chezmoi shell (https://www.chezmoi.io/)
     vi_mode                 # vi mode (you don't need this if you've enabled prompt_char)
     # vpn_ip                # virtual private network indicator
@@ -770,7 +769,7 @@
 
   #[ nix_shell: nix shell (https://nixos.org/nixos/nix-pills/developing-with-nix-shell.html) ]##
   # Nix shell color.
-  typeset -g POWERLEVEL9K_NIX_SHELL_FOREGROUND=74
+  # typeset -g POWERLEVEL9K_NIX_SHELL_FOREGROUND=74
 
   # Display the icon of nix_shell if PATH contains a subdirectory of /nix/store.
   # typeset -g POWERLEVEL9K_NIX_SHELL_INFER_FROM_PATH=false
@@ -1737,3 +1736,29 @@ typeset -g POWERLEVEL9K_CONFIG_FILE=${${(%):-%x}:a}
 
 (( ${#p10k_config_opts} )) && setopt ${p10k_config_opts[@]}
 'builtin' 'unset' 'p10k_config_opts'
+
+# Custom nix_shell module
+function prompt_nix_shell {
+  # Check if we're inside a nix-shell (pure or impure)
+  if [[ -n "$IN_NIX_SHELL" ]]; then
+    # Set default foreground color to blue
+    local foreground_color='blue'
+
+    # If direnv is active (i.e., DIRENV_DIR is set), change color to green
+    if [[ -n "$DIRENV_DIR" ]]; then
+      foreground_color='green'
+    fi
+
+    # Determine the label to show in prompt
+    local shell_label
+
+    if [[ -n "$NIX_SHELL_NAME" ]]; then
+      shell_label="$NIX_SHELL_NAME"
+    else
+      shell_label="nix"
+    fi
+
+    # Show the p10k segment with the computed color and label
+    p10k segment -f "$foreground_color" -b default -t "$shell_label"
+  fi
+}
