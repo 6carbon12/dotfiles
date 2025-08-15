@@ -43,6 +43,11 @@ return {
         show_tab_indicators = false,
       },
     })
+
+    -- bufferline higlights
+    vim.api.nvim_set_hl(0, "BufferLineBufferSelected", { sp = "#7aa2f7", underline = true, bold = true})
+    vim.api.nvim_set_hl(0, "BufferLineIndicatorSelected", { sp = "#7aa2f7", underline = true })
+    vim.api.nvim_set_hl(0, "BufferLineModifiedSelected", { fg = "#f7768e", sp = "#7aa2f7",underline = true })     -- The ● icon
   end,
 }
 

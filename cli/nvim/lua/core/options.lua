@@ -45,11 +45,6 @@ vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn",  { undercurl=true, sp="#f3f99d
 vim.api.nvim_set_hl(0, "DiagnosticUnderlineInfo",  { undercurl=true, sp="#57c7ff" })
 vim.api.nvim_set_hl(0, "DiagnosticUnderlineHint",  { undercurl=true, sp="#9aedfe" })
 
--- bufferline higlights
-vim.api.nvim_set_hl(0, "BufferLineBufferSelected", { sp = "#7aa2f7", underline = true, bold = true})
-vim.api.nvim_set_hl(0, "BufferLineIndicatorSelected", { sp = "#7aa2f7", underline = true })
-vim.api.nvim_set_hl(0, "BufferLineModifiedSelected", { fg = "#f7768e", sp = "#7aa2f7",underline = true })     -- The ● icon
-
 -- Making folds work
 vim.o.foldenable = true
 vim.o.foldmethod = 'expr'
