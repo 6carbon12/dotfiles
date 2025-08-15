@@ -28,6 +28,9 @@ end
 
 -- Diagnostics popup
 keymap("n", "<leader>d", vim.diagnostic.open_float, with_desc("Open diagnostics floating"))
+keymap("n", "K", function ()
+  vim.lsp.buf.hover { border = 'rounded' }
+end, with_desc("Styled details"))
 
 -- Redo
 keymap("n", "<M-u>", ":redo<CR>", with_desc("Redo"))
