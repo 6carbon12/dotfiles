@@ -1,4 +1,4 @@
-# ~/.dotfiles/ 
+# ~/.dotfiles/
 
 This is all the important config files in my home directory. The configs are divided into 3 categories. Only config files in `~/.config` and `~/` are included--
 the majotiry from `~/.config`  
@@ -26,25 +26,25 @@ All things with a gui that don't fall in env are here, most everyday use app con
 - If multiple versions of an app generate different configs they must be grouped under a folder
 - The structure of the config files in `$HOME/` can be ignored if there is a better structure which is more categorizing and intuitive
 - Scripts used by applications and scripts meant to replace the applications by making them better/custom must be saved under the applications' respective folder
-- All plugins, themes must be cloned into `~/.local/share/<app-name>/plugins/`  
-- No external repo should be cloned into  `~/.dotfiles/`
+- All plugins, themes must be cloned into `~/.local/share/<app-name>/plugins/`
+- No external repo should be cloned into `~/.dotfiles/`
 
-## Setup 
+## Setup
 
 - Install git: <br>
-`sudo pacman -S git`
+  `sudo pacman -S git`
 - Clone this repo: <br>
-`git clone https://github.com/6carbon12/dotfiles.git ~/.dotfiles`
+  `git clone https://github.com/6carbon12/dotfiles.git ~/.dotfiles`
 - Go into .dotfiles dir <br>
-`cd .dotfiles`
+  `cd .dotfiles`
 - Install packages <br>
-`./install.sh`
+  `./install.sh`
 - Setup the .dotfiles <br>
-`./setup.sh`
+  `./setup.sh`
 
 ## Current Folder structure
 
-Generated with `eza -TL 1`
+Generated with `eza -TL 2`
 
 ```
 cli
@@ -73,6 +73,3 @@ gui
 └── xsettingsd
 README.md
 ```
-
-
-
