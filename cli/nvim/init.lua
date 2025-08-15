@@ -29,9 +29,3 @@ require("plugins.init")
 
 -- Keymaps
 require("core.keymaps")
-
--- current line and search result higlights
-vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#7aa2f7", italic = true })
-vim.api.nvim_set_hl(0, "Search",    { bg = "#2e3b4e", fg = "#82aaff", bold = true })
-vim.api.nvim_set_hl(0, "IncSearch", { bg = "#1f2a38", fg = "#a0e4ff", bold = true })
-

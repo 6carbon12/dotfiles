@@ -15,6 +15,25 @@ return {
       },
       sidebars = "dark",
       hide_inactive_statusline = false,
+      on_highlights = function (hl, c)
+        hl.CursorLineNr =
+        {
+          fg = c.blue,
+          italic = true
+        }
+        hl.Search =
+        {
+          bg = c.bg_highlight,
+          fg = c.blue5,
+          italic = true
+        }
+        hl.IncSearch =
+        {
+          bg = c.bg_highlight,
+          fg = c.orange,
+          bold = true
+        }
+      end
     })
 
     vim.cmd([[colorscheme tokyonight]])
