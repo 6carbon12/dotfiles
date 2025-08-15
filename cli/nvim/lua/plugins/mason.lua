@@ -7,7 +7,6 @@ return {
   config = function()
     require("mason").setup()
     require("mason-lspconfig").setup({
-      ensure_installed = { "lua_ls" }, -- add more servers here
     })
   end,
 }
