@@ -15,5 +15,6 @@ require("lazy").setup({
   require("plugins.conform"),
   require("plugins.persistance"),
   require("plugins.telescope"),
+  require("plugins.indentmini"),
 })
 
