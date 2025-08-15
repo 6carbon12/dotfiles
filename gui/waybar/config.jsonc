@@ -70,24 +70,24 @@
     "network": {
         "format-wifi": "{essid}  {bandwidthDownBytes}",
         "interval": 4,
-        "format-ethernet": "{ipaddr}/{cidr} ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip": false,
-        "format-linked": "{ifname} (No IP) ",
+        "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "on-click": "kitty iwctl"
     },
     "pulseaudio": {
         "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon} ",
-        "format-bluetooth-muted": " {icon} ",
-        "format-muted": " ",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": "",
+        "format-muted": "",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "hands-free": "󰋎",
+            "headset": "󰋎",
             "phone": "",
             "portable": "",
             "car": "",
