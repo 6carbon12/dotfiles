@@ -26,8 +26,31 @@ return {
             update_in_insert = false,
           },
         },
-        lualine_c = { "filename", "%s" },
+        lualine_c = {
+          "filename",
+          {
+            function()
+              local sc = vim.fn.searchcount({ maxcount = 0 })
+              if sc.total > 0 then
+                return string.format("[%d/%d]", sc.current, sc.total)
+              end
+              return ""
+            end,
+            cond = function()
+              return vim.v.hlsearch == 1
+            end
+          },
+        },
         lualine_x = {
+          {
+            function ()
+              local reg = vim.fn.reg_recording()
+              if reg ~= "" then
+                return "REC @" .. reg
+              end
+              return ""
+            end
+          },
           "fileformat",
           "filetype"
         },
