@@ -17,5 +17,6 @@ require("lazy").setup({
   require("plugins.telescope"),
   require("plugins.indentmini"),
   require("plugins.mini-pairs"),
+  require("plugins.guess-indent"),
 })
 
