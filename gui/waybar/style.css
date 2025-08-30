@@ -3,11 +3,21 @@
     font-size: 14px;
 }
 
+@define-color dark-red #f2263e;
+@define-color dark-gray #292e42;
+@define-color white #c0caf5;
+@define-color dark-purple #9d7cd8;
+@define-color light-blue #7aa2f7;
+@define-color light-red #f7768e;
+@define-color text #1a1b26;
+@define-color green #9ece6a;
+@define-color yellow #e0af68;
+@define-color cyan #7dcfff;
+
 #waybar {
     background-color: rgba(0, 0, 0, 0);
 }
 
-#window,
 #workspaces {
     margin: 4px 12px;
     padding: 0px 10px;
@@ -15,10 +25,23 @@
     font-weight: bold;
 }
 
+#window {
+    margin: 4px 0;
+    padding: 0px 8px;
+    border-radius: 4px;
+    color: @white;
+    background-color: @dark-gray;
+}
+
+window#waybar.empty #window {
+    background-color: transparent;
+    border: none;
+}
+
 #workspaces button {
     padding: 0px 14px;
     margin: 0px 4px;
-    color: #9d7cd8;
+    color: @dark-purple;
     border: none;
     box-shadow: none;
     text-shadow: none;
@@ -26,17 +49,17 @@
 }
 
 #workspaces button:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: @dark-gray;
 }
 
 #workspaces button.active {
-    background-color: #7aa2f7;
-    color: #1a1b26;
+    background-color: @light-blue;
+    color: @text;
 }
 
 #workspaces button.urgent {
-    background: #f7768e;
-    color: #1a1b26;
+    background: @light-red;
+    color: @text;
 }
 
 #clock,
@@ -48,49 +71,48 @@
 #pulseaudio {
     padding: 0 12px;
     border-radius: 8px;
-    color: #1a1b26;
+    color: @text;
     margin: 4px 4px;
     font-weight: bold;
-    font-size: 14px;
 }
 
 #pulseaudio {
-    background-color: #f7768e;
+    background-color: @light-red;
 }
 
 #pulseaudio.muted {
-    background-color: #414868;
-    color: #9aa5ce;
+    background-color: @dark-gray;
+    color: @white;
 }
 
 #network {
-    background-color: #7dcfff;
+    background-color: @cyan;
 }
 
 #network.disconnected {
-    background-color: #f2263e;
+    background-color: @dark-red;
 }
 
 #cpu {
-    background-color: #e0af68;
+    background-color: @yellow;
 }
 
 #memory {
-    background-color: #9ece6a;
+    background-color: @green;
 }
 
 #backlight {
-    background-color: #7aa2f7;
+    background-color: @light-blue;
 }
 
 #battery {
-    background-color: #bb9af7;
+    background-color: @dark-purple;
 }
 
 #battery.critical:not(.charging) {
-    background-color: #f2293e;
+    background-color: @dark-red
 }
 
 #clock {
-    background-color: #c0caf5;
+    background-color: @white;
 }

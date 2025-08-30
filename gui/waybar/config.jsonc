@@ -3,10 +3,10 @@
     "layer": "top",
     "position": "top",
     "height": 36,
-    // "width": 1920,
     "spacing": 0, 
     "modules-left": [
-        "hyprland/workspaces"
+        "hyprland/workspaces",
+        "hyprland/window"
     ],
     "modules-center": [
     ],
@@ -19,6 +19,16 @@
         "battery",
         "clock"
     ],
+    "hyprland/window": {
+        "format": "{title}",
+        "rewrite": {
+            "(.*) — Mozilla Firefox": "󰈹  $1",
+            "bash": "  Terminal",
+            "btop": "  BTOP",
+            "(.*) — LibreOffice (.*)": "󰏆  $2 — $1",
+            "OBS (.*) - (.*) - (.*)": "  $2 - $3"
+        }
+    },
     "clock": {
         "interval": 60,
         "format": "{:%I:%M %p} ",
@@ -39,7 +49,7 @@
     },
     "cpu": {
         "format": "{usage}% ",
-        "tooltip": false,
+        "tooltip": false
     },
     "memory": {
         "format": "{}% ",
@@ -65,7 +75,7 @@
         // "format-full": "",
         "format-icons": ["", "", "", "", ""],
         "tooltip": true,
-        "tooltip-format": "{power} W",
+        "tooltip-format": "{power} W"
     },
     "network": {
         "format-wifi": "{essid}  {bandwidthDownBytes}",
@@ -95,5 +105,5 @@
         },
         "tooltip": false,
         "on-click": "pavucontrol"
-    },
+    }
 }
