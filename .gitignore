@@ -1,9 +1,3 @@
-# Zsh plugins coz they have git repos in em
-# cli/zsh/.zsh
-
-# Tmux plugins
-# cli/tmux/plugins
-
 # backups
 *.bak
 
@@ -13,6 +7,3 @@
 
 # Clipse history
 /cli/clipse/clipboard_history.json
-
-# Spotify
-/gui/spotify/Users/
