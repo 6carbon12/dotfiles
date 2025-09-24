@@ -23,6 +23,7 @@
         "format": "{title}",
         "rewrite": {
             "(.*) — Mozilla Firefox": "󰈹  $1",
+            "(.*) - YouTube — Mozilla Firefox": "󰗃  $1",
             "bash": "  Terminal",
             "btop": "  BTOP",
             "(.*) — LibreOffice (.*)": "󰏆  $2 — $1",
