@@ -10,7 +10,7 @@ RESET="\e[0m"
 
 # Groups
 CORE_PACKAGES=(fastfetch gtk3 pavucontrol xsettingsd ttf-jetbrains-mono-nerd)
-WM_PACKAGES=(hyprland grim slurp fuzzel waybar wl-clipboard mako clipse)
+WM_PACKAGES=(hyprland grim slurp walker waybar wl-clipboard mako clipse)
 TERM_PACKAGES=(kitty neovim tmux zsh zoxide fd ripgrep fzf btop yazi eza playerctl)
 MISC_PACKAGES=(firefox mpv)
 
@@ -40,7 +40,8 @@ install_packages() {
 
   for pkg in "${packages[@]}"; do
     echo -e "${YELLOW}>>> Installing $pkg...${RESET}"
-    if yay -S --noconfirm --needed "$pkg > /dev/null"; then
+    if yay -S --noconfirm --needed "$pkg" > /dev/null; then
+      echo $?
       echo -e "${GREEN}✔ Finished installing $pkg${RESET}"
     else
       echo -e "${RED}⚠ Failed to install $pkg${RESET}"

@@ -17,20 +17,21 @@ declare -A DOTFILES_MAP=(
   [btop]="$DOTFILES_DIR/cli/btop"
   [clipse]="$DOTFILES_DIR/cli/clipse"
   [fastfetch]="$DOTFILES_DIR/cli/fastfetch"
+  [kitty]="$DOTFILES_DIR/cli/kitty"
+  [nvim]="$DOTFILES_DIR/cli/nvim"
+  [tmux]="$DOTFILES_DIR/cli/tmux"
+  [yazi]="$DOTFILES_DIR/cli/yazi"
+  [zsh]="$DOTFILES_DIR/cli/zsh"
   [fuzzel]="$DOTFILES_DIR/gui/fuzzel"
   [gtk-3.0]="$DOTFILES_DIR/gui/gtk/gtk-3.0"
   [hypr]="$DOTFILES_DIR/gui/hypr"
-  [kitty]="$DOTFILES_DIR/cli/kitty"
   [mako]="$DOTFILES_DIR/gui/mako"
-  [nvim]="$DOTFILES_DIR/cli/nvim"
-  [tmux]="$DOTFILES_DIR/cli/tmux"
+  [walker]="$DOTFILES_DIR/gui/walker"
+  [waybar]="$DOTFILES_DIR/gui/waybar"
+  [xsettingsd]="$DOTFILES_DIR/gui/xsettingsd"
   [user-dirs.conf]="$DOTFILES_DIR/env/user-dirs.conf"
   [user-dirs.dirs]="$DOTFILES_DIR/env/user-dirs.dirs"
   [user-dirs.locale]="$DOTFILES_DIR/env/user-dirs.locale"
-  [waybar]="$DOTFILES_DIR/gui/waybar"
-  [xsettingsd]="$DOTFILES_DIR/gui/xsettingsd"
-  [yazi]="$DOTFILES_DIR/cli/yazi"
-  [zsh]="$DOTFILES_DIR/cli/zsh"
   [mimeapps.list]="$DOTFILES_DIR/env/mimeapps.list"
 )
 
@@ -42,7 +43,7 @@ declare -A ROOT_DOTFILES_MAP=(
   [.p10k.zsh]="$DOTFILES_DIR/cli/zsh/.p10k.zsh"
   [.zshrc]="$DOTFILES_DIR/cli/zsh/.zshrc"
   [.zprofile]="$DOTFILES_DIR/cli/zsh/.zprofile"
-+)
+)
 
 link_dotfiles() {
   echo -e "${YELLOW}[*] Linking dotfiles into ~/.config/${RESET}"

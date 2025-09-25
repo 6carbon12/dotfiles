@@ -1,8 +1,8 @@
 # ~/.dotfiles/
 
 This is all the important config files in my home directory. The configs are divided into 3 categories. Only config files in `~/.config` and `~/` are included--
-the majotiry from `~/.config`  
-Any file which stores data as in hashes or history mut **NOT** be tracked  
+the majority from `~/.config`  
+Any file which stores data as in hashes or history must **NOT** be tracked  
 Any app that has minimal configuratin need not be tracked, except in some cases
 
 ## Folder Structure
@@ -41,35 +41,3 @@ All things with a gui that don't fall in env are here, most everyday use app con
   `./install.sh`
 - Setup the .dotfiles <br>
   `./setup.sh`
-
-## Current Folder structure
-
-Generated with `eza -TL 2`
-
-```
-cli
-├── alacritty
-├── btop
-├── clipse
-├── fastfetch
-├── git
-├── kitty
-├── nvim
-├── tmux
-├── yazi
-└── zsh
-env
-├── mimeapps.list
-├── pavucontrol.ini
-├── user-dirs.conf
-├── user-dirs.dirs
-└── user-dirs.locale
-gui
-├── fuzzel
-├── gtk
-├── hypr
-├── mako
-├── waybar
-└── xsettingsd
-README.md
-```
