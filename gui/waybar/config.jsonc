@@ -105,6 +105,6 @@
             "default": ["", "", ""]
         },
         "tooltip": false,
-        "on-click": "pavucontrol"
+        "on-click": "kitty --title pulsemixer pulsemixer"
     }
 }
