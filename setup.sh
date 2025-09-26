@@ -28,6 +28,7 @@ declare -A DOTFILES_MAP=(
   [mako]="$DOTFILES_DIR/gui/mako"
   [walker]="$DOTFILES_DIR/gui/walker"
   [waybar]="$DOTFILES_DIR/gui/waybar"
+  [wofi]="$DOTFILES_DIR/gui/wofi"
   [xsettingsd]="$DOTFILES_DIR/gui/xsettingsd"
   [user-dirs.conf]="$DOTFILES_DIR/env/user-dirs.conf"
   [user-dirs.dirs]="$DOTFILES_DIR/env/user-dirs.dirs"
