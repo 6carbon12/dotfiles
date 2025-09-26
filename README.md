@@ -36,7 +36,7 @@ All things with a gui that don't fall in env are here, most everyday use app con
 - Clone this repo: <br>
   `git clone https://github.com/6carbon12/dotfiles.git ~/.dotfiles`
 - Go into .dotfiles dir <br>
-  `cd .dotfiles`
+  `cd ~/.dotfiles`
 - Install packages <br>
   `./install.sh`
 - Setup the .dotfiles <br>

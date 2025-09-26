@@ -9,10 +9,9 @@ YELLOW="\e[33m"
 RESET="\e[0m"
 
 # Groups
-CORE_PACKAGES=(fastfetch gtk3 pavucontrol xsettingsd ttf-jetbrains-mono-nerd)
-WM_PACKAGES=(hyprland grim slurp walker waybar wl-clipboard mako clipse)
-TERM_PACKAGES=(kitty neovim tmux zsh zoxide fd ripgrep fzf btop yazi eza playerctl)
-MISC_PACKAGES=(firefox mpv)
+CORE_PACKAGES=(hyprland hyprpaper hypridle hyprlock wl-clipboard waybar wofi grim slurp mako brightnessctl clipse kitty neovim tmux zsh btop yazi pulsemixer)
+FONTS=(ttf-jetbrains-mono-nerd woff2-font-awesome noto-fonts)
+MISC_PACKAGES=(fd ripgrep fzf bat eza fastfetch firefox mpv emote nordzy-hyprcursors)
 
 check_arch() {
   if ! grep -qi "arch" /etc/os-release; then
@@ -73,15 +72,11 @@ echo -e "\n${YELLOW}Installing Core packages${RESET}"
 install_packages "${CORE_PACKAGES[@]}"
 echo -e "\n${YELLOW}Installed Core packages${RESET}"
 
-echo -e "\n${YELLOW}Installing GUI packages${RESET}"
-install_packages "${WM_PACKAGES[@]}"
-echo -e "\n${YELLOW}Installed GUI packages${RESET}"
+echo -e "\n${YELLOW}Installing FONTS${RESET}"
+install_packages "${FONTS[@]}"
+echo -e "\n${YELLOW}Installed FONTS${RESET}"
 
-echo -e "\n${YELLOW}Installing TERM packages${RESET}"
-install_packages "${TERM_PACKAGES[@]}"
-echo -e "\n${YELLOW}Installed TERM packages${RESET}"
-
-echo -e "\n${YELLOW}3️⃣ Install Misc / Extras (Firefox, mpv, etc.)? (y/N)${RESET}"
+echo -e "\n${YELLOW}3️⃣ Install Misc / Extras (Firefox, zoxide, fd etc.)? (y/N)${RESET}"
 read -rp "" ans
 if [[ "$ans" =~ ^[Yy]$ ]]; then
   install_packages "${MISC_PACKAGES[@]}"
