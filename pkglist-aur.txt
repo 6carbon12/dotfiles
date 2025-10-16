@@ -1,0 +1,9 @@
+clipse
+clipse-debug
+emote
+ncurses5-compat-libs
+ncurses5-compat-libs-debug
+nordzy-hyprcursors
+scilab-bin
+yay
+yay-debug
