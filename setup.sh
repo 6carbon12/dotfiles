@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 set -eu
 
 # Colors
@@ -11,7 +10,6 @@ DOTFILES_DIR="$HOME/.dotfiles"
 CONFIG_DIR="$HOME/.config"
 ZSHRC="$HOME/.zshrc"
 
-# Directories and files to symlink (key = target name in .config, value = source in dotfiles)
 declare -A DOTFILES_MAP=(
   [alacritty]="$DOTFILES_DIR/cli/alacritty"
   [btop]="$DOTFILES_DIR/cli/btop"
@@ -36,7 +34,6 @@ declare -A DOTFILES_MAP=(
   [mimeapps.list]="$DOTFILES_DIR/env/mimeapps.list"
 )
 
-# Root-level dotfiles in $HOME
 declare -A ROOT_DOTFILES_MAP=(
   [.gitconfig]="$DOTFILES_DIR/cli/git/.gitconfig"
   [.gitignore]="$DOTFILES_DIR/cli/git/.gitignore"
@@ -46,62 +43,81 @@ declare -A ROOT_DOTFILES_MAP=(
   [.zprofile]="$DOTFILES_DIR/cli/zsh/.zprofile"
 )
 
+backup_and_link() {
+  local src="$1"
+  local dest="$2"
+
+  # If correct symlink exists, skip
+  if [[ -L "$dest" && "$(readlink "$dest")" == "$src" ]]; then
+    echo "  Skipping $dest (already linked)"
+    return
+  fi
+
+  # Backup existing file
+  if [[ -e "$dest" || -L "$dest" ]]; then
+    mv "$dest" "$dest.bak"
+    echo "  Backed up existing $dest -> $dest.bak"
+  fi
+
+  ln -s "$src" "$dest"
+  echo "  Linked $dest -> $src"
+}
+
 link_dotfiles() {
   echo -e "${YELLOW}[*] Linking dotfiles into ~/.config/${RESET}"
   mkdir -p "$CONFIG_DIR"
 
   for target in "${!DOTFILES_MAP[@]}"; do
-    src="${DOTFILES_MAP[$target]}"
-    dest="$CONFIG_DIR/$target"
+    backup_and_link "${DOTFILES_MAP[$target]}" "$CONFIG_DIR/$target"
+  done
+}
 
-    # Remove if already exists and is not the correct symlink
-    if [[ -e "$dest" && ! -L "$dest" ]]; then
-      echo "  Removing existing $dest"
-      rm -rf "$dest"
-    fi
-
-    if [[ -L "$dest" ]]; then
-      echo "  Skipping $target (already linked)"
-    else
-      ln -s "$src" "$dest"
-      echo "  Linked $target"
-    fi
+link_dotfiles_root() {
+  echo -e "${YELLOW}[*] Linking root-level dotfiles...${RESET}"
+  for target in "${!ROOT_DOTFILES_MAP[@]}"; do
+    backup_and_link "${ROOT_DOTFILES_MAP[$target]}" "$HOME/$target"
   done
 }
 
 install_plugins() {
   echo -e "${YELLOW}[*] Installing plugins...${RESET}"
-  mkdir -p "$HOME/.local/share/tmux/plugins" "$HOME/.local/share/zsh/plugins"
+
+  mkdir -p "$HOME/.local/share/tmux/plugins"
+  mkdir -p "$HOME/.local/share/zsh/plugins"
 
   # tpm
   if [[ ! -d "$HOME/.local/share/tmux/plugins/tpm" ]]; then
-    git clone https://github.com/tmux-plugins/tpm "$HOME/.local/share/tmux/plugins/tpm"
-    echo "  Installed tpm"
+    git clone https://github.com/tmux-plugins/tpm "$HOME/.local/share/tmux/plugins/tpm" || echo "Failed to clone tpm"
   else
     echo "  tpm already exists"
   fi
 
   # p10k
   if [[ ! -d "$HOME/.local/share/zsh/plugins/p10k" ]]; then
-    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$HOME/.local/share/zsh/plugins/p10k"
-    echo "  Installed powerlevel10k"
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$HOME/.local/share/zsh/plugins/p10k" || echo "Failed to clone p10k"
   else
     echo "  powerlevel10k already exists"
   fi
 
   # zsh-autosuggestions
   if [[ ! -d "$HOME/.local/share/zsh/plugins/zsh-autosuggestions" ]]; then
-    git clone https://github.com/zsh-users/zsh-autosuggestions "$HOME/.local/share/zsh/plugins/zsh-autosuggestions"
-    echo "  Installed zsh-autosuggestions"
+    git clone https://github.com/zsh-users/zsh-autosuggestions "$HOME/.local/share/zsh/plugins/zsh-autosuggestions" || echo "Failed to clone zsh-autosuggestions"
   else
     echo "  zsh-autosuggestions already exists"
+  fi
+
+  # zsh-vi-mode
+  if [[ ! -d "$HOME/.local/share/zsh/plugins/zsh-vi-mode" ]]; then
+    git clone https://github.com/jeffreytse/zsh-vi-mode.git "$HOME/.local/share/zsh/plugins/zsh-vi-mode" || echo "Failed to clone zsh-vi-mode"
+  else
+    echo "  zsh-vi-mode already exists"
   fi
 }
 
 finalize() {
   echo -e "${YELLOW}[*] Sourcing zsh config...${RESET}"
   if [[ -f "$ZSHRC" ]]; then
-    source "$ZSHRC"
+    zsh -c "source $ZSHRC"
   else
     echo "No $ZSHRC found. Skipping."
   fi
@@ -114,6 +130,6 @@ finalize() {
 
 # --- Main ---
 link_dotfiles
+link_dotfiles_root
 install_plugins
 finalize
-

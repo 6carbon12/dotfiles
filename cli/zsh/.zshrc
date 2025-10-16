@@ -12,6 +12,7 @@ setopt autocd extendedglob
 unsetopt beep
 setopt append_history
 setopt sharehistory
+bindkey -v
 # End of lines configured by zsh-newuser-install
 
 # The following lines were added by compinstall
@@ -27,13 +28,13 @@ source ~/.local/share/zsh/plugins/p10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 source ~/.local/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.local/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 ###########
 # ALIASES #
 ###########
 
 # Better apps but muscle memory
-alias grep="grep --color=auto"
 alias ls="eza"
 alias cat="bat"
 alias grep="rg"

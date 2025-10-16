@@ -1,65 +1,91 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
-set -eu
-
+# -----------------------
 # Colors
+# -----------------------
 RED="\e[31m"
 GREEN="\e[32m"
 YELLOW="\e[33m"
 RESET="\e[0m"
 
-# Groups
+log()     { echo -e "${YELLOW}[*] $*${RESET}"; }
+success() { echo -e "${GREEN}✔ $*${RESET}"; }
+error()   { echo -e "${RED}✖ $*${RESET}"; }
+
+# -----------------------
+# Package Groups
+# -----------------------
 CORE_PACKAGES=(hyprland hyprpaper hypridle hyprlock wl-clipboard waybar wofi grim slurp mako brightnessctl clipse kitty neovim tmux zsh btop yazi pulsemixer)
 FONTS=(ttf-jetbrains-mono-nerd woff2-font-awesome noto-fonts)
 MISC_PACKAGES=(fd ripgrep fzf bat eza fastfetch firefox mpv emote nordzy-hyprcursors)
 
+# -----------------------
+# Functions
+# -----------------------
+
 check_arch() {
-  if ! grep -qi "arch" /etc/os-release; then
-    echo -e "${RED}✖ This script is only for Arch-based distros!${RESET}"
+  source /etc/os-release
+  if [[ "$ID" != "arch" && "$ID_LIKE" != *"arch"* ]]; then
+    error "This script is only for Arch-based distributions!"
     exit 1
   fi
+  log "Confirmed Arch-based system."
 }
 
 install_yay() {
   if ! command -v yay &>/dev/null; then
-    echo -e "${YELLOW}[*] Installing yay...${RESET}"
-    sudo pacman -S --noconfirm --needed base-devel git > /dev/null
+    log "Installing yay..."
+    sudo pacman -S --noconfirm --needed base-devel git
     tmpdir=$(mktemp -d)
-    git clone https://aur.archlinux.org/yay.git "$tmpdir" > /dev/null
-    (cd "$tmpdir" && makepkg -si --noconfirm > /dev/null)
+    pushd "$tmpdir" > /dev/null
+    git clone https://aur.archlinux.org/yay.git .
+    makepkg -si --noconfirm
+    popd > /dev/null
     rm -rf "$tmpdir"
+    success "yay installed."
   else
-    echo -e "${GREEN}[*] yay is already installed.${RESET}"
+    success "yay is already installed."
   fi
 }
 
 install_packages() {
   local packages=("$@")
-  FAILED_PKGS=()
+  local failed=()
 
   for pkg in "${packages[@]}"; do
-    echo -e "${YELLOW}>>> Installing $pkg...${RESET}"
-    if yay -S --noconfirm --needed "$pkg" > /dev/null; then
-      echo $?
-      echo -e "${GREEN}✔ Finished installing $pkg${RESET}"
+    log "Installing $pkg..."
+    if yay -S --needed --noconfirm "$pkg"; then
+      success "Installed $pkg"
     else
-      echo -e "${RED}⚠ Failed to install $pkg${RESET}"
-      FAILED_PKGS+=("$pkg")
+      error "Failed to install $pkg"
+      failed+=("$pkg")
     fi
   done
 
-  if [[ ${#FAILED_PKGS[@]} -gt 0 ]]; then
-    echo -e "\n${RED}⚠ The following packages failed to install: ${FAILED_PKGS[*]}${RESET}"
+  if [[ ${#failed[@]} -gt 0 ]]; then
+    error "The following packages failed: ${failed[*]}"
   fi
 }
 
 uninstall_all() {
-  echo -e "${YELLOW}[*] Removing all packages (all groups)...${RESET}"
-  yay -Rns --noconfirm "${CORE_PACKAGES[@]}" "${WM_PACKAGES[@]}" "${TERM_PACKAGES[@]}" "${MISC_PACKAGES[@]}" || true
+  log "Removing all packages..."
+  yay -Rns --noconfirm "${CORE_PACKAGES[@]}" "${FONTS[@]}" "${MISC_PACKAGES[@]}" || true
+  success "Uninstallation complete."
 }
 
-# --- Main ---
+prompt_install_misc() {
+  read -rp "Install Misc/Extras (Firefox, fd, etc.)? [y/N]: " ans
+  if [[ "$ans" =~ ^[Yy]$ ]]; then
+    install_packages "${MISC_PACKAGES[@]}"
+  else
+    log "Skipping Misc packages."
+  fi
+}
 
+# -----------------------
+# Main
+# -----------------------
 check_arch
 
 if [[ "${1:-}" == "--clean" ]]; then
@@ -68,19 +94,13 @@ if [[ "${1:-}" == "--clean" ]]; then
 fi
 
 install_yay
-echo -e "\n${YELLOW}Installing Core packages${RESET}"
+
+log "Installing Core packages..."
 install_packages "${CORE_PACKAGES[@]}"
-echo -e "\n${YELLOW}Installed Core packages${RESET}"
 
-echo -e "\n${YELLOW}Installing FONTS${RESET}"
+log "Installing Fonts..."
 install_packages "${FONTS[@]}"
-echo -e "\n${YELLOW}Installed FONTS${RESET}"
 
-echo -e "\n${YELLOW}3️⃣ Install Misc / Extras (Firefox, zoxide, fd etc.)? (y/N)${RESET}"
-read -rp "" ans
-if [[ "$ans" =~ ^[Yy]$ ]]; then
-  install_packages "${MISC_PACKAGES[@]}"
-else
-  echo -e "${GREEN}Skipping Misc group.${RESET}"
-fi
+prompt_install_misc
 
+success "All done! ✅"
