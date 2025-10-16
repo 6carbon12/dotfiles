@@ -399,6 +399,7 @@ oniguruma
 openal
 opencore-amr
 openjpeg2
+openssh
 openssl
 opus
 p11-kit
