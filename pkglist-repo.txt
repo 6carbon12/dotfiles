@@ -1,3 +1,4 @@
+7zip
 abseil-cpp
 acl
 adwaita-cursors
@@ -8,6 +9,7 @@ alsa-card-profiles
 alsa-lib
 alsa-topology-conf
 alsa-ucm-conf
+android-tools
 aom
 aquamarine
 archlinux-keyring
@@ -84,6 +86,9 @@ fontconfig
 freeglut
 freetype2
 fribidi
+fuse-common
+fuse2
+fuse3
 fzf
 gawk
 gc
@@ -111,6 +116,7 @@ gobject-introspection-runtime
 gperftools
 gpgme
 gpsd
+graphene
 graphite
 grep
 grim
@@ -119,6 +125,8 @@ grub
 gsettings-desktop-schemas
 gsettings-system-schemas
 gsm
+gst-plugins-base-libs
+gstreamer
 gtest
 gtk-layer-shell
 gtk-update-icon-cache
@@ -189,6 +197,7 @@ libcloudproviders
 libcolord
 libcups
 libdaemon
+libdatachannel
 libdatrie
 libdbusmenu-glib
 libdbusmenu-gtk3
@@ -221,9 +230,11 @@ libidn2
 libiec61883
 libimobiledevice
 libimobiledevice-glue
+libinih
 libinput
 libisl
 libjpeg-turbo
+libjuice
 libjxl
 libkeybinder3
 libksba
@@ -238,6 +249,7 @@ libmnl
 libmodplug
 libmpc
 libmpdclient
+libmtp
 libmysofa
 libnet
 libnetfilter_conntrack
@@ -276,6 +288,7 @@ libsndfile
 libsodium
 libsoup3
 libsoxr
+libsrtp
 libssh
 libssh2
 libstemmer
@@ -369,6 +382,7 @@ mailcap
 make
 mako
 man-db
+mbedtls
 md4c
 mesa
 mesa-demos
@@ -394,6 +408,7 @@ noto-fonts-emoji
 npth
 nspr
 nss
+obs-studio
 ocl-icd
 oniguruma
 openal
@@ -402,6 +417,7 @@ openjpeg2
 openssh
 openssl
 opus
+orc
 p11-kit
 pacman
 pacman-mirrorlist
@@ -433,6 +449,7 @@ popt
 portaudio
 pps-tools
 procps-ng
+protobuf
 psmisc
 pugixml
 pulse-native-provider
@@ -463,8 +480,10 @@ python-tqdm
 python-virtualenv
 python-virtualenv-clone
 python-wheel
+qrcodegencpp-cmake
 qt6-base
 qt6-declarative
+qt6-svg
 qt6-translations
 rav1e
 re2
@@ -472,6 +491,9 @@ readline
 resvg
 rhash
 ripgrep
+rnnoise
+rsync
+rtkit
 rubberband
 ruby
 rubygems
@@ -485,6 +507,7 @@ serd
 shaderc
 shadow
 shared-mime-info
+simde
 slurp
 snappy
 sndio
@@ -525,6 +548,7 @@ uchardet
 unibilium
 unzip
 upower
+uthash
 util-linux
 util-linux-libs
 v4l-utils
@@ -551,6 +575,9 @@ xcb-util-image
 xcb-util-keysyms
 xcb-util-renderutil
 xcb-util-wm
+xdg-desktop-portal
+xdg-desktop-portal-gtk
+xdg-desktop-portal-hyprland
 xdg-utils
 xkeyboard-config
 xorg-fonts-encodings
