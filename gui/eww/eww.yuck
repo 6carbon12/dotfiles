@@ -1,0 +1,58 @@
+
+(defpoll day :interval "1h" `date +%A | tr '[:lower:]' '[:upper:]'`)
+(defpoll date :interval "1h" `date +"%d %B %Y" | tr '[:lower:]' '[:upper:]'`)
+
+(defwidget day-display []
+  (box :class "day-box"
+    (label :class "day-text" :text day)
+  )
+)
+
+(defwidget date-display []
+  (box :class "date-box"
+    (label :class "date-text" :text date :yalign 0)
+  )
+)
+
+(defwindow date-day-window
+  :monitor 0
+  :geometry (geometry
+               :x "0%"
+               :y "15%"
+               :width "100%"
+               :height "128px"
+               :anchor "top left")
+  :stacking "bottom"
+  :exclusive false
+  :focusable false
+  :windowtype "desktop"
+  :wm-ignore true
+  (box :class "day-date-box" :orientation "vertical" :spacing 0
+    (day-display)
+    (date-display)
+  )
+)
+
+(defwindow power-window
+  :monitor 0
+  :geometry (geometry
+               :x "0%"
+               :y "60%"
+               :width "30%"
+               :height "64px"
+               :anchor "top center")
+  :stacking "bottom"
+  :exclusive false
+  :focusable false
+  :windowtype "desktop"
+  :wm-ignore true
+  (box :class "power-box" :height 140 :orientation "h" :spacing 24
+    (button :class "btn-sleep" :onclick "systemctl sleep"
+      (label :class "sleep" :text ""))
+    (button :class "btn-power" :onmiddleclick "shutdown now"
+      (label :class "power" :text "󰐥"))
+    (button :class "btn-restart" :onrightclick "reboot"
+      (label :class "restart" :text "󰑓"))
+  )
+)
+

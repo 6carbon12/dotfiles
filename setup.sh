@@ -25,6 +25,7 @@ declare -A DOTFILES_MAP=(
   [hypr]="$DOTFILES_DIR/gui/hypr"
   [mako]="$DOTFILES_DIR/gui/mako"
   [walker]="$DOTFILES_DIR/gui/walker"
+  [eww]="$DOTFILES_DIR/gui/eww"
   [waybar]="$DOTFILES_DIR/gui/waybar"
   [wofi]="$DOTFILES_DIR/gui/wofi"
   [xsettingsd]="$DOTFILES_DIR/gui/xsettingsd"
