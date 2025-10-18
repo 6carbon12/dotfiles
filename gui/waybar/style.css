@@ -3,19 +3,23 @@
     font-size: 14px;
 }
 
-@define-color dark-red #f2263e;
-@define-color dark-gray #292e42;
-@define-color white #c0caf5;
-@define-color dark-purple #9d7cd8;
-@define-color light-blue #7aa2f7;
-@define-color light-red #f7768e;
-@define-color text #1a1b26;
-@define-color green #9ece6a;
-@define-color yellow #e0af68;
-@define-color cyan #7dcfff;
+/* alpha can only be hardcoded */
+@define-color dark-red rgba(242, 38, 62, 0.8);
+@define-color dark-gray rgba(41, 46, 66, 0.8);
+@define-color light-gray rgba(115, 122, 162, 0.8);
+@define-color white rgba(192, 202, 245, 0.8);
+@define-color dark-purple rgba(157, 124, 216, 0.8);
+@define-color light-blue rgba(122, 162, 247, 0.8);
+@define-color light-red rgba(247, 118, 142, 0.8);
+@define-color green rgba(79, 214, 190, 0.8);
+@define-color yellow rgba(224, 175, 104, 0.8);
+@define-color cyan rgba(125, 207, 255, 0.8);
+
+@define-color text rgba(26, 27, 38, 1);
+@define-color dark-purple-solid rgba(157, 124, 216, 1);
 
 #waybar {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(150, 100, 255, 0.2);
 }
 
 #workspaces {
@@ -41,7 +45,7 @@ window#waybar.empty #window {
 #workspaces button {
     padding: 0px 14px;
     margin: 0px 4px;
-    color: @dark-purple;
+    color: @dark-purple-solid;
     border: none;
     box-shadow: none;
     text-shadow: none;
@@ -77,7 +81,7 @@ window#waybar.empty #window {
 }
 
 #pulseaudio {
-    background-color: @light-red;
+    background-color: @light-gray;
 }
 
 #pulseaudio.muted {
@@ -94,19 +98,19 @@ window#waybar.empty #window {
 }
 
 #cpu {
-    background-color: @yellow;
+    background-color: @dark-purple;
 }
 
 #memory {
-    background-color: @green;
-}
-
-#backlight {
     background-color: @light-blue;
 }
 
+#backlight {
+    background-color: @yellow;
+}
+
 #battery {
-    background-color: @dark-purple;
+    background-color: @green;
 }
 
 #battery.critical:not(.charging) {
