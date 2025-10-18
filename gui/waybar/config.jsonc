@@ -85,7 +85,7 @@
         "tooltip": false,
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "on-click": "kitty --title float-term iwctl"
+        "on-click": "kitty --title float-term --override window_padding_width=20 iwctl"
     },
     "pulseaudio": {
         "scroll-step": 1, // %, can be a float
@@ -105,6 +105,6 @@
             "default": ["", "", ""]
         },
         "tooltip": false,
-        "on-click": "kitty --title float-term pulsemixer"
+        "on-click": "kitty --title float-term --override window_padding_width=20 pulsemixer"
     }
 }
