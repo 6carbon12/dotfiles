@@ -47,7 +47,7 @@
   :windowtype "desktop"
   :wm-ignore true
   (box :class "power-box" :height 140 :orientation "h" :spacing 24
-    (button :class "btn-sleep" :onclick "systemctl sleep"
+    (button :class "btn-sleep" :onclick "hyprctl dispatch exec hyprlock"
       (label :class "sleep" :text ""))
     (button :class "btn-power" :onmiddleclick "shutdown now"
       (label :class "power" :text "󰐥"))
