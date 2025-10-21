@@ -1,0 +1,5 @@
+clipse
+emote
+eww
+nordzy-hyprcursors
+ttf-orbitron
