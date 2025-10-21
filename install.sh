@@ -16,9 +16,9 @@ error()   { echo -e "${RED}✖ $*${RESET}"; }
 # -----------------------
 # Package Groups
 # -----------------------
-CORE_PACKAGES=(hyprland hyprpaper hypridle hyprlock wl-clipboard waybar eww wofi grim slurp mako brightnessctl clipse kitty neovim tmux zsh btop yazi pulsemixer)
-FONTS=(ttf-jetbrains-mono-nerd woff2-font-awesome noto-fonts)
-MISC_PACKAGES=(fd ripgrep fzf bat eza fastfetch firefox mpv emote nordzy-hyprcursors)
+CORE_PACKAGES=(hyprland hyprpaper hypridle hyprlock hyprsunset wl-clipboard waybar eww wofi grim slurp mako brightnessctl clipse kitty neovim tmux zsh btop yazi pulsemixer)
+FONTS=(ttf-jetbrains-mono-nerd ttf-orbitron woff2-font-awesome noto-fonts)
+MISC_PACKAGES=(fd ripgrep fzf bat eza zoxide fastfetch rsync firefox mpv emote nordzy-hyprcursors)
 
 # -----------------------
 # Functions
