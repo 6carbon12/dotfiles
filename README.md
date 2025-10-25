@@ -28,6 +28,7 @@ All things with a gui that don't fall in env are here, most everyday use app con
 - Scripts used by applications and scripts meant to replace the applications by making them better/custom must be saved under the applications' respective folder
 - All plugins, themes must be cloned into `~/.local/share/<app-name>/plugins/`
 - No external repo should be cloned into `~/.dotfiles/`
+- pkglist-native.txt and pkglist-foreign.txt are auto generated with pacman hook
 
 ## Setup
 

@@ -2,4 +2,6 @@ clipse
 emote
 eww
 nordzy-hyprcursors
+plymouth-theme-tech-a-git
+scilab-bin
 ttf-orbitron
