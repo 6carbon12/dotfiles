@@ -6,9 +6,10 @@ bluez
 bluez-utils
 brightnessctl
 btop
-chromium
 dhcpcd
+dmidecode
 efibootmgr
+expac
 eza
 fastfetch
 fd
