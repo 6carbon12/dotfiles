@@ -5,10 +5,10 @@
     "height": 36,
     "spacing": 0, 
     "modules-left": [
-        "hyprland/workspaces",
-        "hyprland/window"
+        "hyprland/window",
     ],
     "modules-center": [
+        "hyprland/workspaces",
     ],
     "modules-right": [
         "pulseaudio",

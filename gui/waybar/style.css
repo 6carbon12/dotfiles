@@ -30,7 +30,7 @@
 }
 
 #window {
-    margin: 4px 0;
+    margin: 4px 8px;
     padding: 0px 8px;
     border-radius: 4px;
     color: @white;
@@ -43,22 +43,31 @@ window#waybar.empty #window {
 }
 
 #workspaces button {
-    padding: 0px 14px;
+    padding: 0px 6px;
+    border: 1px solid @dark-purple-solid;
     margin: 0px 4px;
+    border-radius: 16px;
     color: @dark-purple-solid;
-    border: none;
     box-shadow: none;
     text-shadow: none;
-    transition: background-color, color 0.15s ease;
+    transition: background-color, color, padding, 300ms ease;
 }
 
 #workspaces button:hover {
-    background: @dark-gray;
+    background: @dark-purple-solid;
+    color: @text;
 }
 
 #workspaces button.active {
     background-color: @light-blue;
+    padding: 0px 14px;
+    border: none;
+    border-radius: 16px;
     color: @text;
+}
+
+#workspaces button.active:hover {
+    background: @dark-purple-solid;
 }
 
 #workspaces button.urgent {
