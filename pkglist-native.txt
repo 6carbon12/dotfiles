@@ -31,7 +31,6 @@ libreoffice-fresh
 linux
 linux-firmware
 linux-lts
-linux-lts-headers
 ly
 mako
 man-db
@@ -62,6 +61,7 @@ wl-clipboard
 wofi
 xdg-desktop-portal
 xdg-desktop-portal-hyprland
+xdg-user-dirs
 yazi
 zoxide
 zram-generator
