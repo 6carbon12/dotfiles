@@ -13,6 +13,7 @@ eza
 fastfetch
 fd
 firefox
+fwupd
 fzf
 git
 grim
@@ -56,6 +57,7 @@ sof-firmware
 tlp
 tmux
 ttf-jetbrains-mono-nerd
+uwsm
 waybar
 wl-clipboard
 wofi

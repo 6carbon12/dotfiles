@@ -1,30 +1,26 @@
-// Load with --load-config examples/2.jsonc
-// Note that you must replace the image path to an existing image to display it.
-
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
        "logo": {
-           // "source": "~/.config/fastfetch/ASCII-penguin",
            "color": {
                "1": "#7aa2f7",
                "2": "#7aa2f7"
             },
             "padding": {
-                "left": 4,
-                "top": 4
+                "left": 1,
+                "top": 1
             }
        },
     "display": {
         "separator": "    ",
         "constants": [
-            "────────────" // {$1}, used in Custom module
+            "───────────────" // {$1}, used in Custom module
         ],
         "key": {
             "type": "icon",
             "paddingLeft": 2
         },
         "color": {
-            "keys": "#7dcff0"
+            "keys": "#3d59a1"
         },
         "percent": {
             "ndigits": 1,
@@ -34,24 +30,20 @@
     "modules": [
         {
             "type": "custom", // HardwareStart
-            // {#1} is equivalent to `\u001b[1m`. {#} is equivalent to `\u001b[m`
             "format": "┌{$1} {#1}Hardware Information{#} {$1}┐"
         },
         {
             "type": "host",
-            "format": "Lenovo IdeaPad Flex 5"
+            "format": "{vendor} {family}"
         },
-        {
-            "type": "cpu",
-            "format": "Intel i3-1005G1"
-        },
+        "cpu",
         {
             "type": "disk",
-            "format": "{size-used} / {size-total} {size-percentage-bar}"
+            "format": "{size-used} / {size-total} {size-percentage-bar} - {mountpoint}"
         },
         {
             "type": "memory",
-            "format": "{1} / {2} {4}"
+            "format": "{used} / {total} {percentage-bar}"
         },
         {
             "type": "display",
@@ -59,12 +51,9 @@
         },
         {
             "type": "battery",
-            "format": "{10} "
+            "format": "{manufacturer} {technology} {capacity-bar}"
         },
-        {
-            "type": "sound",
-            "format": "Ice Lake-LP Speaker {volume-percentage-bar}"
-        },
+        "sound",
         {
             "type": "custom", // SoftwareStart
             "format": "├{$1} {#1}Software Information{#} {$1}┤"
@@ -73,7 +62,7 @@
             "type": "title",
             "keyIcon": "",
             "key": "Title", // Title module has no key by default, so that icon is not displayed
-            "format": "Kiran S"
+            "format": "{user-name}"
         },
         "os",
         "kernel",
@@ -81,8 +70,6 @@
         "shell",
         "terminal",
         "terminalfont",
-        "theme",
-        "icons",
         "wallpaper",
         "packages",
         "uptime",
@@ -90,19 +77,6 @@
             "type": "media",
             "format": "{title}"
         },
-        {
-            "type": "localip",
-            "compact": true
-        },
-        {
-            "type": "publicip",
-            "timeout": 1000
-        },
-        {
-            "type": "wifi",
-            "format": "{ssid}"
-        },
-        "locale",
         {
             "type": "custom", // InformationEnd
             "format": "└{$1}──────────────────────{$1}┘"
