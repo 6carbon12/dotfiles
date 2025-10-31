@@ -57,8 +57,8 @@ sof-firmware
 tlp
 tmux
 ttf-jetbrains-mono-nerd
-uwsm
 waybar
+wev
 wl-clipboard
 wofi
 xdg-desktop-portal
