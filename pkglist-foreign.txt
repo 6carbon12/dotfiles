@@ -1,6 +1,7 @@
 clipse
 emote
 eww
+libfprint-goodixtls-55x4
 nordzy-hyprcursors
 plymouth-theme-tech-a-git
 scilab-bin

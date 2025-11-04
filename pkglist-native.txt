@@ -6,6 +6,7 @@ bluez
 bluez-utils
 brightnessctl
 btop
+cmatrix
 dhcpcd
 efibootmgr
 expac
@@ -13,8 +14,9 @@ eza
 fastfetch
 fd
 firefox
-fwupd
+fprintd
 fzf
+geoclue
 git
 grim
 grub
@@ -22,6 +24,7 @@ hypridle
 hyprland
 hyprlock
 hyprpaper
+hyprpolkitagent
 hyprsunset
 intel-ucode
 iwd
@@ -32,6 +35,7 @@ libreoffice-fresh
 linux
 linux-firmware
 linux-lts
+lxappearance
 ly
 mako
 man-db
@@ -40,15 +44,21 @@ mpv
 ncdu
 neovim
 ninja
+nodejs
 noto-fonts-cjk
+npm
 obs-studio
 obsidian
+okular
 openssh
 pacman-contrib
 pacutils
 papirus-icon-theme
 plymouth
 pulsemixer
+pyenv
+python-pip
+quota-tools
 ripgrep
 rsync
 slurp
