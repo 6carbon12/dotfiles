@@ -74,6 +74,7 @@ wofi
 xdg-desktop-portal
 xdg-desktop-portal-hyprland
 xdg-user-dirs
+yarn
 yazi
 zoxide
 zram-generator
