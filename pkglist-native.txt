@@ -18,8 +18,10 @@ fprintd
 fzf
 geoclue
 git
+gnome-tweaks
 grim
 grub
+gtk4
 hypridle
 hyprland
 hyprlock
@@ -35,10 +37,10 @@ libreoffice-fresh
 linux
 linux-firmware
 linux-lts
-lxappearance
 ly
 mako
 man-db
+materia-gtk-theme
 mesa-utils
 mpv
 ncdu
