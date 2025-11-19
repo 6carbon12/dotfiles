@@ -1,3 +1,9 @@
 [flavor]
 light = "tokyo-night"
 dark = "tokyo-night"
+
+[tabs]
+active = { fg = "#7aa2f7", bg = "#1a1b26", bold = true }
+inactive = { fg = "#565f89", bg = "#24283b" , bink = true}
+sep_inner = { open = "", close = "" }
+sep_outer = { open = "", close = ""}
