@@ -65,6 +65,10 @@ export TERM="tmux-256color"
 export npm_config_cache="~/.local/share/npm"
 export GNUPGHOME="~/.local/share/gnupg"
 
+# Set editor
+export EDITOR=nvim
+export VISUAL=nvim
+
 ################
 # APP SPECIFIC #
 ################
