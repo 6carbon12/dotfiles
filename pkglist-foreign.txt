@@ -5,6 +5,7 @@ harmonymusic
 libfprint-goodixtls-55x4
 nordzy-hyprcursors
 plymouth-theme-tech-a-git
+python-selenium
 scilab-bin
 tokyonight-gtk-theme-git
 ttf-orbitron
