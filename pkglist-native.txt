@@ -13,6 +13,7 @@ eza
 fastfetch
 fd
 firefox
+flatpak
 fprintd
 fzf
 git
@@ -59,6 +60,7 @@ ripgrep
 rsync
 slurp
 smartmontools
+socat
 sof-firmware
 telegram-desktop
 tlp

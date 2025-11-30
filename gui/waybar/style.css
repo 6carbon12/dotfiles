@@ -42,6 +42,22 @@ window#waybar.empty #window {
     border: none;
 }
 
+#custom-minimized {
+    padding: 0px;
+    font-size: 16px;
+}
+
+/* The Active Dot Style */
+#custom-minimized.occupied {
+    color: @light-blue; /* Changed to your specific blue */
+}
+
+/* Hide when empty */
+#custom-minimized.empty {
+    padding: 0;
+    margin: 0;
+}
+
 #workspaces button {
     padding: 0px 6px;
     border: 1px solid @dark-purple-solid;

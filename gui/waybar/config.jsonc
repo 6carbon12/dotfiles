@@ -6,6 +6,7 @@
     "spacing": 0, 
     "modules-left": [
         "hyprland/window",
+        "custom/minimized"
     ],
     "modules-center": [
         "hyprland/workspaces",
@@ -29,6 +30,13 @@
             "(.*) — LibreOffice (.*)": "󰏆  $2 — $1",
             "OBS (.*) - (.*) - (.*)": "  $2 - $3"
         }
+    },
+    "custom/minimized": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/minimized_dot.sh",
+        "restart-interval": 1,
+        "on-click": "hyprctl dispatch togglespecialworkspace minimized"
     },
     "clock": {
         "interval": 60,
