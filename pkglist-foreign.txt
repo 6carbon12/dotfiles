@@ -1,9 +1,9 @@
+64gram-desktop-bin
 clipse
 emote
 eww
 harmonymusic
 libfprint-goodixtls-55x4
-ltspice
 nordzy-hyprcursors
 plymouth-theme-tech-a-git
 python-selenium

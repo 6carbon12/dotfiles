@@ -7,6 +7,8 @@ bluez-utils
 brightnessctl
 btop
 cmatrix
+cups
+cups-pdf
 efibootmgr
 expac
 eza
@@ -31,6 +33,7 @@ iwd
 jq
 keyd
 kitty
+lib32-libcanberra
 libnotify
 libreoffice-fresh
 linux
@@ -44,17 +47,20 @@ neovim
 nodejs
 noto-fonts-cjk
 npm
+nwg-look
 obs-studio
 obsidian
 okular
 openssh
 pacman-contrib
 pacutils
+pamixer
 papirus-icon-theme
 plymouth
 pulsemixer
 pyenv
 python-pip
+python-wxpython
 reflector
 ripgrep
 rsync
@@ -62,7 +68,6 @@ slurp
 smartmontools
 socat
 sof-firmware
-telegram-desktop
 tlp
 tmux
 ttf-jetbrains-mono-nerd
