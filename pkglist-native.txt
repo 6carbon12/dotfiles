@@ -1,5 +1,6 @@
 7zip
 android-tools
+base
 bat
 bluetui
 bluez
@@ -7,6 +8,7 @@ bluez-utils
 brightnessctl
 btop
 cmatrix
+code
 cups
 cups-pdf
 efibootmgr
@@ -51,7 +53,9 @@ nwg-look
 obs-studio
 obsidian
 okular
+openresolv
 openssh
+openvpn
 pacman-contrib
 pacutils
 pamixer
@@ -68,6 +72,8 @@ slurp
 smartmontools
 socat
 sof-firmware
+swaync
+tk
 tlp
 tmux
 ttf-jetbrains-mono-nerd

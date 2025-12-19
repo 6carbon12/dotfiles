@@ -17,6 +17,11 @@ return {
         vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
       end
     })
+    vim.lsp.config("emmet_ls", {
+      filetypes = {
+         "astro", "css", "eruby", "html", "htmlangular", "htmldjango", "javascriptreact", "less", "pug", "svelte", "templ", "typescriptreact", "vue"
+      }
+    })
   end,
 }
 
