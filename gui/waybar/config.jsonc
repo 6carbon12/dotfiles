@@ -5,11 +5,11 @@
     "height": 36,
     "spacing": 0, 
     "modules-left": [
-        "hyprland/window",
+        "custom/dashboard",
         "custom/minimized"
     ],
     "modules-center": [
-        "hyprland/workspaces",
+        "hyprland/workspaces"
     ],
     "modules-right": [
         "pulseaudio",
@@ -30,6 +30,11 @@
             "(.*) — LibreOffice (.*)": "󰏆  $2 — $1",
             "OBS (.*) - (.*) - (.*)": "  $2 - $3"
         }
+    },
+    "custom/dashboard": {
+        "format": "  ",
+        "tooltip": false,
+        "on-click": "eww open --toggle dashboard"
     },
     "custom/minimized": {
         "format": "{}",

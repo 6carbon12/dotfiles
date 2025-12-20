@@ -1,58 +1,103 @@
+;; DATE DAY
 
 (defpoll day :interval "1h" `date +%A | tr '[:lower:]' '[:upper:]'`)
 (defpoll date :interval "1h" `date +"%d %B %Y" | tr '[:lower:]' '[:upper:]'`)
 
-(defwidget day-display []
-  (box :class "day-box"
+(defwindow date-day-window
+  :monitor 0
+  :geometry (geometry
+    :x "0%"
+    :y "15%"
+    :width "100%"
+    :height "128px"
+    :anchor "top left")
+  :stacking "bottom"
+  :exclusive false
+  :focusable false
+  (box :orientation "vertical" :spacing 0
     (label :class "day-text" :text day)
-  )
-)
-
-(defwidget date-display []
-  (box :class "date-box"
     (label :class "date-text" :text date :yalign 0)
   )
 )
 
-(defwindow date-day-window
+;; DASHBOARD
+
+(defpoll music_title :interval "1s" "playerctl metadata title || echo 'No Music'")
+(defpoll music_artist :interval "1s" "playerctl metadata artist || echo ''")
+(defpoll dnd_status :interval "0.25s" "makoctl mode | grep -q 'dnd' && echo 'true' || echo 'false'")
+(defpoll bt_status :interval "0.25s" 
+  "bluetoothctl show | grep -q 'Powered: yes' && echo 'true' || echo 'false'")
+(defpoll wifi_status :interval "0.25s" 
+  "iwctl station wlan0 show | grep -q 'connected' && echo 'true' || echo 'false'")
+(defpoll greeting :interval "1h" 
+  `date +%H | awk '{if ($1 < 5) print "Go to Sleep"; else if ($1 < 12) print "Good Morning"; else if ($1 < 18) print "Good Afternoon"; else print "Good Evening"}'`)
+
+
+(defwindow dashboard :class "dashboard"
   :monitor 0
-  :geometry (geometry
-               :x "0%"
-               :y "15%"
-               :width "100%"
-               :height "128px"
-               :anchor "top left")
-  :stacking "bottom"
+  :geometry (geometry :x "8px"
+    :y "8px"
+    :width "400px"
+    :height "0px"
+    :anchor "top left")
+  :stacking "overlay"
   :exclusive false
-  :focusable false
-  :windowtype "desktop"
-  :wm-ignore true
-  (box :class "day-date-box" :orientation "vertical" :spacing 0
-    (day-display)
-    (date-display)
+  (dashboard_layout))
+
+(defwidget dashboard_layout []
+  (box :class "layout-box" :orientation "v" :space-evenly false
+
+    ;; 1. HEADER
+    (box :class "header" :orientation "v" :space-evenly false :spacing 5
+      (box :orientation "h" :space-evenly true
+        (label :class "greeting-text" :text greeting :halign "start")
+        (button :class "close-btn" :halign "end" 
+          :onclick "eww update dashboard_open=false && eww close dashboard" 
+          "✖")
+      )
+    )
+
+    ;; 2. MUSIC CARD
+    (box :class "music-box" :orientation "v" :space-evenly false
+      (label :class "song-title" :text music_title :limit-width 25)
+      (label :class "song-artist" :text music_artist :limit-width 25)
+      (box :orientation "h" :halign "center" :spacing 20
+        (button :onclick "playerctl previous" "⏮")
+        (button :onclick "playerctl play-pause" "⏯")
+        (button :onclick "playerctl next" "⏭")
+      )
+    )
+
+    ;; 3. TOGGLES GRID
+    (box :class "toggles-grid" :orientation "h" :spacing 15
+
+      ;; DND Toggle
+      (button :class {dnd_status == "true" ? "btn-active" : "btn-inactive"} 
+        :onclick "makoctl mode -t dnd" 
+        " ")
+
+      ;; Bluetooth Toggle
+      (button :class {bt_status == "true" ? "btn-active" : "btn-inactive"} 
+        :onclick "bluetoothctl show | grep -q 'Powered: yes' && bluetoothctl power off || bluetoothctl power on" 
+        "")
+
+      ;; Wifi Toggle 
+      (button :class {wifi_status == "true" ? "btn-active" : "btn-inactive"} 
+        :onclick "iwctl device wlan0 show | grep -qE 'Powered *on' && iwctl device wlan0 set-property Powered off || iwctl device wlan0 set-property Powered on" 
+        " ")
+    )
+
+    ;; 5. POWER CONTROLS (Bottom Right)
+    (box :class "power-box" :orientation "h" :halign "end" :spacing 10
+
+      ;; Sleep (Left)
+      (button :class "btn-sleep" :onclick "hyprctl dispatch exec hyprlock" "")
+
+      ;; Reboot (Middle)
+      (button :class "btn-restart" :onclick "reboot" "󰑓")
+
+      ;; Shutdown (Right)
+      (button :class "btn-power" :onclick "shutdown now" "󰐥")
+    )
   )
 )
-
-(defwindow power-window
-  :monitor 0
-  :geometry (geometry
-               :x "0%"
-               :y "60%"
-               :width "30%"
-               :height "64px"
-               :anchor "top center")
-  :stacking "bottom"
-  :exclusive false
-  :focusable false
-  :windowtype "desktop"
-  :wm-ignore true
-  (box :class "power-box" :height 140 :orientation "h" :spacing 24
-    (button :class "btn-sleep" :onclick "hyprctl dispatch exec hyprlock"
-      (label :class "sleep" :text ""))
-    (button :class "btn-power" :onmiddleclick "shutdown now"
-      (label :class "power" :text "󰐥"))
-    (button :class "btn-restart" :onrightclick "reboot"
-      (label :class "restart" :text "󰑓"))
-  )
-)
-

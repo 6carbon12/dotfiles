@@ -1,0 +1,201 @@
+$bg: #1a1b26;
+$bg-lighter: #24283b;
+$fg: #c0caf5;
+$accent: #7aa2f7;
+$red: #f7768e;
+$green: #9ece6a;
+$purple: #9d7cd8;
+$border: #414868;
+
+
+/* COMMON */
+button, button * {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+* {
+  font-family: "JetBrainsMono Nerd Font";
+}
+
+
+/* DATE DAY */
+.date-day-window {
+  background-color: transparent;
+}
+
+.day-text {
+  font-family: "Anurati";
+  font-size: 128px;
+  color: $purple;
+  letter-spacing: 24px;
+}
+
+.date-text {
+  font-family: "Anurati", "Orbitron";
+  font-size: 24px;
+  font-weight: bold;
+  color: $purple;
+  letter-spacing: 12px;
+}
+
+
+/* POWER CONTROL */
+.power-window {
+  background-color: transparent;
+}
+
+.power, .restart, .sleep {
+  color: #414868;
+}
+
+.power {
+  font-size: 88px;
+}
+
+button:hover .power {
+  font-size: 100px;
+}
+
+.restart {
+  font-size: 48px;
+}
+
+button:hover .restart {
+  font-size: 58px;
+}
+
+.sleep {
+  font-size: 44px;
+}
+
+button:hover .sleep {
+  font-size: 54px;
+}
+
+
+/* DASHBOARD */
+.dashboard {
+  background-color: transparent; 
+}
+
+.layout-box {
+  background-color: $bg;
+  border: 2px solid $border;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5); /* The "Floating" Shadow */
+}
+
+/* HEADER */
+.header {
+  margin-bottom: 20px;
+}
+
+.welcome-text {
+  color: $purple;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.close-btn {
+  color: $red;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.close-btn:hover {
+  color: $fg;
+}
+
+/* MUSIC CARD */
+.music-box {
+  background-color: $bg-lighter;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.song-title {
+  color: $accent;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.song-artist {
+  color: $fg;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.music-box button {
+  color: $fg;
+  font-size: 24px;
+  padding: 5px;
+}
+
+.music-box button:hover {
+  color: $accent;
+}
+
+/* TOGGLE GRID */
+.toggles-grid button {
+  padding: 15px;
+  border-radius: 12px;
+  font-size: 24px;
+  transition: all 0.2s;
+}
+
+.btn-active {
+  background-color: $accent; 
+  color: $bg;
+}
+
+.btn-inactive {
+  background-color: $bg-lighter;
+  color: #565f89; /* Dimmed gray-blue */
+}
+
+.btn-active:hover {
+  background-color: $purple; /* Change color slightly on hover */
+}
+
+.btn-inactive:hover {
+  background-color: $border;
+}
+
+/* POWER ROW CONTAINER */
+.power-box {
+  margin-top: 28px; /* Push it to the bottom */
+}
+
+.power-box button {
+  background-color: $bg-lighter;
+  padding: 8px 12px;   /* Smaller padding than other buttons */
+  border-radius: 16px;
+  font-size: 18px;     /* Smaller icon size */
+  transition: background-color 0.2s;
+}
+
+.btn-power {
+  color: $red;
+}
+
+.btn-sleep, .btn-restart {
+  color: $fg;
+}
+
+.btn-sleep:hover, .btn-restart:hover {
+  background-color: $accent; /* Blue */
+  color: $bg;
+}
+
+.btn-power:hover {
+  background-color: $red; /* Background becomes Red */
+  color: $bg;             /* Icon becomes Dark */
+}
