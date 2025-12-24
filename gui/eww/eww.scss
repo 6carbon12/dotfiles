@@ -44,40 +44,6 @@ button, button * {
 }
 
 
-/* POWER CONTROL */
-.power-window {
-  background-color: transparent;
-}
-
-.power, .restart, .sleep {
-  color: #414868;
-}
-
-.power {
-  font-size: 88px;
-}
-
-button:hover .power {
-  font-size: 100px;
-}
-
-.restart {
-  font-size: 48px;
-}
-
-button:hover .restart {
-  font-size: 58px;
-}
-
-.sleep {
-  font-size: 44px;
-}
-
-button:hover .sleep {
-  font-size: 54px;
-}
-
-
 /* DASHBOARD */
 .dashboard {
   background-color: transparent; 
@@ -88,7 +54,6 @@ button:hover .sleep {
   border: 2px solid $border;
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5); /* The "Floating" Shadow */
 }
 
 /* HEADER */
@@ -117,26 +82,28 @@ button:hover .sleep {
   background-color: $bg-lighter;
   border-radius: 12px;
   padding: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .song-title {
   color: $accent;
   font-weight: bold;
   font-size: 16px;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
 
 .song-artist {
   color: $fg;
   font-size: 12px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .music-box button {
   color: $fg;
   font-size: 24px;
   padding: 5px;
+  margin-bottom: -8px;
+  transition: all 0.2s;
 }
 
 .music-box button:hover {
@@ -145,18 +112,19 @@ button:hover .sleep {
 
 /* TOGGLE GRID */
 .toggles-grid button {
-  padding: 15px;
   border-radius: 12px;
   font-size: 24px;
   transition: all 0.2s;
 }
 
 .btn-active {
+  padding: 24px;
   background-color: $accent; 
   color: $bg;
 }
 
 .btn-inactive {
+  padding: 24px;
   background-color: $bg-lighter;
   color: #565f89; /* Dimmed gray-blue */
 }
@@ -168,34 +136,62 @@ button:hover .sleep {
 .btn-inactive:hover {
   background-color: $border;
 }
+/* Separate style for dnd button */
+.btn-dnd-active {
+  padding: 15px 20px 15px 15px;
+  background-color: $accent; 
+  color: $bg;
+}
+
+.btn-dnd-inactive {
+  /* weird values for dnd padding because the nerfont icon is skewed */
+  /* These values are pixel perfect using figma*/
+  padding: 15px 20px 15px 15px;
+  background-color: $bg-lighter;
+  color: #565f89;
+}
+
+.btn-dnd-active:hover {
+  background-color: $purple;
+}
+
+.btn-dnd-inactive:hover {
+  background-color: $border;
+}
+
 
 /* POWER ROW CONTAINER */
 .power-box {
-  margin-top: 28px; /* Push it to the bottom */
+  margin-top: 24px;
 }
 
 .power-box button {
   background-color: $bg-lighter;
-  padding: 8px 12px;   /* Smaller padding than other buttons */
   border-radius: 16px;
-  font-size: 18px;     /* Smaller icon size */
+  font-size: 18px;
   transition: background-color 0.2s;
 }
 
 .btn-power {
   color: $red;
+  padding: 8px 12px;
 }
 
 .btn-sleep, .btn-restart {
   color: $fg;
+  padding: 8px 12px;
+}
+
+.btn-sleep {
+  padding: 8px 13px 8px 8px;
 }
 
 .btn-sleep:hover, .btn-restart:hover {
-  background-color: $accent; /* Blue */
+  background-color: $accent;
   color: $bg;
 }
 
 .btn-power:hover {
-  background-color: $red; /* Background becomes Red */
-  color: $bg;             /* Icon becomes Dark */
+  background-color: $red;
+  color: $bg;
 }

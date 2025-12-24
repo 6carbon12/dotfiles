@@ -69,12 +69,12 @@
     )
 
     ;; 3. TOGGLES GRID
-    (box :class "toggles-grid" :orientation "h" :spacing 15
+    (box :class "toggles-grid" :orientation "h" :spacing 18
 
       ;; DND Toggle
-      (button :class {dnd_status == "true" ? "btn-active" : "btn-inactive"} 
+      (button :class {dnd_status == "true" ? "btn-dnd-active" : "btn-dnd-inactive"} 
         :onclick "makoctl mode -t dnd" 
-        " ")
+        "")
 
       ;; Bluetooth Toggle
       (button :class {bt_status == "true" ? "btn-active" : "btn-inactive"} 
@@ -85,6 +85,8 @@
       (button :class {wifi_status == "true" ? "btn-active" : "btn-inactive"} 
         :onclick "iwctl device wlan0 show | grep -qE 'Powered *on' && iwctl device wlan0 set-property Powered off || iwctl device wlan0 set-property Powered on" 
         " ")
+
+      ;; Add another row of toggles (Night light, power saving, ...)
     )
 
     ;; 5. POWER CONTROLS (Bottom Right)
