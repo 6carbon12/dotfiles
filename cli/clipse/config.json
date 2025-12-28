@@ -1,35 +1,40 @@
 {
     "allowDuplicates": false,
     "historyFile": "clipboard_history.json",
-    "maxHistory": 100,
+    "maxHistory": 250,
     "logFile": "clipse.log",
     "themeFile": "custom_theme.json",
     "tempDir": "~/.local/share/clipse/tempDir",
     "keyBindings": {
-        "choose": "enter",
-        "clearSelected": "S",
-        "down": "down",
+        "up": "k",
+        "down": "j",
+        "nextPage": "l",
+        "prevPage": "h",
+        "home": "home",
         "end": "end",
         "filter": "/",
-        "home": "home",
-        "more": "?",
-        "nextPage": "right",
-        "prevPage": "left",
         "preview": " ",
-        "quit": "q",
-        "remove": "x",
         "selectDown": "ctrl+down",
-        "selectSingle": "s",
         "selectUp": "ctrl+up",
-        "togglePin": "p",
+        "choose": "enter",
+        "selectSingle": "s",
+        "clearSelected": "S",
+        "yankFilter": "ctrl+s",
         "togglePinned": "tab",
-        "up": "up",
-        "yankFilter": "ctrl+s"
+        "quit": "q",
+        "togglePin": "p",
+        "remove": "x",
+        "more": "?"
     },
     "imageDisplay": {
         "type": "kitty",
         "scaleX": 24,
         "scaleY": 24,
         "heightCut": 12
-    }
+    },
+    "autoPaste": {
+        "enabled": true,
+        "keybind": "shift+insert"
+   },
+    "enableDescription": true
 }
