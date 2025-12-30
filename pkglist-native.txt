@@ -64,6 +64,7 @@ python-wxpython
 reflector
 ripgrep
 rsync
+scrcpy
 slurp
 smartmontools
 socat

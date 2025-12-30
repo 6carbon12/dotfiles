@@ -14,6 +14,8 @@
 @define-color green rgba(79, 214, 190, 0.8);
 @define-color yellow rgba(224, 175, 104, 0.8);
 @define-color cyan rgba(125, 207, 255, 0.8);
+@define-color orange rgba(255, 158, 100, 0.8);
+@define-color teal rgba(115, 218, 202, 0.8);
 
 @define-color text rgba(26, 27, 38, 1);
 @define-color dark-purple-solid rgba(157, 124, 216, 1);
@@ -40,6 +42,23 @@
 window#waybar.empty #window {
     background-color: transparent;
     border: none;
+}
+
+#custom-dashboard {
+    font-size: 18px;
+    padding: 0 9px 0 6px;
+    border-radius: 8px;
+    margin: 4px 8px 4px 4px;
+    font-weight: bold;
+    background-color: transparent;
+    border: 1px solid #7aa2f7;
+    color: #7aa2f7;
+    transition: all 0.2s;
+}
+
+#custom-dashboard:hover {
+    background-color: #7aa2f7;
+    color: #1a1b26;
 }
 
 #custom-minimized {
