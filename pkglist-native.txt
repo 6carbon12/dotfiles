@@ -1,5 +1,6 @@
 7zip
 android-tools
+arch-wiki-docs
 bat
 bluetui
 bluez
@@ -70,6 +71,7 @@ sof-firmware
 strace
 tlp
 tmux
+traceroute
 ttf-jetbrains-mono-nerd
 waybar
 waydroid
