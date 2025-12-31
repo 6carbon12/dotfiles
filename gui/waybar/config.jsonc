@@ -98,7 +98,7 @@
         "tooltip": false,
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
-        "on-click": "kitty --title float-term --override window_padding_width=20 impala"
+        "on-click": "kitty --class float-term --override window_padding_width=20 impala"
     },
     "pulseaudio": {
         "scroll-step": 1, // %, can be a float
@@ -118,6 +118,6 @@
             "default": ["", "", ""]
         },
         "tooltip": false,
-        "on-click": "kitty --title float-term --override window_padding_width=20 pulsemixer"
+        "on-click": "kitty --class float-term --override window_padding_width=20 pulsemixer"
     }
 }
