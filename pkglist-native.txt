@@ -1,4 +1,5 @@
 7zip
+alsa-utils
 android-tools
 arch-wiki-docs
 bat
@@ -56,6 +57,7 @@ openvpn
 pacman-contrib
 pacutils
 papirus-icon-theme
+pavucontrol
 plymouth
 pulsemixer
 pyenv
