@@ -23,7 +23,7 @@ return {
 
 
     dashboard.section.buttons.val = {
-      dashboard.button("e", "  New file", ":enew<CR>"),
+      dashboard.button("n", "  New file", ":enew<CR>"),
       dashboard.button("r", "  Recent files", ":Telescope oldfiles<CR>"),
       dashboard.button("l", "  Restore session", ":lua require('persistence').load()<CR>"),
       dashboard.button("q", "  Quit", ":qa<CR>"),
