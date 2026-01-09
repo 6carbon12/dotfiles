@@ -14,4 +14,4 @@ if ! [ -f $MOUNT/backup.sh ]; then
 fi
 
 notify-send "BACKUP STARTED..."
-kitty --title float-term --override window_padding_width=80 $MOUNT/backup.sh
+kitty --class float-term --override window_padding_width=80 $MOUNT/backup.sh
