@@ -5,7 +5,6 @@ eww
 harmonymusic
 nordzy-hyprcursors
 plymouth-theme-tech-a-git
-python-selenium
-scilab-bin
+qpdfview
 tokyonight-gtk-theme-git
 ttf-orbitron
