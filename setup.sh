@@ -8,40 +8,41 @@ RESET="\e[0m"
 
 DOTFILES_DIR="$HOME/.dotfiles"
 CONFIG_DIR="$HOME/.config"
-ZSHRC="$HOME/.zshrc"
 
 declare -A DOTFILES_MAP=(
-  [alacritty]="$DOTFILES_DIR/cli/alacritty"
-  [btop]="$DOTFILES_DIR/cli/btop"
-  [clipse]="$DOTFILES_DIR/cli/clipse"
-  [fastfetch]="$DOTFILES_DIR/cli/fastfetch"
-  [kitty]="$DOTFILES_DIR/cli/kitty"
-  [nvim]="$DOTFILES_DIR/cli/nvim"
-  [tmux]="$DOTFILES_DIR/cli/tmux"
-  [yazi]="$DOTFILES_DIR/cli/yazi"
-  [zsh]="$DOTFILES_DIR/cli/zsh"
-  [fuzzel]="$DOTFILES_DIR/gui/fuzzel"
-  [gtk-3.0]="$DOTFILES_DIR/gui/gtk/gtk-3.0"
-  [hypr]="$DOTFILES_DIR/gui/hypr"
-  [mako]="$DOTFILES_DIR/gui/mako"
-  [walker]="$DOTFILES_DIR/gui/walker"
-  [eww]="$DOTFILES_DIR/gui/eww"
-  [waybar]="$DOTFILES_DIR/gui/waybar"
-  [wofi]="$DOTFILES_DIR/gui/wofi"
-  [xsettingsd]="$DOTFILES_DIR/gui/xsettingsd"
-  [user-dirs.conf]="$DOTFILES_DIR/env/user-dirs.conf"
-  [user-dirs.dirs]="$DOTFILES_DIR/env/user-dirs.dirs"
-  [user-dirs.locale]="$DOTFILES_DIR/env/user-dirs.locale"
-  [mimeapps.list]="$DOTFILES_DIR/env/mimeapps.list"
+  # -- Directories in ~/.config
+  [alacritty]="$DOTFILES_DIR/config/alacritty"
+  [btop]="$DOTFILES_DIR/config/btop"
+  [clipse]="$DOTFILES_DIR/config/clipse"
+  [eww]="$DOTFILES_DIR/config/eww"
+  [fastfetch]="$DOTFILES_DIR/config/fastfetch"
+  [fuzzel]="$DOTFILES_DIR/config/fuzzel"
+  [gtk-3.0]="$DOTFILES_DIR/config/gtk/gtk-3.0"
+  [hypr]="$DOTFILES_DIR/config/hypr"
+  [kitty]="$DOTFILES_DIR/config/kitty"
+  [mako]="$DOTFILES_DIR/config/mako"
+  [nvim]="$DOTFILES_DIR/config/nvim"
+  [tmux]="$DOTFILES_DIR/config/tmux"
+  [walker]="$DOTFILES_DIR/config/walker"
+  [waybar]="$DOTFILES_DIR/config/waybar"
+  [wofi]="$DOTFILES_DIR/config/wofi"
+  [yazi]="$DOTFILES_DIR/config/yazi"
+  [zsh]="$DOTFILES_DIR/config/zsh"
+  # --- Loose Files in ~/.config
+  [mimeapps.list]="$DOTFILES_DIR/config/mime/mimeapps.list"
+  [pavucontrol.ini]="$DOTFILES_DIR/config/pavucontrol/pavucontrol.ini"
+  [user-dirs.conf]="$DOTFILES_DIR/config/user-dirs/user-dirs.conf"
+  [user-dirs.dirs]="$DOTFILES_DIR/config/user-dirs/user-dirs.dirs"
+  [user-dirs.locale]="$DOTFILES_DIR/config/user-dirs/user-dirs.locale"
 )
 
 declare -A ROOT_DOTFILES_MAP=(
-  [.gitconfig]="$DOTFILES_DIR/cli/git/.gitconfig"
-  [.gitignore]="$DOTFILES_DIR/cli/git/.gitignore"
-  [.gtkrc-2.0]="$DOTFILES_DIR/gui/gtk/.gtkrc-2.0"
-  [.p10k.zsh]="$DOTFILES_DIR/cli/zsh/.p10k.zsh"
-  [.zshrc]="$DOTFILES_DIR/cli/zsh/.zshrc"
-  [.zprofile]="$DOTFILES_DIR/cli/zsh/.zprofile"
+  [.gitconfig]="$DOTFILES_DIR/config/git/.gitconfig"
+  [.gitignore]="$DOTFILES_DIR/config/git/.gitignore"
+  [.gtkrc-2.0]="$DOTFILES_DIR/config/gtk/.gtkrc-2.0"
+  [.p10k.zsh]="$DOTFILES_DIR/config/zsh/.p10k.zsh"
+  [.zshrc]="$DOTFILES_DIR/config/zsh/.zshrc"
+  [.zprofile]="$DOTFILES_DIR/config/zsh/.zprofile"
 )
 
 backup_and_link() {
@@ -116,12 +117,14 @@ install_plugins() {
 }
 
 finalize() {
-  echo -e "${YELLOW}[*] Sourcing zsh config...${RESET}"
-  if [[ -f "$ZSHRC" ]]; then
-    zsh -c "source $ZSHRC"
-  else
-    echo "No $ZSHRC found. Skipping."
-  fi
+  echo -e "${YELLOW}[*] Linking ~/.local/bin ${RESET}"
+  backup_and_link ~/.dotfiles/bin ~/.local/bin
+
+  echo -e "${YELLOW}[*] Setting up fonts ${RESET}"
+  mkdir -p ~/.local/share/fonts/
+  cp -r ~/.dotfiles/assets/fonts/* ~/.local/share/fonts/
+  fc-cache -f
+  echo -e "${GREEN}[*] Fonts loaded ${RESET}"
 
   echo -e "\n${GREEN}✔ Setup complete!${RESET}"
   echo -e "${YELLOW}Next steps:${RESET}"

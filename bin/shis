@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cat ~/.local/share/zsh/.zshis | rg -i "$1"

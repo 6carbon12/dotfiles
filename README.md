@@ -1,44 +1,58 @@
 # ~/.dotfiles/
 
-This is all the important config files in my home directory. The configs are divided into 3 categories. Only config files in `~/.config` and `~/` are included--
-the majority from `~/.config`  
-Any file which stores data as in hashes or history must **NOT** be tracked  
-Any app that has minimal configuratin need not be tracked, except in some cases
+This repository contains the configuration files for my Arch Linux + Hyprland system.
+This repository follows logical segregation over script complexity principle, all the configs/related data must be arranged in a logical consistent structure and the original path of the config can be disregarded fully.
 
 ## Folder Structure
 
-### cli
+This repository is organized by **Resource Type**, ensuring a clean separation between logic (configs), executables (scripts), and data (assets).
 
-All applications with a command line interface or a TUI are placed here
+### 1. `config/`
+Contains configuration directories that map to `~/.config/` and/or `~/`.
+* **Application Configs:** (e.g., `hypr`, `nvim`, `waybar`) are mapped directory-to-directory.
+* **System Definitions:** (e.g., `mime`, `user-dirs`) contain loose system files, these are wrapped in logical parent directories to prevent root clutter.
+* **Grouped Configs:** Complex setups like `gtk` (which manages both `~/.gtkrc-2.0` and `~/.config/gtk-3.0`) are grouped logically under one folder here.
 
-### env
+### 2. `bin/`
+Contains custom executable scripts.
+* **Strict Override:** This directory **completely replaces** `~/.local/bin`.
+* Any script existing locally in `~/.local/bin` that is *not* in this repo will be moved to a backup during setup.
 
-Anything that is controlling any hardware, or files that controls system activities like `$HOME/` generation by xdg or also could be where environment vars to launch a specific app might be in here
-
-### gui
-
-All things with a gui that don't fall in env are here, most everyday use app configs are here.
+### 3. `assets/`
+Contains binary data and media. These files are **copied** (merged), not symlinked, to prevent git bloating and filesystem issues.
+* `fonts/`: Custom OTF/TTF fonts (e.g., Anurati). Copied to `~/.local/share/fonts`.
+* `pics/`: Any pictures or icons use ANYWHERE in the repo, not copied nor symlinked
 
 ## Rules
 
-- No folders except the above three in the root
-- There must be no stray config files in either root or any of the categories(except env)
-- If multiple versions of an app generate different configs they must be grouped under a folder
-- The structure of the config files in `$HOME/` can be ignored if there is a better structure which is more categorizing and intuitive
-- Scripts used by applications and scripts meant to replace the applications by making them better/custom must be saved under the applications' respective folder
-- All plugins, themes must be cloned into `~/.local/share/<app-name>/plugins/`
-- No external repo should be cloned into `~/.dotfiles/`
-- pkglist-native.txt and pkglist-foreign.txt are auto generated with pacman hook
+- **Plugins:** All plugins and themes are installed into `~/.local/share/<app-name>/plugins/` (handled by `setup.sh`), never cloned inside this repo.
+- **Package Lists:** `pkglist-native.txt` and `pkglist-foreign.txt` are auto-generated via Pacman hooks to track installed software.
+- **History and Hashes:** Any file which stores data as in hashes or history must **NOT** be tracked  
 
 ## Setup
 
-- Install git: <br>
-  `sudo pacman -S git`
-- Clone this repo: <br>
-  `git clone https://github.com/6carbon12/dotfiles.git ~/.dotfiles`
-- Go into .dotfiles dir <br>
-  `cd ~/.dotfiles`
-- Install packages <br>
-  `./install.sh`
-- Setup the .dotfiles <br>
-  `./setup.sh`
+1.  **Install Git:**
+    ```bash
+    sudo pacman -S git
+    ```
+
+2.  **Clone the Repository:**
+    ```bash
+    git clone https://github.com/6carbon12/dotfiles.git ~/.dotfiles
+    ```
+
+3.  **Enter Directory:**
+    ```bash
+    cd ~/.dotfiles
+    ```
+
+4.  **Install Packages:**
+    ```bash
+    ./install.sh
+    ```
+
+5.  **Link Configs & Setup Assets:**
+    ```bash
+    ./setup.sh
+    ```
+    * *Note: This script will backup existing configurations before overwriting.*

@@ -1,0 +1,15 @@
+# out files
+*.out
+
+# Backups
+*.bak 
+
+# node_modules
+node_modules/
+
+# Nix related
+flake.nix
+.envrc
+
+# Build folder 
+build/

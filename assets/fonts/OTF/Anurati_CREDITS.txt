@@ -1,0 +1,16 @@
+ASSET: Anurati (Font)
+AUTHOR: Emmeran Richard
+SOURCE: https://www.behance.net/gallery/33704618/ANURATI-Free-Font
+LICENSE: Free for Personal Use
+
+--------------------------------------------------------------------------
+
+DISCLAIMER:
+This font is included in this repository solely for personal configuration
+portability and the consistent replication of my desktop environment (Eww/Hyprland).
+
+I do not claim ownership of this asset. All rights belong to the original creator.
+
+If you are viewing this repository and intend to use this font for your own
+commercial projects, please download it from the official source link above
+and check the creator's terms.

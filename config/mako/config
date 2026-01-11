@@ -1,0 +1,33 @@
+# Global settigns
+sort=-time
+layer=overlay
+width=350
+height=110
+border-size=2
+border-radius=8
+margin=8
+default-timeout=5000
+padding=15
+font=JetBrains Mono Nerd Font 10
+
+# Colors
+text-color=#c0caf5
+background-color=#1a1b26
+border-color=#7aa2f7
+
+# Styling diffrently for diffrernt urgency levels
+[urgency=low]
+border-color=#414868
+default-timeout=2000
+
+[urgency=normal]
+border-color=#7aa2f7
+default-timeout=5000
+
+[urgency=critical]
+border-color=#f7768e
+default-timeout=0
+
+# DND mode
+[mode=dnd]
+invisible=1

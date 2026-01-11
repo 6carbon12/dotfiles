@@ -1,0 +1,25 @@
+#! /bin/bash
+
+# padding top
+echo
+
+# Current dir
+current_dir="$(pwd)"
+
+# options
+opts=""
+
+# checking for different dirs
+case "$current_dir" in 
+    "/home/kiran/pics/screenshots")
+        opts="-rfs time"
+        ;;
+    *)
+        opts="-lo --no-user --no-time --no-permissions --icons"
+esac
+
+# calling the main command
+eza $opts "$@"
+
+# padding bottom
+exit

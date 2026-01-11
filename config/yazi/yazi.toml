@@ -1,0 +1,29 @@
+[mgr]
+ratio = [0, 1, 1]
+sort_by = "natural"
+sort_sensitive = false
+sort_reverse = false
+sort_dir_first = true
+linemode = "size"
+show_hidden = true
+show_symlink = false
+scrolloff = 8
+
+[preview]
+wrap = "yes"
+tab_size = 2
+image_filter = "triangle"
+image_quality = 80
+
+[opener]
+play = [
+    { run = 'mpv %s', orphan = true }
+]
+edit = [
+    { run = 'nvim %s', block = true }
+]
+
+[open]
+prepend_rules = [
+    { url = "*.html", use = ["open", "edit"]}
+]

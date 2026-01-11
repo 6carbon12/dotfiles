@@ -1,2 +1,0 @@
-new_tab
-launch /bin/bash --login -c "~/.dotfiles/cli/kitty/tmux-session-mgr.sh"

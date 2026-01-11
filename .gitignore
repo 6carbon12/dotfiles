@@ -6,7 +6,7 @@
 *.log
 
 # Clipse history
-/cli/clipse/clipboard_history.json
+config/clipse/clipboard_history.json
 
 # Personal bookmarks
-gui/gtk/gtk-3.0/bookmarks
+config/gtk/gtk-3.0/bookmarks
