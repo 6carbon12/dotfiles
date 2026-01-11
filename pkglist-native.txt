@@ -9,6 +9,7 @@ brightnessctl
 btop
 cups
 cups-pdf
+dconf-editor
 efibootmgr
 eza
 fastfetch
@@ -32,6 +33,7 @@ iwd
 jq
 keyd
 kitty
+kvantum
 libnotify
 libreoffice-fresh
 linux
@@ -53,6 +55,8 @@ papirus-icon-theme
 plymouth
 pulsemixer
 python-pipenv
+qt5ct
+qt6ct
 ripgrep
 rsync
 scrcpy
