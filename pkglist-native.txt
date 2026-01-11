@@ -9,6 +9,7 @@ brightnessctl
 btop
 cups
 cups-pdf
+efibootmgr
 eza
 fastfetch
 fd
@@ -17,7 +18,6 @@ flatpak
 fzf
 git
 grim
-grub
 hypridle
 hyprland
 hyprlock
@@ -25,6 +25,7 @@ hyprpaper
 hyprpolkitagent
 hyprsunset
 impala
+intel-gpu-tools
 intel-media-driver
 intel-ucode
 iwd
@@ -64,6 +65,7 @@ ttf-jetbrains-mono-nerd
 vulkan-intel
 waybar
 waydroid
+wine-mono
 wl-clipboard
 wofi
 xdg-desktop-portal
