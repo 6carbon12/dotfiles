@@ -23,6 +23,7 @@ declare -A DOTFILES_MAP=(
   [Kvantum]="$DOTFILES_DIR/config/Kvantum"
   [mako]="$DOTFILES_DIR/config/mako"
   [nvim]="$DOTFILES_DIR/config/nvim"
+  [qpdfview]="$DOTFILES_DIR/config/qpdfview"
   [qt6ct]="$DOTFILES_DIR/config/qt6ct"
   [tmux]="$DOTFILES_DIR/config/tmux"
   [walker]="$DOTFILES_DIR/config/walker"
@@ -135,6 +136,8 @@ finalize() {
 }
 
 # --- Main ---
+# Setup git filters
+git config filter.qpdf-scrubber.clean "sed -E '/^(openPath|recentlyUsed|state|geometry|currentTabIndex|scaleFactor|rotation|.*DialogSize)=/d'"
 link_dotfiles
 link_dotfiles_root
 install_plugins
