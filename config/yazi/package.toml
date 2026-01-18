@@ -4,4 +4,4 @@ deps = []
 [[flavor.deps]]
 use = "BennyOe/tokyo-night"
 rev = "b3950bf"
-hash = "319ce574cdb2865baf4323db90456504"
+hash = "701fb6b0d128c6d05f690bf753c4dce0"

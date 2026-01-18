@@ -7,3 +7,14 @@ active = { fg = "#7aa2f7", bg = "#1a1b26", bold = true }
 inactive = { fg = "#565f89", bg = "#24283b" , bink = true}
 sep_inner = { open = "", close = "" }
 sep_outer = { open = "", close = ""}
+
+[icon]
+dirs = [
+	{ name = "wkspc", text = "", fg = "#c0caf5" },
+	{ name = "dls", text = "", fg = "#c0caf5" },
+	{ name = "docs", text = "", fg = "#c0caf5" },
+	{ name = "pics", text = "", fg = "#c0caf5" },
+	{ name = "music", text = "", fg = "#c0caf5" },
+	{ name = "vids", text = "", fg = "#c0caf5" },
+	{ name = ".dotfiles", text = "", fg = "#c0caf5" },
+]
