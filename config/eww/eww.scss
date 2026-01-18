@@ -100,14 +100,15 @@ button, button * {
 
 .music-box button {
   color: $fg;
-  font-size: 24px;
-  padding: 5px;
+  font-size: 36px;
+  padding-left: 16px;
+  padding-right: 16px;
   margin-bottom: -8px;
-  transition: all 0.2s;
+  transition: all 0.1s;
 }
 
 .music-box button:hover {
-  color: $accent;
+  background-color: $bg;
 }
 
 /* TOGGLE GRID */

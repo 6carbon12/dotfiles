@@ -22,8 +22,12 @@
 
 ;; DASHBOARD
 
+;; `playerctl -F` isn't used because it can't reliably handle when player stops 
+;; it emits an empty line which isn't picked up by eww
 (defpoll music_title :interval "1s" "playerctl metadata title || echo 'No Music'")
 (defpoll music_artist :interval "1s" "playerctl metadata artist || echo ''")
+(defpoll music_status :interval '0.1s' "playerctl status || echo '󰐊'")
+
 (defpoll dnd_status :interval "0.25s" "makoctl mode | grep -q 'dnd' && echo 'true' || echo 'false'")
 (defpoll bt_status :interval "0.25s" 
   "bluetoothctl show | grep -q 'Powered: yes' && echo 'true' || echo 'false'")
@@ -53,7 +57,7 @@
         (label :class "greeting-text" :text greeting :halign "start")
         (button :class "close-btn" :halign "end" 
           :onclick "eww update dashboard_open=false && eww close dashboard" 
-          "✖")
+          "")
       )
     )
 
@@ -62,9 +66,9 @@
       (label :class "song-title" :text music_title :limit-width 25)
       (label :class "song-artist" :text music_artist :limit-width 25)
       (box :orientation "h" :halign "center" :spacing 20
-        (button :onclick "playerctl previous" "⏮")
-        (button :onclick "playerctl play-pause" "⏯")
-        (button :onclick "playerctl next" "⏭")
+        (button :onclick "playerctl previous" "󰒮")
+        (button :onclick "playerctl play-pause" {music_status == 'Playing' ? '󰏤' : '󰐊'})
+        (button :onclick "playerctl next" "󰒭")
       )
     )
 
