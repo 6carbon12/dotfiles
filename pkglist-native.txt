@@ -28,6 +28,7 @@ hyprpaper
 hyprpolkitagent
 hyprsunset
 impala
+inotify-tools
 intel-gpu-tools
 intel-media-driver
 intel-ucode
@@ -60,10 +61,10 @@ pacman-contrib
 pacutils
 papirus-icon-theme
 perl-image-exiftool
+phototonic
 plymouth
 pulsemixer
 python-pipenv
-qt5ct
 qt6ct
 ripgrep
 rsync
