@@ -12,6 +12,12 @@ Contains configuration directories that map to `~/.config/` and/or `~/`.
 * **Application Configs:** (e.g., `hypr`, `nvim`, `waybar`) are mapped directory-to-directory.
 * **System Definitions:** (e.g., `mime`, `user-dirs`) contain loose system files, these are wrapped in logical parent directories to prevent root clutter.
 * **Grouped Configs:** Complex setups like `gtk` (which manages both `~/.gtkrc-2.0` and `~/.config/gtk-3.0`) are grouped logically under one folder here.
+* **`_root/`**:
+    Contains a copy of real root with config files that have been modified/need to be tracked 
+    * All files are safely *copied* to root using `scripts/root.sh` (uses `rsync`)
+    * Any update to root config files must first be done in `config/_root/` then be copied to real root using `scripts/root.sh`
+    * **Safety**: The `scripts/root.sh` script automatically backs up any existing system files (with a timestamp) before overwriting them.
+        * `scripts/clean.sh` script can be used to remove these backup files
 
 ### 2. `bin/`
 Contains custom executable scripts.
@@ -23,14 +29,7 @@ Contains binary data and media. These files are **copied** (merged), not symlink
 * `fonts/`: Custom OTF/TTF fonts (e.g., Anurati). Copied to `~/.local/share/fonts`.
 * `pics/`: Any pictures or icons use ANYWHERE in the repo, not copied nor symlinked
 
-### 4. `root/`
-Contains a copy of real root with config files that have been modified/need to be tracked 
-* All files are safely *copied* to root using `scripts/root.sh` (uses `rsync`)
-* Any update to root config files must first be done in `root/` then be copied to real root using `scripts/root.sh`
-* **Safety**: The `scripts/root.sh` script automatically backs up any existing system files (with a timestamp) before overwriting them.
-    * `scripts/clean.sh` script can be used to remove these backup files
-
-### 5. `scripts/`
+### 4. `scripts/`
 Contains the automation logic. Unlike `bin/`, these scripts are not added to `$PATH`; they are intended to be executed via the `Makefile`.
 * `install.sh`: Installs all necessary packages
 * `user.sh`: Non-destructively symlinks the contents of `config/` to `~/.config` and `~/`.

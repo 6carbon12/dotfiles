@@ -12,7 +12,6 @@ cups
 cups-pdf
 dconf-editor
 efibootmgr
-evtest
 eza
 fastfetch
 fd
@@ -28,7 +27,6 @@ hyprpaper
 hyprpolkitagent
 hyprsunset
 impala
-inotify-tools
 intel-gpu-tools
 intel-media-driver
 intel-ucode
@@ -37,7 +35,6 @@ jq
 keyd
 kitty
 kvantum
-libinput-tools
 libnotify
 libreoffice-fresh
 linux
@@ -78,7 +75,6 @@ ttf-jetbrains-mono-nerd
 vulkan-intel
 waybar
 waydroid
-wev
 wine-mono
 wl-clipboard
 wofi

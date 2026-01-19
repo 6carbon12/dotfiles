@@ -16,9 +16,66 @@ error()   { echo -e "${RED}✖ $*${RESET}"; }
 # -----------------------
 # Package Groups
 # -----------------------
-CORE_PACKAGES=(hyprland hyprpaper hypridle hyprlock hyprsunset hyprpolkitagent xhost wl-clipboard waybar impala socat eww wofi grim slurp mako brightnessctl clipse kitty neovim tmux zsh btop yazi 7zip pulsemixer)
+PACKAGES=(hyprland
+  # Desktop Core
+  hyprpaper
+  hypridle
+  hyprlock
+  hyprsunset
+  hyprpolkitagent
+  ly
+  keyd
+  zram-generator
+  xorg-xhost
+  waybar
+  socat
+  eww
+  mako
+  libnotify
+  wofi
+  nordzy-hyprcursors
+  brightnessctl
+  tlp
+  xdg-desktop-portal
+  xdg-desktop-portal-hyprland
+  xdg-desktop-portal-gtk
+  tokyonight-gtk-theme-git
+  kvantum
+  qt6ct
+  papirus-icon-theme
+  # Shell
+  kitty
+  zsh
+  tmux
+  zoxide
+  fzf
+  eza
+  bat
+  ripgrep
+  fd
+  btop
+  fastfetch
+  brightnessctl
+  # TUIs
+  pulsemixer
+  impala
+  # Desktop Actions
+  grim
+  slurp
+  wl-clipboard
+  clipse
+  # Applications
+  yazi
+  7zip
+  firefox
+  mpv
+  qpdfview
+  emote
+  neovim
+  # Script Dependancies
+  rsync
+  jq)
 FONTS=(ttf-jetbrains-mono-nerd ttf-orbitron noto-fonts)
-MISC_PACKAGES=(fd ripgrep fzf bat eza zoxide fastfetch rsync firefox okular mpv emote nordzy-hyprcursors)
 
 # -----------------------
 # Functions
@@ -75,17 +132,8 @@ install_packages() {
 
 uninstall_all() {
   log "Removing all packages..."
-  yay -Rns --noconfirm "${CORE_PACKAGES[@]}" "${FONTS[@]}" "${MISC_PACKAGES[@]}" || true
+  yay -Rns --noconfirm "${PACKAGES[@]}" "${FONTS[@]}" || true
   success "Uninstallation complete."
-}
-
-prompt_install_misc() {
-  read -rp "Install Misc/Extras (Firefox, fd, etc.)? [y/N]: " ans
-  if [[ "$ans" =~ ^[Yy]$ ]]; then
-    install_packages "${MISC_PACKAGES[@]}"
-  else
-    log "Skipping Misc packages."
-  fi
 }
 
 # -----------------------
@@ -101,11 +149,10 @@ fi
 install_yay
 
 log "Installing Core packages..."
-install_packages "${CORE_PACKAGES[@]}"
+install_packages "${PACKAGES[@]}"
 
 log "Installing Fonts..."
 install_packages "${FONTS[@]}"
 
-prompt_install_misc
 
 success "All done! ✅"
