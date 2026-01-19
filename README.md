@@ -25,14 +25,21 @@ Contains binary data and media. These files are **copied** (merged), not symlink
 
 ### 4. `root/`
 Contains a copy of real root with config files that have been modified/need to be tracked 
-* All files are safely *copied* to root using `setup-system.sh` (uses `rsync`)
-* Any update to root config files must first be done in `root/` then be copied to real root using `setup-system.sh`
-* **Safety**: The `setup-system.sh` automatically backs up any existing system files (with a timestamp) before overwriting them.
-    * `clean-system.sh` can be used to remove these backup files
+* All files are safely *copied* to root using `scripts/root.sh` (uses `rsync`)
+* Any update to root config files must first be done in `root/` then be copied to real root using `scripts/root.sh`
+* **Safety**: The `scripts/root.sh` script automatically backs up any existing system files (with a timestamp) before overwriting them.
+    * `scripts/clean.sh` script can be used to remove these backup files
+
+### 5. `scripts/`
+Contains the automation logic. Unlike `bin/`, these scripts are not added to `$PATH`; they are intended to be executed via the `Makefile`.
+* `install.sh`: Installs all necessary packages
+* `user.sh`: Non-destructively symlinks the contents of `config/` to `~/.config` and `~/`.
+* `root.sh`: Merges the `root/` directory into the system `/` (requires sudo).
+* `clean.sh`: Utility to purge timestamped backup files (.bak)
 
 ## Rules
 
-- **Plugins:** All plugins and themes are installed into `~/.local/share/<app-name>/plugins/` (handled by `setup.sh`), never cloned inside this repo.
+- **Plugins:** All plugins and themes are installed into `~/.local/share/<app-name>/plugins/` (handled by `user.sh`), never cloned inside this repo.
 - **Package Lists:** `pkglist-native.txt` and `pkglist-foreign.txt` are auto-generated via Pacman hooks to track installed software.
 - **History and Hashes:** Any file which stores data as in hashes or history must **NOT** be tracked  
 
@@ -53,13 +60,8 @@ Contains a copy of real root with config files that have been modified/need to b
     cd ~/.dotfiles
     ```
 
-4.  **Install Packages:**
+4. **Run setup:**
     ```bash
-    ./install.sh
+    make all
     ```
-
-5.  **Link Configs & Setup Assets:**
-    ```bash
-    ./setup.sh
-    ```
-    * *Note: This script will backup existing configurations before overwriting.*
+    * *Note: All script will backup existing configurations before overwriting.*

@@ -60,8 +60,8 @@ backup_and_link() {
 
   # Backup existing file
   if [[ -e "$dest" || -L "$dest" ]]; then
-    mv "$dest" "$dest.bak"
-    echo "  Backed up existing $dest -> $dest.bak"
+    mv "$dest" "$dest.bak-$(date +%Y%m%d-%H%M%S)"
+    echo "  Backed up existing $dest -> $dest.bak-$(date +%Y%m%d-%H%M%S)"
   fi
 
   ln -s "$src" "$dest"
@@ -117,6 +117,10 @@ install_plugins() {
   else
     echo "  zsh-vi-mode already exists"
   fi
+
+  echo "  Installing yazi pkgs"
+  ya pkg install > /dev/null
+
 }
 
 finalize() {

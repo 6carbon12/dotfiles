@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Configuration
-SOURCE_DIR="./root"
+SOURCE_DIR="config/_root/"
 # Create a backup suffix with a timestamp so you never overwrite previous backups
 BACKUP_SUFFIX=".bak-$(date +%Y%m%d-%H%M%S)"
 

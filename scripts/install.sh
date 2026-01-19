@@ -54,6 +54,11 @@ install_packages() {
   local failed=()
 
   for pkg in "${packages[@]}"; do
+    if yay -Q $pkg > /dev/null 2>&1; then
+      success "$pkg already installed"
+      continue
+    fi
+
     log "Installing $pkg..."
     if yay -S --needed --noconfirm "$pkg"; then
       success "Installed $pkg"
