@@ -1,0 +1,2 @@
+ACTION=="add", KERNEL=="sd*[0-9]", ENV{ID_FS_UUID}=="af03141a-ae1e-4b47-a274-9ef81445ce4e", RUN+="/usr/bin/bash -c '/home/kiran/.local/bin/mount-backup %k'"
+ACTION=="remove", KERNEL=="sd*[0-9]", ENV{ID_FS_UUID}=="af03141a-ae1e-4b47-a274-9ef81445ce4e", RUN+="/usr/bin/bash -c '/home/kiran/.local/bin/umount-backup %k'"

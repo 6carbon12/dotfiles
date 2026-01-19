@@ -1,0 +1,12 @@
+# LTS KERNAL
+ALL_config="/etc/mkinitcpio.conf"
+ALL_kver="/boot/vmlinuz-linux-lts"
+
+PRESETS=('default' 'fallback')
+
+default_image="/boot/initramfs-linux-lts.img"
+#default_uki="/boot/EFI/Linux/arch-lts.efi"
+#default_options="--splash /usr/share/systemd/bootctl/splash-arch.bmp"
+
+fallback_image="/boot/initramfs-linux-lts-fallback.img"
+fallback_options="-S autodetect"

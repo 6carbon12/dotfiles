@@ -23,6 +23,13 @@ Contains binary data and media. These files are **copied** (merged), not symlink
 * `fonts/`: Custom OTF/TTF fonts (e.g., Anurati). Copied to `~/.local/share/fonts`.
 * `pics/`: Any pictures or icons use ANYWHERE in the repo, not copied nor symlinked
 
+### 4. `root/`
+Contains a copy of real root with config files that have been modified/need to be tracked 
+* All files are safely *copied* to root using `setup-system.sh` (uses `rsync`)
+* Any update to root config files must first be done in `root/` then be copied to real root using `setup-system.sh`
+* **Safety**: The `setup-system.sh` automatically backs up any existing system files (with a timestamp) before overwriting them.
+    * `clean-system.sh` can be used to remove these backup files
+
 ## Rules
 
 - **Plugins:** All plugins and themes are installed into `~/.local/share/<app-name>/plugins/` (handled by `setup.sh`), never cloned inside this repo.

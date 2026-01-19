@@ -1,0 +1,12 @@
+# MAINLINE KERNEL
+ALL_config="/etc/mkinitcpio.conf"
+ALL_kver="/boot/vmlinuz-linux"
+
+PRESETS=('default' 'fallback')
+
+default_image="/boot/initramfs-linux.img"
+#default_uki="/boot/EFI/Linux/arch.efi"
+#default_options="--splash /usr/share/systemd/bootctl/splash-arch.bmp"
+
+fallback_image="/boot/initramfs-linux-fallback.img"
+fallback_options="-S autodetect"

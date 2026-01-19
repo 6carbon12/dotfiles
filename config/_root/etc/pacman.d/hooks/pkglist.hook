@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Install
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+Description = Generate filtered explicit package list
+When = PostTransaction
+Exec = /usr/local/bin/update-pkg-list.sh
