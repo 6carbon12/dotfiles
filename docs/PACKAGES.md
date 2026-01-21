@@ -14,7 +14,6 @@
 * **zram-generator**: Systemd unit generator for zram devices
 * **xorg-xhost**: Lets GUI apps launched with `sudo` to run on user wayland session (used in `exec-once`)
 * **waybar**: Status bar.
-    * *Requires:* `socat` (for IPC data streaming).
 * **eww**: Widget system.
 * **mako**: Notification daemon.
 * **libnotify**: Notification sending library used by `firefox`
@@ -88,8 +87,7 @@
 ## 7. Script Dependancies
 *Invisible tools used purely by scripts/IPC.*
 
-* **socat**: Used by `eww`/Hyprland IPC scripts.
-* **rsync**: Used in `system-setup.sh` and other scripts
+* **rsync**: Used in `scripts/root.sh` and other scripts
 * **jq**: Used in `hypr/script/screenshot.sh`
 
 ## 8. Assets

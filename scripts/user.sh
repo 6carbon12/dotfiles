@@ -133,6 +133,10 @@ finalize() {
   fc-cache -f
   echo -e "${GREEN}[*] Fonts loaded ${RESET}"
 
+  echo -e "${YELLOW}[*] Compiling minimized_dot ${RESET}"
+  gcc -static -Os -s config/waybar/scripts/minimized_dot.c -o config/waybar/scripts/minimized_dot
+  echo -e "${GREEN}[*] Compiled minimized_dot ${RESET}"
+
   echo -e "\n${GREEN}✔ Setup complete!${RESET}"
   echo -e "${YELLOW}Next steps:${RESET}"
   echo -e "1. Open tmux: ${GREEN}tmux${RESET}"
