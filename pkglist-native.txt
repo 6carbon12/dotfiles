@@ -65,6 +65,7 @@ smartmontools
 snap-pac
 snapper
 sof-firmware
+swappy
 tlp
 tmux
 ttf-jetbrains-mono-nerd

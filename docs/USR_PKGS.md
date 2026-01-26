@@ -69,6 +69,7 @@ Packages to give a GUI desktop to be built on top `SYSTEM_PKGS`.
 #### Screenshot
 * **grim**: Backend (Grab pixels).
 * **slurp**: Frontend (Select region).
+* **swappy**: Screenshot annotation
 
 #### Clipboard History
 * **clipse**: History UI.
