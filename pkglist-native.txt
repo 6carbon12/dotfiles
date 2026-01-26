@@ -40,9 +40,7 @@ libnotify
 libreoffice-fresh
 linux
 linux-firmware-intel
-linux-headers
 linux-lts
-linux-lts-headers
 ly
 mako
 man-pages
@@ -58,12 +56,12 @@ papirus-icon-theme
 phototonic
 plymouth
 pulsemixer
-python-pipenv
 qt6ct
 ripgrep
 rsync
 scrcpy
 slurp
+smartmontools
 snap-pac
 snapper
 sof-firmware

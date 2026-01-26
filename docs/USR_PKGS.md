@@ -1,4 +1,6 @@
-# PACKAGES
+# USER PACKAGES
+
+Packages to give a GUI desktop to be built on top `SYSTEM_PKGS`.
 
 ## 1. Desktop Core
 *Core apps that are needed to have well configured Desktop.*
