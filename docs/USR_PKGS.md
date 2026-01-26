@@ -75,6 +75,11 @@ Packages to give a GUI desktop to be built on top `SYSTEM_PKGS`.
 * **clipse**: History UI.
 * **wl-clipboard**: Backend.
 
+#### OCR Support
+*grim and slurp is used to get the image then copied via wl-clipboard*
+* **tesseract**: OCR backend
+* **tesseract-data-eng**: English data for `tesseract`
+
 ## 6. Applications 
 *Standalone applications for specific tasks.*
 

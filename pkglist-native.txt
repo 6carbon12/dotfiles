@@ -66,6 +66,8 @@ snap-pac
 snapper
 sof-firmware
 swappy
+tesseract
+tesseract-data-eng
 tlp
 tmux
 ttf-jetbrains-mono-nerd
