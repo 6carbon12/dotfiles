@@ -1,0 +1,15 @@
+#!/bin/bash
+
+export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+export XDG_RUNTIME_DIR=/run/user/1000
+
+if [[ $1 == 'mount' ]]; then
+  /usr/bin/systemd-mount --no-block /dev/$2 /mnt
+  su kiran -c "/usr/bin/notify-send 'BACKUP DRIVE MOUNTED' '󰣇 󰘶 B to start backup'"
+fi
+
+
+if [[ $1 == 'unmount' ]]; then
+  /usr/bin/systemd-umount /mnt
+  su kiran -c "/usr/bin/notify-send 'BACKUP DRIVE UNMOUNTED'"
+fi
