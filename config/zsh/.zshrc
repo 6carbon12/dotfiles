@@ -2,29 +2,28 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Lines configured by zsh-newuser-install
 HISTFILE=~/.local/share/zsh/.zshis
 HISTSIZE=65536 # 2^16
 SAVEHIST=1048576 # 2^20
-export MANPAGER='nvim +Man!'
-export RANGER_LOAD_DEFAULT_RC=false
-setopt autocd extendedglob
-unsetopt beep
+setopt autocd
+setopt extendedglob
 setopt append_history
 setopt sharehistory
+setopt noflowcontrol
+unsetopt beep
 bindkey -v
-# End of lines configured by zsh-newuser-install
 
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/kiran/.zshrc'
-
+# Completion
 autoload -Uz compinit
 compinit -d "$HOME/.zsh/zcompdump"
-# End of lines added by compinstall
+zstyle ':completion:*' menu select
+zstyle ':completion::complete:*' gain-privileges 1
+
+###########
+# PLUGINS #
+###########
 
 source ~/.local/share/zsh/plugins/p10k/powerlevel10k.zsh-theme
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 source ~/.local/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -55,6 +54,9 @@ alias gd="git diff"
 # ENVIRONMENT VARIABLES #
 #########################
 
+# Use neovim as manpager in place of less
+export MANPAGER='nvim +Man!'
+
 # .local bin
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -68,6 +70,9 @@ export GNUPGHOME="~/.local/share/gnupg"
 # Set editor
 export EDITOR=nvim
 export VISUAL=nvim
+
+# ssh agent socket
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 ################
 # APP SPECIFIC #
