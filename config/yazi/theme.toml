@@ -1,20 +1,41 @@
-[flavor]
-light = "tokyo-night"
-dark = "tokyo-night"
+[mgr]
+cwd 					= { fg = "#7aa2f7", bg = "#1a1b26", bold = true, italic = true}
+count_copied  = { fg = "#1a1b26", bg = "#9ece6a", bold = true}
+count_cut 		= { fg = "#1a1b26", bg = "#f7768e", bold = true}
+
+[indicator]
+padding = { open = "█", close = "█" }
 
 [tabs]
-active = { fg = "#7aa2f7", bg = "#1a1b26", bold = true }
-inactive = { fg = "#565f89", bg = "#24283b" , bink = true}
-sep_inner = { open = "", close = "" }
-sep_outer = { open = "", close = ""}
+active 		= { fg = "#1a1b26", bg = "#7aa2f7"}
+inactive 	= { fg = "#7aa2f7", bg = "#1a1b26"}
+sep_inner = { open = "", close = "" }
+sep_outer = { open = "", close = ""}
 
-[icon]
-dirs = [
-	{ name = "wkspc", text = "", fg = "#c0caf5" },
-	{ name = "dls", text = "", fg = "#c0caf5" },
-	{ name = "docs", text = "", fg = "#c0caf5" },
-	{ name = "pics", text = "", fg = "#c0caf5" },
-	{ name = "music", text = "", fg = "#c0caf5" },
-	{ name = "vids", text = "", fg = "#c0caf5" },
-	{ name = ".dotfiles", text = "", fg = "#c0caf5" },
-]
+[status]
+sep_left  			= { open = "", close = "" }
+sep_right 			= { open = "", close = "" }
+separator_style = { fg = "#414868", bg = "#414868" }
+progress_label 	= { fg = "#1a1b26", bold = true }
+progress_normal = { fg = "#7aa2f7", bg = "#292e42" }
+progress_error 	= { fg = "#f7768e", bg = "#292e42" }
+perm_sep   			= { fg = "#7aa2f7" }
+perm_type  			= { fg = "#9ece6a" }
+perm_read  			= { fg = "#e0af68" }
+perm_write 			= { fg = "#f7768e" }
+perm_exec  			= { fg = "#bb9af7" }
+
+[mode]
+normal_main = { fg = "#414868", bg = "#7aa2f7", bold = true }
+normal_alt  = { fg = "#7aa2f7", bg = "#414868" }
+select_main = { fg = "#414868", bg = "#9ece6a", bold = true }
+select_alt  = { fg = "#7aa2f7", bg = "#414868" }
+unset_main 	= { fg = "#414868", bg = "#bb9af7", bold = true }
+unset_alt  	= { fg = "#7aa2f7", bg = "#414868" }
+
+[confirm]
+border = { fg = "#f7768e" }
+title  = { fg = "#f7768e" }
+
+[cmp]
+active = { bg = "#7aa2f7", fg = "#1a1b26"}
