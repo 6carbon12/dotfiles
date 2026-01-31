@@ -38,9 +38,8 @@ kitty
 kvantum
 libnotify
 libreoffice-fresh
-linux
 linux-firmware-intel
-linux-lts
+linux-zen
 ly
 mako
 man-pages
