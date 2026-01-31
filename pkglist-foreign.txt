@@ -4,7 +4,6 @@ emote
 eww
 harmonymusic
 nordzy-hyprcursors
-plymouth-theme-tech-a-git
 qpdfview
 tokyonight-gtk-theme-git
 ttf-orbitron
