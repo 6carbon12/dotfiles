@@ -5,5 +5,6 @@ eww
 harmonymusic
 nordzy-hyprcursors
 qpdfview
+snapper-rollback
 tokyonight-gtk-theme-git
 ttf-orbitron

@@ -11,6 +11,7 @@ Packages used to setup the base system.
 
 - **btrfs-progs**: Utilities to interact with BTRFS.
 - **snapper**: Snapshot manager.
+- **snapper-rollback**: Rollback helper since `snapper rollback` doesn't work for flat layouts.
 - **snap-pac**: Pacman hooks for pre and post snapshot on updates.
 - **grub-btrfs**: Adds snapshots to GRUB menu.
     - **inotify-tools**: Needed for grub-btrfsd
