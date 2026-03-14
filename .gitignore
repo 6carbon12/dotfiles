@@ -13,3 +13,6 @@ config/gtk/gtk-3.0/bookmarks
 
 # minimize_dot binary
 config/waybar/scripts/minimized_dot
+
+# swap_caps_esc binary
+config/systemd/scripts/swap_caps_esc

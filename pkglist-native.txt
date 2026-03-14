@@ -33,7 +33,6 @@ intel-media-driver
 intel-ucode
 iwd
 jq
-keyd
 kitty
 kvantum
 libnotify

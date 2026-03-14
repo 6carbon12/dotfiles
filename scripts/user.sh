@@ -25,6 +25,7 @@ declare -A DOTFILES_MAP=(
   [nvim]="$DOTFILES_DIR/config/nvim"
   [qpdfview]="$DOTFILES_DIR/config/qpdfview"
   [qt6ct]="$DOTFILES_DIR/config/qt6ct"
+  [systemd/user/swap_caps_esc.service]="$DOTFILES_DIR/config/systemd/user/swap_caps_esc.service"
   [tmux]="$DOTFILES_DIR/config/tmux"
   [walker]="$DOTFILES_DIR/config/walker"
   [waybar]="$DOTFILES_DIR/config/waybar"
@@ -131,11 +132,16 @@ finalize() {
   mkdir -p ~/.local/share/fonts/
   cp -r ~/.dotfiles/assets/fonts/* ~/.local/share/fonts/
   fc-cache -f
-  echo -e "${GREEN}[*] Fonts loaded ${RESET}"
 
   echo -e "${YELLOW}[*] Compiling minimized_dot ${RESET}"
   gcc -static -Os -s config/waybar/scripts/minimized_dot.c -o config/waybar/scripts/minimized_dot
-  echo -e "${GREEN}[*] Compiled minimized_dot ${RESET}"
+
+  echo -e "${YELLOW}[*] Compiling swap_caps_esc ${RESET}"
+  gcc -O2 -s config/systemd/scripts/swap_caps_esc.c -I/usr/include/libevdev-1.0 -levdev -o config/systemd/scripts/swap_caps_esc
+
+  echo -e "${YELLOW}[*] Enabling swap_caps_esc.service ${RESET}"
+  systemctl --user daemon-reload
+  systemctl --user enable --now swap_caps_esc.service
 
   echo -e "\n${GREEN}✔ Setup complete!${RESET}"
   echo -e "${YELLOW}Next steps:${RESET}"
