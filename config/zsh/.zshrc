@@ -77,6 +77,9 @@ export VISUAL=nvim
 # ssh agent socket
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
+# pyenv root (where all different python versions are stored)
+export PYENV_ROOT="$HOME/.local/share/pyenv"
+
 ################
 # APP SPECIFIC #
 ################
@@ -84,3 +87,6 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 # ZOXIDE
 eval "$(zoxide init zsh)"
 alias cd="z"
+
+# pyenv
+eval "$(pyenv init -)"
