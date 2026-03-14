@@ -50,6 +50,9 @@ alias ga="git add ."
 alias gc="git commit"
 alias gd="git diff"
 
+# Fix pip disk quota exceeded error
+alias pip='TMPDIR=$HOME/.cache/pip-tmp pip'
+
 #########################
 # ENVIRONMENT VARIABLES #
 #########################
