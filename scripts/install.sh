@@ -24,7 +24,6 @@ PACKAGES=(hyprland
   hyprsunset
   hyprpolkitagent
   ly
-  keyd
   zram-generator
   xorg-xhost
   waybar

@@ -12,7 +12,6 @@ Packages to give a GUI desktop to be built on top `SYSTEM_PKGS`.
 * **hyprsunset**: Blue light filter.
 * **hyprpolkitagent**: GUI authentication agent.
 * **ly**: Display manager
-* **keyd**: Key remapper
 * **zram-generator**: Systemd unit generator for zram devices
 * **xorg-xhost**: Lets GUI apps launched with `sudo` to run on user wayland session (used in `exec-once`)
 * **waybar**: Status bar.
