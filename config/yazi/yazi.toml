@@ -17,13 +17,17 @@ image_quality = 80
 
 [opener]
 play = [
-    { run = 'mpv %s', orphan = true }
+    { run = 'mpv %s', desc = "Play", orphan = true }
 ]
 edit = [
-    { run = 'nvim %s', block = true }
+    { run = 'nvim %s', desc = "Edit", block = true }
+]
+run_sh = [
+    { run = "bash %s", desc = "Run", block = false },
 ]
 
 [open]
 prepend_rules = [
-    { url = "*.html", use = ["open", "edit"]}
+    { url = "*.html", use = ["open", "edit"]},
+    { url = "*.sh", use = ["run_sh", "edit"]}
 ]
