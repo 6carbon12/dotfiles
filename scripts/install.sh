@@ -18,7 +18,7 @@ error()   { echo -e "${RED}✖ $*${RESET}"; }
 # -----------------------
 PACKAGES=(hyprland
   # Desktop Core
-  hyprpaper
+  awww
   hypridle
   hyprlock
   hyprsunset

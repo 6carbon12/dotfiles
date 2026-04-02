@@ -1,5 +1,6 @@
 7zip
 android-tools
+awww
 base
 bat
 bluez
@@ -24,7 +25,6 @@ grub-btrfs
 hypridle
 hyprland
 hyprlock
-hyprpaper
 hyprpolkitagent
 hyprsunset
 impala

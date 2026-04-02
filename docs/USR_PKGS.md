@@ -6,7 +6,7 @@ Packages to give a GUI desktop to be built on top `SYSTEM_PKGS`.
 *Core apps that are needed to have well configured Desktop.*
 
 * **hyprland**: Compositor.
-* **hyprpaper**: Wallpaper utility.
+* **awww**: Wallpaper utility.
 * **hypridle**: Idle daemon.
 * **hyprlock**: Lock screen.
 * **hyprsunset**: Blue light filter.

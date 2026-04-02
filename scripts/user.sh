@@ -133,6 +133,10 @@ finalize() {
   cp -r ~/.dotfiles/assets/fonts/* ~/.local/share/fonts/
   fc-cache -f
 
+  echo -e "${YELLOW}[*] Adding wallpaper ${RESET}"
+  mkdir -p $HOME/.local/share/awww
+  cp ~/.dotfiles/assets/pics/wallpaper.png ~/.local/share/awww/
+
   echo -e "${YELLOW}[*] Compiling minimized_dot ${RESET}"
   gcc -static -Os -s config/waybar/scripts/minimized_dot.c -o config/waybar/scripts/minimized_dot
 
