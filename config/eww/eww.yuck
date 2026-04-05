@@ -3,7 +3,7 @@
 (defpoll day :interval "1h" `date +%A | tr '[:lower:]' '[:upper:]'`)
 (defpoll date :interval "1h" `date +"%d %B %Y" | tr '[:lower:]' '[:upper:]'`)
 
-(defwindow date-day-window
+(defwindow date-day-window-main
   :monitor 0
   :geometry (geometry
     :x "0%"
@@ -20,6 +20,22 @@
   )
 )
 
+(defwindow date-day-window-external
+  :monitor 1
+  :geometry (geometry
+    :x "0%"
+    :y "15%"
+    :width "100%"
+    :height "128px"
+    :anchor "top left")
+  :stacking "bottom"
+  :exclusive false
+  :focusable false
+  (box :orientation "vertical" :spacing 0
+    (label :class "day-text" :text day)
+    (label :class "date-text" :text date :yalign 0)
+  )
+)
 ;; DASHBOARD
 
 ;; `playerctl -F` isn't used because it can't reliably handle when player stops 
@@ -37,8 +53,19 @@
   `date +%H | awk '{if ($1 < 5) print "Go to Sleep"; else if ($1 < 12) print "Good Morning"; else if ($1 < 18) print "Good Afternoon"; else print "Good Evening"}'`)
 
 
-(defwindow dashboard :class "dashboard"
+(defwindow dashboard-main :class "dashboard"
   :monitor 0
+  :geometry (geometry :x "8px"
+    :y "8px"
+    :width "400px"
+    :height "0px"
+    :anchor "top left")
+  :stacking "overlay"
+  :exclusive false
+  (dashboard_layout))
+
+(defwindow dashboard-external :class "dashboard"
+  :monitor 1
   :geometry (geometry :x "8px"
     :y "8px"
     :width "400px"
