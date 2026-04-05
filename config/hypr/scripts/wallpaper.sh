@@ -7,7 +7,7 @@ mkdir -p "$AWWW_DIR"
 case "$MODE" in
     start)
         IMAGE=$(find "$AWWW_DIR" -maxdepth 1 -type f | head -n 1)
-        awww img "$IMAGE"
+        awww img -o HDMI-A-1,eDP-1 "$IMAGE"
         ;;
 
     set)
@@ -31,7 +31,7 @@ case "$MODE" in
         # Get the absolute path of the newly copied file
         TARGET_IMAGE="$AWWW_DIR/$(basename "$NEW_IMAGE")"
         
-        awww img --transition-type any --transition-fps 60 "$TARGET_IMAGE"
+        awww img -o HDMI-A-1,eDP-1 --transition-type any --transition-fps 60 "$TARGET_IMAGE"
         ;;
 
     *)
