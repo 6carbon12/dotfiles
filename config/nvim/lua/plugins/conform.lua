@@ -13,7 +13,6 @@ return {
         json = { "prettier" },
         markdown = { "prettier" },
         yaml = { "prettier" },
-        lua = { "stylua" },
       },
       formatters = {
         prettier_tailwind = {

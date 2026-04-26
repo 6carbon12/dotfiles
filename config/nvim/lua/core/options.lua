@@ -15,11 +15,17 @@ vim.o.shiftwidth = 2
 vim.o.expandtab = true
 vim.o.smartindent = true
 vim.o.autoindent = true
+vim.opt.list = true
+vim.opt.listchars = {
+    tab = "▏ ",
+    leadmultispace = "▏ ",
+    trail = "•",
+}
 
 -- UI
 vim.opt.cmdheight = 0                 -- Hide command line when not needed
 vim.opt.relativenumber = true         -- Show relative line numbers
-vim.opt.number = true         -- Show relative line numbers
+vim.opt.number = true                 -- Show relative line numbers
 vim.opt.signcolumn = "yes"
 vim.opt.numberwidth = 4
 vim.opt.cursorline = true
@@ -29,21 +35,30 @@ vim.o.termguicolors = true
 -- Colored line number with undercurl for diagnostics
 vim.diagnostic.config({
   virtual_text = false,
-  signs = true,
   underline = true,
   update_in_insert = false,
   severity_sort = true,
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = "󰅙 ",
+      [vim.diagnostic.severity.WARN]  = " ",
+      [vim.diagnostic.severity.HINT]  = "󰌵 ",
+      [vim.diagnostic.severity.INFO]  = " ",
+    },
+    texthl = {
+      [vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
+      [vim.diagnostic.severity.WARN]  = "DiagnosticSignWarn",
+      [vim.diagnostic.severity.HINT]  = "DiagnosticSignHint",
+      [vim.diagnostic.severity.INFO]  = "DiagnosticSignInfo",
+    },
+    numhl = {
+      [vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
+      [vim.diagnostic.severity.WARN]  = "DiagnosticSignWarn",
+      [vim.diagnostic.severity.HINT]  = "DiagnosticSignHint",
+      [vim.diagnostic.severity.INFO]  = "DiagnosticSignInfo",
+    },
+  }
 })
-
-vim.fn.sign_define("DiagnosticSignError", { text = "", numhl = "DiagnosticSignError" })
-vim.fn.sign_define("DiagnosticSignWarn",  { text = "", numhl = "DiagnosticSignWarn" })
-vim.fn.sign_define("DiagnosticSignHint",  { text = "", numhl = "DiagnosticSignHint" })
-vim.fn.sign_define("DiagnosticSignInfo",  { text = "", numhl = "DiagnosticSignInfo" })
-
-vim.api.nvim_set_hl(0, "DiagnosticUnderlineError", { undercurl=true, sp="#ff5c57" })
-vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn",  { undercurl=true, sp="#f3f99d" })
-vim.api.nvim_set_hl(0, "DiagnosticUnderlineInfo",  { undercurl=true, sp="#57c7ff" })
-vim.api.nvim_set_hl(0, "DiagnosticUnderlineHint",  { undercurl=true, sp="#9aedfe" })
 
 -- Making folds work
 vim.o.foldenable = true

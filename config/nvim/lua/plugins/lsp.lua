@@ -10,7 +10,7 @@ return {
         },
       },
     })
-    vim.lsp.config("cland", {
+    vim.lsp.config("clangd", {
       on_attach = function(_, bufnr)
         local opts = { noremap = true, silent = true, buffer = bufnr }
         vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
@@ -19,7 +19,7 @@ return {
     })
     vim.lsp.config("emmet_ls", {
       filetypes = {
-         "astro", "css", "eruby", "html", "htmlangular", "htmldjango", "javascriptreact", "less", "pug", "svelte", "templ", "typescriptreact", "vue"
+        "astro", "css", "eruby", "html", "htmlangular", "htmldjango", "javascriptreact", "less", "pug", "svelte", "templ", "typescriptreact", "vue"
       }
     })
   end,
