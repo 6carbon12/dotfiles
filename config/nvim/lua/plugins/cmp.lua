@@ -27,9 +27,9 @@ return {
         { name = "path" },
       }),
       formatting = {
+        fields = {'abbr', 'icon'},
         format = require("lspkind").cmp_format({
           mode = "symbol",
-          maxwidth = 32,
           preset = "codicons"
         }),
       },
