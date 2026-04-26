@@ -31,7 +31,6 @@ PACKAGES=(hyprland
   eww
   mako
   libnotify
-  wofi
   nordzy-hyprcursors
   brightnessctl
   ddcutil

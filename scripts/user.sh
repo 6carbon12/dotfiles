@@ -143,6 +143,13 @@ finalize() {
   echo -e "${YELLOW}[*] Compiling swap_caps_esc ${RESET}"
   gcc -O2 -s config/systemd/scripts/swap_caps_esc.c -I/usr/include/libevdev-1.0 -levdev -o config/systemd/scripts/swap_caps_esc
 
+  echo -e "${YELLOW}[*] Making App Launcher ${RESET}"
+  TMP_DIR=$(mktemp -d)
+  git clone https://github.com/6carbon12/arka $TMP_DIR >/dev/null 2>&1
+  cd $TMP_DIR
+  make > /dev/null 2>&1
+  mv arka ~/.local/bin/arka
+
   echo -e "${YELLOW}[*] Enabling swap_caps_esc.service ${RESET}"
   systemctl --user daemon-reload
   systemctl --user enable --now swap_caps_esc.service

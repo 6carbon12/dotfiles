@@ -18,7 +18,6 @@ Packages to give a GUI desktop to be built on top `SYSTEM_PKGS`.
 * **eww**: Widget system.
 * **mako**: Notification daemon.
 * **libnotify**: Notification sending library used by `firefox`
-* **wofi**: App launcher.
 * **nordzy-hyprcursors**: Cursor theme.
 * **brightnessctl**: Backlight control (Main interface).
 * **ddcutil**: Brightness Control for external monitor.
