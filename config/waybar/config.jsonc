@@ -35,7 +35,7 @@
     "custom/dashboard": {
         "format": "  ",
         "tooltip": false,
-        "on-click": "eww open --toggle dashboard"
+        "on-click": "eww open-many dashboard-main dashboard-external --toggle"
     },
     "custom/minimized": {
         "format": "{}",
