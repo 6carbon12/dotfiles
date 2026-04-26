@@ -147,6 +147,9 @@ finalize() {
   systemctl --user daemon-reload
   systemctl --user enable --now swap_caps_esc.service
 
+  echo -e "${YELLOW}[*] You will now be added to i2c group, for which you'll be asked for your password (if not cached)${RESET}"
+  sudo usermod -aG i2c $USER
+
   echo -e "\n${GREEN}✔ Setup complete!${RESET}"
   echo -e "${YELLOW}Next steps:${RESET}"
   echo -e "1. Open tmux: ${GREEN}tmux${RESET}"

@@ -34,6 +34,7 @@ PACKAGES=(hyprland
   wofi
   nordzy-hyprcursors
   brightnessctl
+  ddcutil
   tlp
   xdg-desktop-portal
   xdg-desktop-portal-hyprland

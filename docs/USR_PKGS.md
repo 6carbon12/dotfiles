@@ -21,6 +21,7 @@ Packages to give a GUI desktop to be built on top `SYSTEM_PKGS`.
 * **wofi**: App launcher.
 * **nordzy-hyprcursors**: Cursor theme.
 * **brightnessctl**: Backlight control (Main interface).
+* **ddcutil**: Brightness Control for external monitor.
 * **tlp**: Power management
 
 #### Desktop Portals
