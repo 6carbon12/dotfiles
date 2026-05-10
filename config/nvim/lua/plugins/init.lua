@@ -14,5 +14,6 @@ require("lazy").setup({
   require("plugins.telescope"),
   require("plugins.mini-pairs"),
   require("plugins.guess-indent"),
+  require("plugins.tree-sitter-manager"),
 })
 
