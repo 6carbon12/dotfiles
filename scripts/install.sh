@@ -71,7 +71,8 @@ PACKAGES=(hyprland
   qpdfview
   emote
   neovim
-  # Script Dependancies
+  # Script/Plugin Dependancies
+  tree-sitter-cli
   rsync
   jq)
 FONTS=(ttf-jetbrains-mono-nerd ttf-orbitron noto-fonts)

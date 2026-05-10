@@ -86,7 +86,8 @@ Packages to give a GUI desktop to be built on top `SYSTEM_PKGS`.
 * **firefox**: Web Browser.
 * **mpv**: Media Player.
 * **neovim**: Text editor
-    * *Requires:* `fzf`, `ripgrep`, `fd` (used by Telescope plugin)
+    * *telescope:* `fzf`, `ripgrep`, `fd`  
+    * *tree-sitter-manager:* **tree-sitter-cli** 
 * **qpdfview**: PDF Viewer.
 * **yazi**: File Manager (TUI).
     * *Requires:* **7zip** (for archive preview/extraction).
