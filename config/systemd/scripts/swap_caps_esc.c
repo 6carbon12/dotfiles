@@ -122,8 +122,7 @@ int main() {
             if (dev_name && !(strcmp(dev_name, "Optimus BT1 Keyboard"))) {
                 if (event.code == KEY_LEFTMETA) { event.code = KEY_LEFTALT; }
                 else if (event.code == KEY_LEFTALT) { event.code = KEY_LEFTMETA; }
-                else if (event.code == KEY_RIGHTMETA) { event.code = KEY_RIGHTALT; }
-                else if (event.code == KEY_RIGHTALT) { event.code = KEY_RIGHTMETA; }
+                else if (event.code == KEY_RIGHTALT) { event.code = KEY_RIGHTCTRL; }
             }
 
             // swap CAPS and ESC
