@@ -124,7 +124,7 @@
     (box :class "power-box" :orientation "h" :halign "end" :spacing 10
 
       ;; Sleep (Left)
-      (button :class "btn-sleep" :onclick "systemctl suspend" "")
+      (button :class "btn-sleep" :onclick "eww close dashboard-main dashboard-external; hyprctl dispatch submap reset; systemctl suspend" "")
 
       ;; Reboot (Middle)
       (button :class "btn-restart" :onclick "systemctl reboot" "󰑓")
