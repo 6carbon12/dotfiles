@@ -71,6 +71,7 @@ tesseract
 tesseract-data-eng
 tlp
 tmux
+tree-sitter-cli
 ttf-jetbrains-mono-nerd
 vulkan-intel
 waybar
