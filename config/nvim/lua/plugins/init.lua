@@ -12,7 +12,7 @@ require("lazy").setup({
   require("plugins.conform"),
   require("plugins.persistance"),
   require("plugins.telescope"),
-  require("plugins.mini-pairs"),
+  require("plugins.autopairs"),
   require("plugins.guess-indent"),
   require("plugins.tree-sitter-manager"),
 })
