@@ -13,7 +13,7 @@
         "home": "home",
         "end": "end",
         "filter": "/",
-        "preview": " ",
+        "preview": "space",
         "selectDown": "ctrl+down",
         "selectUp": "ctrl+up",
         "choose": "enter",
