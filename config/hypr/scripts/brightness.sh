@@ -4,7 +4,7 @@
 CACHE_FILE="/tmp/monitor_bus_id"
 
 # 1. Update laptop screen immediately
-brightnessctl s 1%"$1"
+brightnessctl s 10%"$1"
 
 # 2. Get the Bus ID (from cache or detect)
 if [ -f "$CACHE_FILE" ]; then

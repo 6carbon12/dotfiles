@@ -6,18 +6,18 @@ IMG_PATH="$HOME/pics/screenshots/$TIMESTAMP.png"
 SWAPPY_IMG_PATH="$HOME/pics/screenshots/$TIMESTAMP-swappy.png"
 mkdir -p $DIR
 
-hyprctl dispatch setprop activewindow opaque on
+hyprctl -r eval "hl.config({ decoration = { active_opacity = 1.0, inactive_opacity = 1.0 }})" 
 
 GEOMETRY=$(slurp)
 if [ -z "$GEOMETRY" ]; then
   # Early exit if Screenshot is canceled
-  hyprctl clients -j | jq -r '.[].address' | xargs -I {} hyprctl dispatch setprop address:{} opaque off
-  exit 1
+  hyprctl reload
+  exit
 fi
 
 grim -g "$GEOMETRY" "$IMG_PATH"
 
-hyprctl clients -j | jq -r '.[].address' | xargs -I {} hyprctl dispatch setprop address:{} opaque off
+hyprctl reload
 wl-copy < $IMG_PATH
 
 ACTION=$(notify-send --wait --app-name="Screenshot" --action="default=Edit in Swappy" "Screenshot Saved" "Click to annotate in Swappy" -i $IMG_PATH)
