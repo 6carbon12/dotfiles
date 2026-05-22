@@ -36,3 +36,10 @@ hl.window_rule({
   size = { 960, 640 },
   center = true,
 })
+
+-- Remove shadow for tiled windows
+hl.window_rule({
+  name = "tile-no-shadow",
+  match = { float = false },
+  no_shadow = true,
+})
