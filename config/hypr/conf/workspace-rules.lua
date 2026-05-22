@@ -6,12 +6,6 @@ hl.workspace_rule({
   layout = "scrolling",
 })
 
--- Scrolling on 2nd workspace
-hl.workspace_rule({
-  workspace = "2",
-  layout = "scrolling",
-})
-
 hl.workspace_rule({
   workspace = "11",
   monitor = "eDP-1",
