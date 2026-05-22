@@ -72,7 +72,6 @@
     },
     "backlight": {
         "format": "{percent}% ",
-        // "format-icons": ["", "", "", "", "", "", "", "", ""],
         "tooltip": false
     },
     "battery": {
@@ -82,12 +81,11 @@
             "critical": 15
         },
         "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
         "format-charging": "{capacity}% ",
+        "format-not-charging": "{capacity}% ",
+        "format-full": "{capacity}% ",
         "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
+        "format-alt": "{time} {power}",
         "format-icons": ["", "", "", "", ""],
         "tooltip": true,
         "tooltip-format": "{power} W"
@@ -102,7 +100,7 @@
         "on-click": "kitty --class float-term --override window_padding_width=20 impala"
     },
     "pulseaudio": {
-        "scroll-step": 1, // %, can be a float
+        "scroll-step": 1,
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon}",
         "format-bluetooth-muted": "",
