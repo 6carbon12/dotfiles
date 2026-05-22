@@ -175,6 +175,10 @@ hl.bind(mainMod .. "+ D", function ()
   hl.dispatch(hl.dsp.exec_cmd("eww open-many dashboard-main dashboard-external --toggle"))
 end)
 
+local function is_inside(px, py, x, y, w, h)
+  return (x <= px and px <= x + w) and (y <= py and py <= y + h)
+end
+
 hl.define_submap("dashboard", function ()
   hl.bind("Space", hl.dsp.exec_cmd("playerctl play-pause"))
   hl.bind("Return", hl.dsp.exec_cmd("playerctl play-pause"))
@@ -195,4 +199,23 @@ hl.define_submap("dashboard", function ()
     hl.dispatch(hl.dsp.submap("reset"))
     hl.dispatch(hl.dsp.exec_cmd("eww open-many dashboard-main dashboard-external --toggle"))
   end)
+
+  hl.bind("mouse:272", function ()
+    local layers = hl.get_layers();
+    for _, layer in ipairs(layers) do
+      local active_mon = hl.get_active_monitor()
+      -- hl.notification.create({text = "active mon: " .. active_mon.name .. "\nlayer monitor: " .. layer.monitor, timeout = 3000})
+      if layer.layer ~= 3 or (active_mon and layer.monitor.name ~= active_mon.name) then
+        goto continue
+      end
+
+      local cursor_pos = hl.get_cursor_pos()
+
+      if cursor_pos and (not is_inside(cursor_pos.x, cursor_pos.y, layer.x, layer.y, layer.w, layer.h)) then
+        hl.dispatch(hl.dsp.submap("reset"))
+        hl.dispatch(hl.dsp.exec_cmd("eww open-many dashboard-main dashboard-external --toggle"))
+      end
+      ::continue::
+    end
+  end,{ mouse = true, non_consuming = true })
 end)
