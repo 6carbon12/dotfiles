@@ -82,9 +82,6 @@
     (box :class "header" :orientation "v" :space-evenly false :spacing 5
       (box :orientation "h" :space-evenly true
         (label :class "greeting-text" :text greeting :halign "start")
-        (button :class "close-btn" :halign "end" 
-          :onclick "eww update dashboard_open=false && eww close dashboard" 
-          "")
       )
     )
 
