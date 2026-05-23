@@ -152,6 +152,8 @@ hl.bind(mainMod .. "+ ALT + D", function ()
     position = "auto",
     scale = "1",
   })
+  -- Reload eww after re-enabling the monitor
+  hl.exec_cmd("touch ~/.config/eww/eww.yuck")
 end
 )
 
