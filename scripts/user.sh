@@ -25,7 +25,6 @@ declare -A DOTFILES_MAP=(
   [nvim]="$DOTFILES_DIR/config/nvim"
   [qpdfview]="$DOTFILES_DIR/config/qpdfview"
   [qt6ct]="$DOTFILES_DIR/config/qt6ct"
-  [systemd/user/swap_caps_esc.service]="$DOTFILES_DIR/config/systemd/user/swap_caps_esc.service"
   [tmux]="$DOTFILES_DIR/config/tmux"
   [walker]="$DOTFILES_DIR/config/walker"
   [waybar]="$DOTFILES_DIR/config/waybar"
@@ -140,19 +139,12 @@ finalize() {
   echo -e "${YELLOW}[*] Compiling minimized_dot ${RESET}"
   gcc -static -Os -s config/waybar/scripts/minimized_dot.c -o config/waybar/scripts/minimized_dot
 
-  echo -e "${YELLOW}[*] Compiling swap_caps_esc ${RESET}"
-  gcc -O2 -s config/systemd/scripts/swap_caps_esc.c -I/usr/include/libevdev-1.0 -levdev -o config/systemd/scripts/swap_caps_esc
-
   echo -e "${YELLOW}[*] Making App Launcher ${RESET}"
   TMP_DIR=$(mktemp -d)
   git clone https://github.com/6carbon12/arka $TMP_DIR >/dev/null 2>&1
   cd $TMP_DIR
   make > /dev/null 2>&1
   mv arka ~/.local/bin/arka
-
-  echo -e "${YELLOW}[*] Enabling swap_caps_esc.service ${RESET}"
-  systemctl --user daemon-reload
-  systemctl --user enable --now swap_caps_esc.service
 
   echo -e "${YELLOW}[*] You will now be added to i2c group, for which you'll be asked for your password (if not cached)${RESET}"
   sudo usermod -aG i2c $USER
