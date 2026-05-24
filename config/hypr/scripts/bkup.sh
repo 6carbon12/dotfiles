@@ -8,10 +8,10 @@ mountpoint -q "$MOUNT" || {
   exit 1; 
 }
 
-if ! [ -f $MOUNT/backup.sh ]; then
+if ! [ -f $MOUNT/backup/backup.sh ]; then
   notify-send "DRIVE IS NOT A BACKUP DRIVE";
   exit 1; 
 fi
 
 notify-send "BACKUP STARTED..."
-kitty --class float-term --override window_padding_width=80 $MOUNT/backup.sh
+kitty --class float-term --override window_padding_width=80 $MOUNT/backup/backup.sh
