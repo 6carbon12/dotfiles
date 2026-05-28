@@ -158,7 +158,7 @@ end
 )
 
 -- Left SUPER will move the cursor to bottom right
-hl.bind("SUPER + SUPER_L", function ()
+hl.bind(mainMod .. "+ U", function ()
   local width = hl.get_active_monitor().width
   local height = hl.get_active_monitor().height
 
