@@ -1,0 +1,2 @@
+singleton Theme 1.0 globals/Theme.qml
+singleton Time 1.0 globals/Time.qml
