@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 640 640"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="low-mine.svg"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="0.47890625"
+     inkscape:cx="579.44535"
+     inkscape:cy="321.56607"
+     inkscape:window-width="1178"
+     inkscape:window-height="684"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+  <path
+     d="m 48,416 h 48 l 134.1,119.2 c 6.4,5.7 14.6,8.8 23.1,8.8 19.2,0 34.8,-15.6 34.8,-34.8 V 130.8 C 288,111.6 272.4,96 253.2,96 c -8.5,0 -16.7,3.1 -23.1,8.8 L 96,224 H 48 C 21.5,224 0,245.5 0,272 v 96 c 0,26.5 21.5,48 48,48 z"
+     id="path1"
+     sodipodi:nodetypes="sccssssccssss" />
+</svg>

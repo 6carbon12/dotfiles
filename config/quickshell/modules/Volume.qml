@@ -7,39 +7,44 @@ import "../globals"
 import "../components"
 
 PillModule {
-  id: root
-  paddingX: 16
-  spacing: 8 
-  color: isMuted ? Theme.lightGray : Theme.lightBlue
+  id: sound
   hasText: false
+  paddingX: 16
+  spacing: 8
+  color: isMuted ? Theme.lightGray : Theme.lightBlue
+  Behavior on color { ColorAnimation { duration: 150; } }
 
-  property var sink: Pipewire.defaultAudioSink
-  PwObjectTracker {
-    objects: [root.sink]
-  }
-  property int volume: (sink && sink.audio) ? Math.round(sink.audio.volume * 100) : 0
-  property bool isMuted: (sink && sink.audio) ? sink.audio.muted : false
-  property string icon: {
-    if (volume >= 60) { return "" }
-    if (volume >= 30) { return "" }
-    if (isMuted || volume === 0) { return "" } 
-    return ""
+  readonly property var sink: Pipewire.defaultAudioSink
+  readonly property bool isBluetooth: sink && sink.properties && (sink.properties["device.api"] == "bluez5")
+  readonly property int volume: (sink && sink.audio) ? Math.round(sink.audio.volume * 100) : 0
+  readonly property bool isMuted: (sink && sink.audio) ? sink.audio.muted : false
+  readonly property string icon: {
+    let device = isBluetooth ? "headset" : "speaker"
+    if (isMuted || 
+        volume === 0)  { return `../assets/volume/${device}/mute.svg` }
+    if (volume <= 25)  { return `../assets/volume/${device}/low.svg` }
+    if (volume <= 50)  { return `../assets/volume/${device}/mid.svg` }
+    if (volume <= 75)  { return `../assets/volume/${device}/high.svg` }
+    if (volume <= 100) { return `../assets/volume/${device}/max.svg` }
+    if (volume > 100)  { return `../assets/volume/${device}/max.svg` }
   }
 
-  // Custom text module that has fixed width
-  Text {
-    text: root.icon
-    color: Theme.text
-    Layout.preferredWidth: 14
-    Layout.topMargin: 2
-    font {
-      family: Theme.fontFamily
-      pixelSize: 14
-      weight: Font.Bold
-    }
+  PwObjectTracker { objects: [sound.sink] }
+
+  // Custom icon that changes based on the volume
+  Image {
+    id: volIcon
+    source: sound.icon
+    cache: false
+    Layout.preferredWidth: 16
+    sourceSize.width: Layout.preferredWidth
+    sourceSize.height: height
+    fillMode: Image.PreserveAspectFit
 
     MouseArea {
-      anchors.fill: parent
+      anchors.centerIn: parent
+      height: parent.height + 16
+      width: parent.width + 16
       cursorShape: Qt.PointingHandCursor
       onClicked: {
         Quickshell.execDetached(["kitty", "--class", "float-term", "--override", "window_padding_width=20", "pulsemixer"])
@@ -54,50 +59,54 @@ PillModule {
     Layout.preferredWidth: 100 
     implicitHeight: 24 // Important to make mouse work
     stepSize: 0.05
-    snapMode: Slider.SnapAlways
 
-    value: (root.sink && root.sink.audio) ? root.sink.audio.volume : 0.0
+    value: (sound.volume > 100) ? (sound.volume - 100)/100 : sound.volume/100
+    Behavior on value { NumberAnimation { duration: 150; } }
 
     onMoved: {
-      if (root.sink && root.sink.audio) {
-        root.sink.audio.volume = value
+      if (sound.sink && sound.sink.audio) {
+        sound.sink.audio.volume = value
 
-        if (root.sink.audio.muted && value > 0) {
-          root.sink.audio.muted = false
+        if (sound.isMuted && value > 0) {
+          sound.sink.audio.muted = false
         }
       }
     }
 
     background: Rectangle {
+      // Unslided area
       width: volumeSlider.availableWidth
       height: 6
       radius: 3
-      color: Qt.darker(Theme.lightGray, 1.5)
+      color: (sound.volume > 100) ? Theme.text : Qt.darker(Theme.lightGray, 1.5)
       anchors.verticalCenter: parent.verticalCenter
 
-      Rectangle { // Filled Area
-        width: root.isMuted ? 0 : (volumeSlider.visualPosition * parent.width)
+      // Slided area (< 100%)
+      Rectangle {
+        width: (sound.volume > 100) ? volumeSlider.width : (volumeSlider.visualPosition * parent.width)
         height: parent.height
         color: Theme.text
-        radius: 3
+        radius: height / 2
+      }
 
-        Rectangle {
-          visible: root.volume > 100
-          width: ((root.volume - 100)/100 * parent.width)
-          height: parent.height
-          color: Theme.lightRed
-          radius: parent.height / 2
-        }
+      // Slided area (> 100%)
+      Rectangle {
+        visible: sound.volume > 100
+        width: parent.width * ((sound.volume - 100)/100)
+        Behavior on width { NumberAnimation { duration: 150; } }
+        height: parent.height
+        color: Theme.lightRed
+        radius: height / 2
       }
     }
 
     handle: Rectangle {
-      x: volumeSlider.leftPadding + volumeSlider.visualPosition * (volumeSlider.availableWidth - width)
-      y: volumeSlider.topPadding + volumeSlider.availableHeight / 2 - height / 2
+      x: volumeSlider.visualPosition * (volumeSlider.availableWidth - width)
+      y: volumeSlider.availableHeight / 2 - height / 2
       width: 10
       height: 10
-      radius: 7
-      color: root.isMuted ? Theme.darkGray : Theme.text
+      radius: height / 2
+      color: sound.isMuted ? Theme.darkGray : Theme.text
       border.width: 2
       border.color: Theme.text
     }
