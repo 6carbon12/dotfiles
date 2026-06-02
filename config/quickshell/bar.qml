@@ -50,7 +50,7 @@ Variants {
         radius: height / 2
         Image {
           id: archLogo
-          source: "./assets/arch-linux.svg"
+          source: "./assets/arch-logo.svg"
           sourceSize: Qt.size(20, 20)
           fillMode: Image.PreserveAspectFit
           anchors.centerIn: parent

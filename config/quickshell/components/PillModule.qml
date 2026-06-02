@@ -6,7 +6,7 @@ Rectangle {
   id: root
   Layout.preferredWidth: mainLayout.implicitWidth + (paddingX * 2)
   height: 28
-  radius: 32
+  radius: height / 2
 
   default property alias innerContent: mainLayout.data
 
@@ -34,7 +34,6 @@ Rectangle {
         pixelSize: 14
         weight: Font.Bold
       }
-
     }
   }
 }
