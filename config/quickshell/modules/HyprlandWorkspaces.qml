@@ -9,7 +9,7 @@ RowLayout {
   spacing: 8
 
   Repeater {
-    model: Hyprland.workspaces.values 
+    model: Hyprland.workspaces.values
 
     Rectangle {
       property bool isSpecial: modelData.name.startsWith("special:")
@@ -22,18 +22,17 @@ RowLayout {
       Layout.preferredWidth: isActive ? 44 : 30
       radius: 16 // Exactly half the height guarantees perfect rounded edges
 
-      color: isHovered ? (Theme.darkPurple) : (isActive ? Theme.lightBlue : "transparent")
-      border.width: isActive ? 0 : 1
-      border.color: isActive ? "transparent" : Theme.lightBlue
+      color: isHovered ? (Theme.colors.accent) : (isActive ? Theme.colors.primary : "transparent")
+      border.width: (isActive || isHovered) ? 0 : 1
+      border.color: (isActive || isHovered) ? "transparent" : Theme.colors.primary
 
       Text {
         anchors.fill: parent
         text: modelData.name
         verticalAlignment: Text.AlignVCenter
         horizontalAlignment: Text.AlignHCenter
-        color: isHovered ? (Theme.text) : (isActive ? Theme.text: Theme.lightBlue)
-        font.family: Theme.fontFamily
-        font.pixelSize: 14
+        color: isHovered ? (Theme.colors.background) : (isActive ? Theme.colors.background: Theme.colors.primary)
+        font: Theme.mainFont.normal
       }
 
       MouseArea {

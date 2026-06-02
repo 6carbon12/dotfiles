@@ -11,7 +11,7 @@ PillModule {
   hasText: false
   paddingX: 16
   spacing: 8
-  color: isMuted ? Theme.lightGray : Theme.lightBlue
+  color: isMuted ? Theme.colors.disabled : Theme.colors.primary
   Behavior on color { ColorAnimation { duration: 150; } }
 
   readonly property var sink: Pipewire.defaultAudioSink
@@ -78,14 +78,14 @@ PillModule {
       width: volumeSlider.availableWidth
       height: 6
       radius: 3
-      color: (sound.volume > 100) ? Theme.text : Qt.darker(Theme.lightGray, 1.5)
+      color: (sound.volume > 100) ? Theme.colors.background : Theme.palette.neutral500
       anchors.verticalCenter: parent.verticalCenter
 
       // Slided area (< 100%)
       Rectangle {
         width: (sound.volume > 100) ? volumeSlider.width : (volumeSlider.visualPosition * parent.width)
         height: parent.height
-        color: Theme.text
+        color: Theme.colors.background
         radius: height / 2
       }
 
@@ -95,7 +95,7 @@ PillModule {
         width: parent.width * ((sound.volume - 100)/100)
         Behavior on width { NumberAnimation { duration: 150; } }
         height: parent.height
-        color: Theme.lightRed
+        color: Theme.colors.danger
         radius: height / 2
       }
     }
@@ -106,9 +106,9 @@ PillModule {
       width: 10
       height: 10
       radius: height / 2
-      color: sound.isMuted ? Theme.darkGray : Theme.text
+      color: Theme.palette.neutral400
       border.width: 2
-      border.color: Theme.text
+      border.color: Theme.colors.background
     }
   }
 }

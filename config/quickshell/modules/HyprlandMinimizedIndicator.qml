@@ -8,7 +8,7 @@ import "../globals"
 Text {
   id: minimizedIndicator
   text: "●"
-  color: Theme.lightBlue
+  color: Theme.colors.primary
   font.pixelSize: 14
   Layout.preferredWidth: 14
   property bool hasMinimized: HyprlandState.hasMinimized
