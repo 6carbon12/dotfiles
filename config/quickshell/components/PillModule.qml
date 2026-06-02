@@ -26,14 +26,10 @@ Rectangle {
 
     Text {
       id: mainText
-      color: Theme.text
+      color: Theme.colors.background
       visible: parent.hasText
       Layout.topMargin: 2
-      font {
-        family: Theme.fontFamily
-        pixelSize: 14
-        weight: Font.Bold
-      }
+      font: Theme.mainFont.bold
     }
   }
 }

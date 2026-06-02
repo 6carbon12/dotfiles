@@ -12,7 +12,7 @@ PillModule {
   property string ssid: NetworkState.ssid
   property string rxSpeed: NetworkState.rxSpeed
 
-  color: isConnected ? Theme.lightBlue : Theme.lightRed
+  color: isConnected ? Theme.colors.primary : Theme.colors.error
   property string icon: isConnected ? "󰖩 " : "󰖪 "
 
   displayText: icon + ssid + " " + rxSpeed

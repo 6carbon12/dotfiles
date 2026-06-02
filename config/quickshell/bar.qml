@@ -46,7 +46,7 @@ Variants {
         id: dashboardToggle
         height: 20 + 8
         width: 20 + 32
-        color: Theme.lightBlue
+        color: Theme.colors.primary
         radius: height / 2
         Image {
           id: archLogo
@@ -159,7 +159,7 @@ Variants {
         property string textMain: icon + " " + percent + "%"
         property string textAlt: (isOnAC ? " " : formatSeconds((isCharging ? bat.timeToFull : bat.timeToEmpty))) + " h -- " + bat.changeRate + " W"
 
-        color: isCritical ? Theme.darkRed : Theme.lightBlue
+        color: isCritical ? Theme.colors.danger : Theme.colors.primary
         displayText: isClicked ? textAlt : textMain
 
         MouseArea {
@@ -178,7 +178,7 @@ Variants {
         id: clock
         paddingX: 12
         displayText: Time.time
-        color: Theme.lightBlue
+        color: Theme.colors.primary
       }
     }
   }

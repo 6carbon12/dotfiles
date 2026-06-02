@@ -14,7 +14,7 @@ Rectangle {
 
   width: mainLayout.implicitWidth + (paddingX * 2)
   radius: 32
-  color: Qt.alpha(Theme.darkGray, 0.7)
+  color: Qt.alpha(Theme.colors.background, Theme.bgOpacity)
 
   RowLayout {
     id: mainLayout

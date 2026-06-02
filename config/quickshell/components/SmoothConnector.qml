@@ -5,7 +5,7 @@ import "../globals"
 Item {
   id: root
   height: parent.height
-  property real alpha: 0.7
+  property real alpha: Theme.bgOpacity
   Image {
     id: leftConnector
     anchors.left: parent.left
@@ -24,7 +24,7 @@ Item {
     anchors.verticalCenterOffset: -1
     anchors.leftMargin: -2
     anchors.rightMargin: -2
-    color: Qt.alpha(Theme.darkGray, root.alpha)
+    color: Qt.alpha(Theme.colors.background, root.alpha)
   }
 
   Image {
