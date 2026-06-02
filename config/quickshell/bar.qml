@@ -67,15 +67,12 @@ Variants {
     }
 
     SmoothConnector {
-      barHeight: bar.connectingBarHeight
-      height: modulesLeft.height
-      z: -1
       anchors {
         left: modulesLeft.right
         right: modulesCenter.left
         top: parent.top
-        leftMargin: -16
-        rightMargin: -16
+        leftMargin: -22
+        rightMargin: -22
         topMargin: 2
       }
     }
@@ -97,15 +94,12 @@ Variants {
     }
 
     SmoothConnector {
-      barHeight: bar.connectingBarHeight
-      height: modulesLeft.height
-      z: -1
       anchors {
         left: modulesCenter.right
         right: modulesRight.left
         top: parent.top
-        leftMargin: -16
-        rightMargin: -16
+        leftMargin: -22
+        rightMargin: -22
         topMargin: 2
       }
     }
