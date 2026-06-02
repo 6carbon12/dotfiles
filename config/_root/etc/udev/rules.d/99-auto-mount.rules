@@ -1,2 +1,0 @@
-ACTION=="add", KERNEL=="sd*[0-9]", ENV{ID_FS_UUID}=="dbec69ff-68d3-4c42-a4c7-7ca43abced24", RUN+="/usr/bin/bash -c '/home/kiran/.local/bin/automount mount %k'"
-ACTION=="remove", KERNEL=="sd*[0-9]", ENV{ID_FS_UUID}=="dbec69ff-68d3-4c42-a4c7-7ca43abced24", RUN+="/usr/bin/bash -c '/home/kiran/.local/bin/automount unmount %k'"
