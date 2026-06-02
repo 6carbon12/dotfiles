@@ -16,5 +16,7 @@ hl.config({
 
     resize_on_border = true,
     extend_border_grab_area = 0,
+
+    layout = "master"
   }
 })

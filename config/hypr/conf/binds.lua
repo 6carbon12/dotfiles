@@ -128,6 +128,10 @@ hl.bind(mainMod .. "+ bracketleft", hl.dsp.exec_cmd([[~/.dotfiles/config/hypr/sc
    repeating = true, locked = true
 })
 
+-- Master layout 
+hl.bind(mainMod .. "+ N", hl.dsp.layout("rollnext"))
+hl.bind(mainMod .. "+ SHIFT + N", hl.dsp.layout("rollprev"))
+
 -- Minimization Solution
 hl.bind(mainMod .. "+ M", hl.dsp.window.move({workspace = "special:minimized", follow = false}))
 hl.bind(mainMod .. "+ SHIFT + M", hl.dsp.workspace.toggle_special("minimized"))
@@ -161,7 +165,6 @@ end
 hl.bind(mainMod .. "+ U", function ()
   local width = hl.get_active_monitor().width
   local height = hl.get_active_monitor().height
-
   hl.dispatch(hl.dsp.cursor.move({ x = width, y = height}))
 end,
 { release = true })
