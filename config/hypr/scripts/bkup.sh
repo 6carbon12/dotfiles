@@ -3,14 +3,14 @@ set -e
 
 MOUNT="/mnt"
 
-mountpoint -q "$MOUNT" || { 
-  notify-send "DRIVE NOT MOUNTED";
-  exit 1; 
+mountpoint -q "$MOUNT" || {
+  notify-send "DRIVE NOT MOUNTED"
+  exit 1
 }
 
 if ! [ -f $MOUNT/backup/backup.sh ]; then
-  notify-send "DRIVE IS NOT A BACKUP DRIVE";
-  exit 1; 
+  notify-send "DRIVE IS NOT A BACKUP DRIVE"
+  exit 1
 fi
 
 notify-send "BACKUP STARTED..."

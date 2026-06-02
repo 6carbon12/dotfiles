@@ -38,18 +38,18 @@
 )
 ;; DASHBOARD
 
-;; `playerctl -F` isn't used because it can't reliably handle when player stops 
+;; `playerctl -F` isn't used because it can't reliably handle when player stops
 ;; it emits an empty line which isn't picked up by eww
 (defpoll music_title :interval "1s" "playerctl metadata title || echo 'No Music'")
 (defpoll music_artist :interval "1s" "playerctl metadata artist || echo ''")
 (defpoll music_status :interval '0.1s' "playerctl status || echo '󰐊'")
 
 (defpoll dnd_status :interval "0.25s" "makoctl mode | grep -q 'dnd' && echo 'true' || echo 'false'")
-(defpoll bt_status :interval "0.25s" 
+(defpoll bt_status :interval "0.25s"
   "bluetoothctl show | grep -q 'Powered: yes' && echo 'true' || echo 'false'")
-(defpoll wifi_status :interval "0.25s" 
+(defpoll wifi_status :interval "0.25s"
   "iwctl station wlan0 show | grep -q 'connected' && echo 'true' || echo 'false'")
-(defpoll greeting :interval "1h" 
+(defpoll greeting :interval "1h"
   `date +%H | awk '{if ($1 < 5) print "Go to Sleep"; else if ($1 < 12) print "Good Morning"; else if ($1 < 18) print "Good Afternoon"; else print "Good Evening"}'`)
 
 
@@ -100,18 +100,18 @@
     (box :class "toggles-grid" :orientation "h" :spacing 18
 
       ;; DND Toggle
-      (button :class {dnd_status == "true" ? "btn-dnd-active" : "btn-dnd-inactive"} 
-        :onclick "makoctl mode -t dnd" 
+      (button :class {dnd_status == "true" ? "btn-dnd-active" : "btn-dnd-inactive"}
+        :onclick "makoctl mode -t dnd"
         "")
 
       ;; Bluetooth Toggle
-      (button :class {bt_status == "true" ? "btn-active" : "btn-inactive"} 
-        :onclick "bluetoothctl show | grep -q 'Powered: yes' && bluetoothctl power off || bluetoothctl power on" 
+      (button :class {bt_status == "true" ? "btn-active" : "btn-inactive"}
+        :onclick "bluetoothctl show | grep -q 'Powered: yes' && bluetoothctl power off || bluetoothctl power on"
         "")
 
-      ;; Wifi Toggle 
-      (button :class {wifi_status == "true" ? "btn-active" : "btn-inactive"} 
-        :onclick "iwctl device wlan0 show | grep -qE 'Powered *on' && iwctl device wlan0 set-property Powered off || iwctl device wlan0 set-property Powered on" 
+      ;; Wifi Toggle
+      (button :class {wifi_status == "true" ? "btn-active" : "btn-inactive"}
+        :onclick "iwctl device wlan0 show | grep -qE 'Powered *on' && iwctl device wlan0 set-property Powered off || iwctl device wlan0 set-property Powered on"
         " ")
 
       ;; Add another row of toggles (Night light, power saving, ...)

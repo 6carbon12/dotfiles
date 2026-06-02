@@ -1,7 +1,7 @@
 return {
-  'goolord/alpha-nvim',
-  dependencies = { 'nvim-tree/nvim-web-devicons' },
-  config = function ()
+  "goolord/alpha-nvim",
+  dependencies = { "nvim-tree/nvim-web-devicons" },
+  config = function()
     local alpha = require("alpha")
     local dashboard = require("alpha.themes.dashboard")
 
@@ -21,7 +21,6 @@ return {
       "                                                                                                                    ",
     }
 
-
     dashboard.section.buttons.val = {
       dashboard.button("r", "  Recent files", ":Telescope oldfiles<CR>"),
       dashboard.button("l", "  Restore session", ":lua require('persistence').load()<CR>"),
@@ -39,6 +38,5 @@ return {
     }
 
     alpha.setup(dashboard.opts)
-  end
+  end,
 }
-

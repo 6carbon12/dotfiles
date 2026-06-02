@@ -13,7 +13,7 @@ hl.config({
       range = 16,
       render_power = 2,
       color = "#000000aa",
-      offset = {6, 6},
+      offset = { 6, 6 },
     },
-  }
+  },
 })

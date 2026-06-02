@@ -10,12 +10,13 @@ current_dir="$(pwd)"
 opts=""
 
 # checking for different dirs
-case "$current_dir" in 
-    "/home/kiran/pics/screenshots")
-        opts="-rfs time"
-        ;;
-    *)
-        opts="-lo --no-user --no-time --no-permissions --icons"
+case "$current_dir" in
+  "/home/kiran/pics/screenshots")
+    opts="-rfs time"
+    ;;
+  *)
+    opts="-lo --no-user --no-time --no-permissions --icons"
+    ;;
 esac
 
 # calling the main command

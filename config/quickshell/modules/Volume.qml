@@ -20,7 +20,7 @@ PillModule {
   readonly property bool isMuted: (sink && sink.audio) ? sink.audio.muted : false
   readonly property string icon: {
     let device = isBluetooth ? "headset" : "speaker"
-    if (isMuted || 
+    if (isMuted ||
         volume === 0)  { return `../assets/volume/${device}/mute.svg` }
     if (volume <= 25)  { return `../assets/volume/${device}/low.svg` }
     if (volume <= 50)  { return `../assets/volume/${device}/mid.svg` }
@@ -56,7 +56,7 @@ PillModule {
     id: volumeSlider
     from: 0.0
     to: 1.0
-    Layout.preferredWidth: 100 
+    Layout.preferredWidth: 100
     implicitHeight: 24 // Important to make mouse work
     stepSize: 0.05
 

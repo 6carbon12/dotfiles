@@ -23,7 +23,7 @@ Singleton {
     let numStr = (bytes / Math.pow(k, i + 1)).toFixed(1);
 
     while (numStr.length < 5) {
-      numStr = "\u00A0" + numStr; 
+      numStr = "\u00A0" + numStr;
     }
 
     return numStr + " " + sizes[i];
@@ -32,7 +32,7 @@ Singleton {
   Process {
     id: wifiProc
     command: ["iwgetid", "-r", "wlan0"]
-    running: true 
+    running: true
 
     stdout: StdioCollector {
       onStreamFinished: {
@@ -60,7 +60,7 @@ Singleton {
   Process {
     id: speedMonitor
     command: [
-      "bash", "-c", 
+      "bash", "-c",
       "read rx1 < /sys/class/net/wlan0/statistics/rx_bytes 2>/dev/null || rx1=0; while sleep 2; do read rx2 < /sys/class/net/wlan0/statistics/rx_bytes 2>/dev/null || rx2=0; echo $(((rx2-rx1)/2)); rx1=$rx2; done"
     ]
     running: true

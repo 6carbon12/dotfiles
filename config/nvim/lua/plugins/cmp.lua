@@ -27,25 +27,24 @@ return {
         { name = "path" },
       }),
       formatting = {
-        fields = {'abbr', 'icon'},
+        fields = { "abbr", "icon" },
         format = require("lspkind").cmp_format({
           mode = "symbol",
-          preset = "codicons"
+          preset = "codicons",
         }),
       },
       window = {
         completion = {
           border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-          winhighlight = 'Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None',
+          winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
           col_offset = 0,
           side_padding = 1,
         },
         documentation = {
           border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-          winhighlight = 'Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None',
+          winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
         },
       },
     })
   end,
 }
-

@@ -14,7 +14,7 @@ hl.monitor({
 })
 
 -- Add monitor
-hl.on("monitor.added", function (_)
+hl.on("monitor.added", function(_)
   -- reload eww when new monitor is added
   hl.exec_cmd("touch ~/.config/eww/eww.yuck")
 end)

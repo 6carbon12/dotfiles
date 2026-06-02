@@ -7,7 +7,7 @@ import "modules"
 
 // TODO: Add ANIMATIONS
 
-// Creates a PanelWindow for each item in Quickshell.screens 
+// Creates a PanelWindow for each item in Quickshell.screens
 // And exposes the `screen` to PanelWindow as `modelData`
 Variants {
   model: Quickshell.screens
@@ -80,7 +80,7 @@ Variants {
     ModulesContainer {
       id: modulesCenter
       anchors {
-        top: parent.top 
+        top: parent.top
         horizontalCenter: parent.horizontalCenter
         topMargin: 2
       }
@@ -142,7 +142,7 @@ Variants {
         property bool isFull: bat.state === UPowerDeviceState.FullyCharged
         property bool isCritical: percent <= 15 && !isCharging
         property string icon: {
-          if (isCharging) { return "󰂄" } 
+          if (isCharging) { return "󰂄" }
           if (isOnAC) { return "" }
           if (percent >= 90) { return "󰂂" }
           if (percent >= 80) { return "󰂁" }
@@ -155,7 +155,7 @@ Variants {
           if (percent >= 10) { return "󰁺" }
           if (percent >= 0) { return "󰂎" }
         }
-        property bool isClicked: false 
+        property bool isClicked: false
         property string textMain: icon + " " + percent + "%"
         property string textAlt: (isOnAC ? " " : formatSeconds((isCharging ? bat.timeToFull : bat.timeToEmpty))) + " h -- " + bat.changeRate + " W"
 
@@ -164,7 +164,7 @@ Variants {
 
         MouseArea {
           id: batteryMouseArea
-          parent: battery 
+          parent: battery
           anchors.fill: parent
 
           onClicked: {

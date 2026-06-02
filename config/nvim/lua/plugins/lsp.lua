@@ -5,7 +5,7 @@ return {
       settings = {
         Lua = {
           diagnostics = {
-            globals = { 'vim' },
+            globals = { "vim" },
           },
         },
       },
@@ -14,15 +14,27 @@ return {
     vim.lsp.config("clangd", {
       on_attach = function(_, bufnr)
         local opts = { noremap = true, silent = true, buffer = bufnr }
-        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-        vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-      end
+        vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+        vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+      end,
     })
 
     vim.lsp.config("emmet_ls", {
       filetypes = {
-        "astro", "css", "eruby", "html", "htmlangular", "htmldjango", "javascriptreact", "less", "pug", "svelte", "templ", "typescriptreact", "vue"
-      }
+        "astro",
+        "css",
+        "eruby",
+        "html",
+        "htmlangular",
+        "htmldjango",
+        "javascriptreact",
+        "less",
+        "pug",
+        "svelte",
+        "templ",
+        "typescriptreact",
+        "vue",
+      },
     })
 
     vim.lsp.config("qmlls", {
@@ -33,5 +45,5 @@ return {
         client.server_capabilities.semanticTokensProvider = nil
       end,
     })
-  end
+  end,
 }

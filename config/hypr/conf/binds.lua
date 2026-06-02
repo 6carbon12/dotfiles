@@ -2,7 +2,7 @@ hl.config({
   binds = {
     hide_special_on_workspace_change = true,
     window_direction_monitor_fallback = false,
-  }
+  },
 })
 
 local mainMod = "SUPER"
@@ -28,18 +28,18 @@ hl.bind("XF86Launch7", hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh"))
 -- Window actions
 hl.bind(mainMod .. "+ X", hl.dsp.window.close())
 hl.bind(mainMod .. "+ F", hl.dsp.window.fullscreen())
-hl.bind(mainMod .. "+ SHIFT + F", hl.dsp.window.float({action = "toggle"}))
+hl.bind(mainMod .. "+ SHIFT + F", hl.dsp.window.float({ action = "toggle" }))
 
 -- Moving Focus
-hl.bind(mainMod .. "+ H", hl.dsp.focus({ direction = "l"}))
-hl.bind(mainMod .. "+ L", hl.dsp.focus({ direction = "r"}))
-hl.bind(mainMod .. "+ K", hl.dsp.focus({ direction = "u"}))
-hl.bind(mainMod .. "+ J", hl.dsp.focus({ direction = "d"}))
+hl.bind(mainMod .. "+ H", hl.dsp.focus({ direction = "l" }))
+hl.bind(mainMod .. "+ L", hl.dsp.focus({ direction = "r" }))
+hl.bind(mainMod .. "+ K", hl.dsp.focus({ direction = "u" }))
+hl.bind(mainMod .. "+ J", hl.dsp.focus({ direction = "d" }))
 
-hl.bind(mainMod .. "+ left",  hl.dsp.focus({ direction = "l"}))
-hl.bind(mainMod .. "+ right", hl.dsp.focus({ direction = "r"}))
-hl.bind(mainMod .. "+ up",    hl.dsp.focus({ direction = "u"}))
-hl.bind(mainMod .. "+ down",  hl.dsp.focus({ direction = "d"}))
+hl.bind(mainMod .. "+ left", hl.dsp.focus({ direction = "l" }))
+hl.bind(mainMod .. "+ right", hl.dsp.focus({ direction = "r" }))
+hl.bind(mainMod .. "+ up", hl.dsp.focus({ direction = "u" }))
+hl.bind(mainMod .. "+ down", hl.dsp.focus({ direction = "d" }))
 
 -- Moving Windows (within workspaces)
 hl.bind(mainMod .. "+ SHIFT + H", hl.dsp.window.move({ direction = "l" }))
@@ -76,15 +76,15 @@ hl.bind(mainMod .. "+ SHIFT + 8", hl.dsp.window.move({ workspace = 8 }))
 hl.bind(mainMod .. "+ SHIFT + 9", hl.dsp.window.move({ workspace = 9 }))
 hl.bind(mainMod .. "+ SHIFT + 0", hl.dsp.window.move({ workspace = 10 }))
 
-hl.bind(mainMod .. "+ CTRL + 1", hl.dsp.window.move({ workspace = 1,  follow = false}))
-hl.bind(mainMod .. "+ CTRL + 2", hl.dsp.window.move({ workspace = 2,  follow = false}))
-hl.bind(mainMod .. "+ CTRL + 3", hl.dsp.window.move({ workspace = 3,  follow = false}))
-hl.bind(mainMod .. "+ CTRL + 4", hl.dsp.window.move({ workspace = 4,  follow = false}))
-hl.bind(mainMod .. "+ CTRL + 5", hl.dsp.window.move({ workspace = 5,  follow = false}))
-hl.bind(mainMod .. "+ CTRL + 6", hl.dsp.window.move({ workspace = 6,  follow = false}))
-hl.bind(mainMod .. "+ CTRL + 7", hl.dsp.window.move({ workspace = 7,  follow = false}))
-hl.bind(mainMod .. "+ CTRL + 8", hl.dsp.window.move({ workspace = 8,  follow = false}))
-hl.bind(mainMod .. "+ CTRL + 9", hl.dsp.window.move({ workspace = 9,  follow = false}))
+hl.bind(mainMod .. "+ CTRL + 1", hl.dsp.window.move({ workspace = 1, follow = false }))
+hl.bind(mainMod .. "+ CTRL + 2", hl.dsp.window.move({ workspace = 2, follow = false }))
+hl.bind(mainMod .. "+ CTRL + 3", hl.dsp.window.move({ workspace = 3, follow = false }))
+hl.bind(mainMod .. "+ CTRL + 4", hl.dsp.window.move({ workspace = 4, follow = false }))
+hl.bind(mainMod .. "+ CTRL + 5", hl.dsp.window.move({ workspace = 5, follow = false }))
+hl.bind(mainMod .. "+ CTRL + 6", hl.dsp.window.move({ workspace = 6, follow = false }))
+hl.bind(mainMod .. "+ CTRL + 7", hl.dsp.window.move({ workspace = 7, follow = false }))
+hl.bind(mainMod .. "+ CTRL + 8", hl.dsp.window.move({ workspace = 8, follow = false }))
+hl.bind(mainMod .. "+ CTRL + 9", hl.dsp.window.move({ workspace = 9, follow = false }))
 hl.bind(mainMod .. "+ CTRL + 0", hl.dsp.window.move({ workspace = 10, follow = false }))
 
 -- Moving Windows (using mouse)
@@ -92,58 +92,65 @@ hl.bind(mainMod .. "+ mouse:272", hl.dsp.window.drag(), { mouse = true })
 
 -- Multimedia
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"), {
-    repeating = true, locked = true
+  repeating = true,
+  locked = true,
 })
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), {
-    repeating = true, locked = true
+  repeating = true,
+  locked = true,
 })
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), {
-    repeating = true, locked = true
+  repeating = true,
+  locked = true,
 })
 hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), {
-    repeating = true, locked = true
+  repeating = true,
+  locked = true,
 })
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), {
-   locked = true
+  locked = true,
 })
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), {
-   locked = true
+  locked = true,
 })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), {
-   locked = true
+  locked = true,
 })
-
 
 -- Brightness
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd([[~/.dotfiles/config/hypr/scripts/brightness.sh "+"]]), {
-   repeating = true, locked = true
+  repeating = true,
+  locked = true,
 })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd([[~/.dotfiles/config/hypr/scripts/brightness.sh "-"]]), {
-   repeating = true, locked = true
+  repeating = true,
+  locked = true,
 })
 hl.bind(mainMod .. "+ bracketright", hl.dsp.exec_cmd([[~/.dotfiles/config/hypr/scripts/brightness.sh "+"]]), {
-   repeating = true, locked = true
+  repeating = true,
+  locked = true,
 })
 hl.bind(mainMod .. "+ bracketleft", hl.dsp.exec_cmd([[~/.dotfiles/config/hypr/scripts/brightness.sh "-"]]), {
-   repeating = true, locked = true
+  repeating = true,
+  locked = true,
 })
 
--- Master layout 
+-- Master layout
 hl.bind(mainMod .. "+ N", hl.dsp.layout("rollnext"))
 hl.bind(mainMod .. "+ SHIFT + N", hl.dsp.layout("rollprev"))
 
 -- Minimization Solution
-hl.bind(mainMod .. "+ M", hl.dsp.window.move({workspace = "special:minimized", follow = false}))
+hl.bind(mainMod .. "+ M", hl.dsp.window.move({ workspace = "special:minimized", follow = false }))
 hl.bind(mainMod .. "+ SHIFT + M", hl.dsp.workspace.toggle_special("minimized"))
 
 -- Toggling internal monitor
-hl.bind(mainMod .. "+ ALT + D", function ()
+hl.bind(mainMod .. "+ ALT + D", function()
   local mons = hl.get_monitors()
   for _, mon in ipairs(mons) do
     if mon.name == "eDP-1" then
       hl.monitor({
         output = "eDP-1",
-        disabled = true
+        disabled = true,
       })
       return
     end
@@ -158,16 +165,14 @@ hl.bind(mainMod .. "+ ALT + D", function ()
   })
   -- Reload eww after re-enabling the monitor
   hl.exec_cmd("touch ~/.config/eww/eww.yuck")
-end
-)
+end)
 
 -- Left SUPER will move the cursor to bottom right
-hl.bind(mainMod .. "+ U", function ()
+hl.bind(mainMod .. "+ U", function()
   local width = hl.get_active_monitor().width
   local height = hl.get_active_monitor().height
-  hl.dispatch(hl.dsp.cursor.move({ x = width, y = height}))
-end,
-{ release = true })
+  hl.dispatch(hl.dsp.cursor.move({ x = width, y = height }))
+end, { release = true })
 
 -- Backup script
 hl.bind(mainMod .. "+ SHIFT + B", hl.dsp.exec_cmd("~/.config/hypr/scripts/bkup.sh"))
@@ -175,7 +180,7 @@ hl.bind(mainMod .. "+ SHIFT + B", hl.dsp.exec_cmd("~/.config/hypr/scripts/bkup.s
 -- SUBMAPS:
 -- Dashboard
 
-hl.bind(mainMod .. "+ D", function ()
+hl.bind(mainMod .. "+ D", function()
   hl.dispatch(hl.dsp.submap("dashboard"))
   hl.dispatch(hl.dsp.exec_cmd("eww open-many dashboard-main dashboard-external --toggle"))
 end)
@@ -184,7 +189,7 @@ local function is_inside(px, py, x, y, w, h)
   return (x <= px and px <= x + w) and (y <= py and py <= y + h)
 end
 
-hl.define_submap("dashboard", function ()
+hl.define_submap("dashboard", function()
   hl.bind("Space", hl.dsp.exec_cmd("playerctl play-pause"))
   hl.bind("Return", hl.dsp.exec_cmd("playerctl play-pause"))
 
@@ -200,13 +205,13 @@ hl.define_submap("dashboard", function ()
   hl.bind("left", hl.dsp.exec_cmd("playerctl previous"))
   hl.bind("comma", hl.dsp.exec_cmd("playerctl previous"))
 
-  hl.bind("catchall", function ()
+  hl.bind("catchall", function()
     hl.dispatch(hl.dsp.submap("reset"))
     hl.dispatch(hl.dsp.exec_cmd("eww open-many dashboard-main dashboard-external --toggle"))
   end)
 
-  hl.bind("mouse:272", function ()
-    local layers = hl.get_layers();
+  hl.bind("mouse:272", function()
+    local layers = hl.get_layers()
     for _, layer in ipairs(layers) do
       local active_mon = hl.get_active_monitor()
       -- hl.notification.create({text = "active mon: " .. active_mon.name .. "\nlayer monitor: " .. layer.monitor, timeout = 3000})
@@ -222,5 +227,5 @@ hl.define_submap("dashboard", function ()
       end
       ::continue::
     end
-  end,{ mouse = true, non_consuming = true })
+  end, { mouse = true, non_consuming = true })
 end)

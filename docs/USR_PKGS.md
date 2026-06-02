@@ -43,7 +43,7 @@ Packages to give a GUI desktop to be built on top `SYSTEM_PKGS`.
 * **zsh**: Interactive Shell.
 * **tmux**: Terminal Multiplexer.
 
-#### Must Have Utilities 
+#### Must Have Utilities
 *Modern replacements for standard unix tools.*
 * **zoxide**: Directory jumping (`cd` replacement).
 * **fzf**: Fuzzy finder.
@@ -79,15 +79,15 @@ Packages to give a GUI desktop to be built on top `SYSTEM_PKGS`.
 * **tesseract**: OCR backend
 * **tesseract-data-eng**: English data for `tesseract`
 
-## 6. Applications 
+## 6. Applications
 *Standalone applications for specific tasks.*
 
 * **emote**: Emoji Picker.
 * **firefox**: Web Browser.
 * **mpv**: Media Player.
 * **neovim**: Text editor
-    * *telescope:* `fzf`, `ripgrep`, `fd`  
-    * *tree-sitter-manager:* **tree-sitter-cli** 
+    * *telescope:* `fzf`, `ripgrep`, `fd`
+    * *tree-sitter-manager:* **tree-sitter-cli**
 * **qpdfview**: PDF Viewer.
 * **yazi**: File Manager (TUI).
     * *Requires:* **7zip** (for archive preview/extraction).

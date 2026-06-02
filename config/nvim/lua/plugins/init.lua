@@ -16,4 +16,3 @@ require("lazy").setup({
   require("plugins.guess-indent"),
   require("plugins.tree-sitter-manager"),
 })
-

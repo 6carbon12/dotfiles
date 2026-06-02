@@ -9,9 +9,9 @@ GREEN="\e[32m"
 YELLOW="\e[33m"
 RESET="\e[0m"
 
-log()     { echo -e "${YELLOW}[*] $*${RESET}"; }
+log() { echo -e "${YELLOW}[*] $*${RESET}"; }
 success() { echo -e "${GREEN}✔ $*${RESET}"; }
-error()   { echo -e "${RED}✖ $*${RESET}"; }
+error() { echo -e "${RED}✖ $*${RESET}"; }
 
 # -----------------------
 # Package Groups
@@ -83,7 +83,7 @@ FONTS=(ttf-jetbrains-mono-nerd ttf-orbitron noto-fonts)
 
 check_arch() {
   source /etc/os-release
-  if [[ "$ID" != "arch" && "$ID_LIKE" != *"arch"* ]]; then
+  if [[ $ID != "arch" && $ID_LIKE != *"arch"* ]]; then
     error "This script is only for Arch-based distributions!"
     exit 1
   fi
@@ -91,7 +91,7 @@ check_arch() {
 }
 
 install_yay() {
-  if ! command -v yay &>/dev/null; then
+  if ! command -v yay &> /dev/null; then
     log "Installing yay..."
     sudo pacman -S --noconfirm --needed base-devel git
     tmpdir=$(mktemp -d)
@@ -141,7 +141,7 @@ uninstall_all() {
 # -----------------------
 check_arch
 
-if [[ "${1:-}" == "--clean" ]]; then
+if [[ ${1:-} == "--clean" ]]; then
   uninstall_all
   exit 0
 fi
@@ -153,6 +153,5 @@ install_packages "${PACKAGES[@]}"
 
 log "Installing Fonts..."
 install_packages "${FONTS[@]}"
-
 
 success "All done! ✅"

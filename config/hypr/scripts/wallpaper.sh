@@ -14,7 +14,7 @@ case "$MODE" in
     NEW_IMAGE="$2"
 
     # Validate that a second argument was passed and that it is an existing file
-    if [[ -z "$NEW_IMAGE" || ! -f "$NEW_IMAGE" ]]; then
+    if [[ -z $NEW_IMAGE || ! -f $NEW_IMAGE ]]; then
       echo "Error: Please provide a valid path to an image."
       echo "Usage: $0 set /path/to/image.jpg"
       exit 1

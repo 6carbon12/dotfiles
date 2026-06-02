@@ -1,0 +1,25 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+
+  - repo: https://github.com/scop/pre-commit-shfmt
+    rev: v3.13.1-1
+    hooks:
+      - id: shfmt
+        args: ["-w", "-s", "-i", "2", "-sr", "-ci"]
+
+  - repo: https://github.com/JohnnyMorganz/StyLua
+    rev: v2.5.2
+    hooks:
+      - id: stylua-github
+
+  - repo: local
+    hooks:
+      - id: qmlformat
+        name: Format QML
+        entry: /usr/lib/qt6/bin/qmlformat --sort-imports --normalize --indent-width 2
+        language: system
+        files: \.qml$

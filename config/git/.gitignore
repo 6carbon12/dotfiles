@@ -2,7 +2,7 @@
 *.out
 
 # Backups
-*.bak 
+*.bak
 
 # node_modules
 node_modules/
@@ -11,5 +11,5 @@ node_modules/
 flake.nix
 .envrc
 
-# Build folder 
+# Build folder
 build/

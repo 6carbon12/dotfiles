@@ -7,4 +7,3 @@ return {
     vim.g.mkdp_filetypes = { "markdown" }
   end,
 }
-

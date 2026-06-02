@@ -13,7 +13,7 @@ Contains configuration directories that map to `~/.config/` and/or `~/`.
 * **System Definitions:** (e.g., `mime`, `user-dirs`) contain loose system files, these are wrapped in logical parent directories to prevent root clutter.
 * **Grouped Configs:** Complex setups like `gtk` (which manages both `~/.gtkrc-2.0` and `~/.config/gtk-3.0`) are grouped logically under one folder here.
 * **`_root/`**:
-    Contains a copy of real root with config files that have been modified/need to be tracked 
+    Contains a copy of real root with config files that have been modified/need to be tracked
     * All files are safely *copied* to root using `scripts/root.sh` (uses `rsync`)
     * Any update to root config files must first be done in `config/_root/` then be copied to real root using `scripts/root.sh`
     * **Safety**: The `scripts/root.sh` script automatically backs up any existing system files (with a timestamp) before overwriting them.
@@ -40,7 +40,7 @@ Contains the automation logic. Unlike `bin/`, these scripts are not added to `$P
 
 - **Plugins:** All plugins and themes are installed into `~/.local/share/<app-name>/plugins/` (handled by `user.sh`), never cloned inside this repo.
 - **Package Lists:** `pkglist-native.txt` and `pkglist-foreign.txt` are auto-generated via Pacman hooks to track installed software.
-- **History and Hashes:** Any file which stores data as in hashes or history must **NOT** be tracked  
+- **History and Hashes:** Any file which stores data as in hashes or history must **NOT** be tracked
 
 ## Setup
 

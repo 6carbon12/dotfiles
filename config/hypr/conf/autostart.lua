@@ -1,4 +1,4 @@
-hl.on("hyprland.start", function ()
+hl.on("hyprland.start", function()
   hl.exec_cmd("awww-daemon")
   hl.exec_cmd("~/.config/hypr/scripts/wallpaper.sh start")
   hl.exec_cmd("hypridle")

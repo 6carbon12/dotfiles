@@ -8,7 +8,6 @@ if [[ $1 == 'mount' ]]; then
   su kiran -c "/usr/bin/notify-send 'BACKUP DRIVE MOUNTED' '󰣇 󰘶 B to start backup'"
 fi
 
-
 if [[ $1 == 'unmount' ]]; then
   /usr/bin/systemd-umount /mnt
   su kiran -c "/usr/bin/notify-send 'BACKUP DRIVE UNMOUNTED'"

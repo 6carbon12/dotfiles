@@ -16,7 +16,7 @@ hl.config({
     touchdevice = {
       enabled = false,
     },
-  }
+  },
 })
 
 hl.device({

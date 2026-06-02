@@ -6,4 +6,3 @@ return {
     options = { "buffers", "curdir", "tabpages", "winsize" }, -- what's saved
   },
 }
-

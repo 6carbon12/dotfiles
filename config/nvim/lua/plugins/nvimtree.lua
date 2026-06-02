@@ -5,10 +5,10 @@ return {
   },
   config = function()
     require("nvim-tree").setup({
-      hijack_cursor = true,        -- cursor stays on file when opening
+      hijack_cursor = true, -- cursor stays on file when opening
       update_focused_file = {
-        enable = true,             -- auto-focus file in tree if it is in cwd
-        update_root = false,       -- don't change cwd to focus the file
+        enable = true, -- auto-focus file in tree if it is in cwd
+        update_root = false, -- don't change cwd to focus the file
       },
 
       actions = {
@@ -33,9 +33,8 @@ return {
       },
 
       filters = {
-        custom = { "^\\.git$" },    -- hide .git folder
+        custom = { "^\\.git$" }, -- hide .git folder
       },
     })
   end,
 }
-

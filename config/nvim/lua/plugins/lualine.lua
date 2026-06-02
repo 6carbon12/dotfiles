@@ -4,7 +4,7 @@ return {
   config = function()
     require("lualine").setup({
       options = {
-        theme = 'tokyonight',
+        theme = "tokyonight",
         section_separators = { left = "", right = "" },
         component_separators = { left = "", right = "" },
         disabled_filetypes = {
@@ -38,21 +38,21 @@ return {
             end,
             cond = function()
               return vim.v.hlsearch == 1
-            end
+            end,
           },
         },
         lualine_x = {
           {
-            function ()
+            function()
               local reg = vim.fn.reg_recording()
               if reg ~= "" then
                 return "REC @" .. reg
               end
               return ""
-            end
+            end,
           },
           "fileformat",
-          "filetype"
+          "filetype",
         },
         lualine_y = { "progress", "location" },
         lualine_z = {},
@@ -69,4 +69,3 @@ return {
     })
   end,
 }
-

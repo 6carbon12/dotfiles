@@ -8,5 +8,5 @@ hl.config({
     key_press_enables_dpms = true,
     focus_on_activate = true,
     background_color = "#463671FF",
-  }
+  },
 })

@@ -18,7 +18,7 @@ Rectangle {
 
   RowLayout {
     id: mainLayout
-    anchors.centerIn: parent 
+    anchors.centerIn: parent
     spacing: 0
     property alias text: mainText.text
     property int pWidth

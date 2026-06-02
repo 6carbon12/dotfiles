@@ -3,5 +3,5 @@ return {
   dependencies = {},
   config = function()
     require("tree-sitter-manager").setup()
-  end
+  end,
 }

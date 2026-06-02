@@ -6,7 +6,10 @@ local fmt = require("luasnip.extras.fmt").fmt
 local rep = require("luasnip.extras").rep
 
 return {
-  s("rfc", fmt([[
+  s(
+    "rfc",
+    fmt(
+      [[
     const {} = ({}) => {{
       return (
         <>
@@ -16,11 +19,13 @@ return {
     }};
 
     export default {};
-  ]], {
-    i(1, "ComponentName"),
-    i(2),
-    i(3, "Content"),
-    rep(1),
-  })),
+  ]],
+      {
+        i(1, "ComponentName"),
+        i(2),
+        i(3, "Content"),
+        rep(1),
+      }
+    )
+  ),
 }
-

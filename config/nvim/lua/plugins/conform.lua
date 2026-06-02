@@ -18,8 +18,10 @@ return {
         prettier_tailwind = {
           command = "prettier",
           args = {
-            "--plugin", "prettier-plugin-tailwindcss",
-            "--stdin-filepath", "$FILENAME",
+            "--plugin",
+            "prettier-plugin-tailwindcss",
+            "--stdin-filepath",
+            "$FILENAME",
           },
           stdin = true,
         },

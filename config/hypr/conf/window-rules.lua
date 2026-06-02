@@ -14,7 +14,7 @@ hl.window_rule({
     xwayland = true,
     float = true,
     fullscreen = false,
-    pin = false
+    pin = false,
   },
   no_focus = true,
 })

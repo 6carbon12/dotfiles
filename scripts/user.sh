@@ -11,41 +11,41 @@ CONFIG_DIR="$HOME/.config"
 
 declare -A DOTFILES_MAP=(
   # -- Directories in ~/.config
-  [alacritty]="$DOTFILES_DIR/config/alacritty"
-  [btop]="$DOTFILES_DIR/config/btop"
-  [clipse]="$DOTFILES_DIR/config/clipse"
-  [eww]="$DOTFILES_DIR/config/eww"
-  [fastfetch]="$DOTFILES_DIR/config/fastfetch"
-  [fuzzel]="$DOTFILES_DIR/config/fuzzel"
-  [gtk-3.0]="$DOTFILES_DIR/config/gtk/gtk-3.0"
-  [hypr]="$DOTFILES_DIR/config/hypr"
-  [kitty]="$DOTFILES_DIR/config/kitty"
-  [Kvantum]="$DOTFILES_DIR/config/Kvantum"
-  [mako]="$DOTFILES_DIR/config/mako"
-  [nvim]="$DOTFILES_DIR/config/nvim"
-  [qpdfview]="$DOTFILES_DIR/config/qpdfview"
-  [qt6ct]="$DOTFILES_DIR/config/qt6ct"
-  [tmux]="$DOTFILES_DIR/config/tmux"
-  [walker]="$DOTFILES_DIR/config/walker"
-  [waybar]="$DOTFILES_DIR/config/waybar"
-  [wofi]="$DOTFILES_DIR/config/wofi"
-  [yazi]="$DOTFILES_DIR/config/yazi"
-  [zsh]="$DOTFILES_DIR/config/zsh"
+  ["alacritty"]="$DOTFILES_DIR/config/alacritty"
+  ["btop"]="$DOTFILES_DIR/config/btop"
+  ["clipse"]="$DOTFILES_DIR/config/clipse"
+  ["eww"]="$DOTFILES_DIR/config/eww"
+  ["fastfetch"]="$DOTFILES_DIR/config/fastfetch"
+  ["fuzzel"]="$DOTFILES_DIR/config/fuzzel"
+  ["gtk-3.0"]="$DOTFILES_DIR/config/gtk/gtk-3.0"
+  ["hypr"]="$DOTFILES_DIR/config/hypr"
+  ["kitty"]="$DOTFILES_DIR/config/kitty"
+  ["Kvantum"]="$DOTFILES_DIR/config/Kvantum"
+  ["mako"]="$DOTFILES_DIR/config/mako"
+  ["nvim"]="$DOTFILES_DIR/config/nvim"
+  ["qpdfview"]="$DOTFILES_DIR/config/qpdfview"
+  ["qt6ct"]="$DOTFILES_DIR/config/qt6ct"
+  ["tmux"]="$DOTFILES_DIR/config/tmux"
+  ["walker"]="$DOTFILES_DIR/config/walker"
+  ["waybar"]="$DOTFILES_DIR/config/waybar"
+  ["wofi"]="$DOTFILES_DIR/config/wofi"
+  ["yazi"]="$DOTFILES_DIR/config/yazi"
+  ["zsh"]="$DOTFILES_DIR/config/zsh"
   # --- Loose Files in ~/.config
-  [mimeapps.list]="$DOTFILES_DIR/config/mime/mimeapps.list"
-  [pavucontrol.ini]="$DOTFILES_DIR/config/pavucontrol/pavucontrol.ini"
-  [user-dirs.conf]="$DOTFILES_DIR/config/user-dirs/user-dirs.conf"
-  [user-dirs.dirs]="$DOTFILES_DIR/config/user-dirs/user-dirs.dirs"
-  [user-dirs.locale]="$DOTFILES_DIR/config/user-dirs/user-dirs.locale"
+  ["mimeapps.list"]="$DOTFILES_DIR/config/mime/mimeapps.list"
+  ["pavucontrol.ini"]="$DOTFILES_DIR/config/pavucontrol/pavucontrol.ini"
+  ["user-dirs.conf"]="$DOTFILES_DIR/config/user-dirs/user-dirs.conf"
+  ["user-dirs.dirs"]="$DOTFILES_DIR/config/user-dirs/user-dirs.dirs"
+  ["user-dirs.locale"]="$DOTFILES_DIR/config/user-dirs/user-dirs.locale"
 )
 
 declare -A ROOT_DOTFILES_MAP=(
-  [.gitconfig]="$DOTFILES_DIR/config/git/.gitconfig"
-  [.gitignore]="$DOTFILES_DIR/config/git/.gitignore"
-  [.gtkrc-2.0]="$DOTFILES_DIR/config/gtk/.gtkrc-2.0"
-  [.p10k.zsh]="$DOTFILES_DIR/config/zsh/.p10k.zsh"
-  [.zshrc]="$DOTFILES_DIR/config/zsh/.zshrc"
-  [.zprofile]="$DOTFILES_DIR/config/zsh/.zprofile"
+  [".gitconfig"]="$DOTFILES_DIR/config/git/.gitconfig"
+  [".gitignore"]="$DOTFILES_DIR/config/git/.gitignore"
+  [".gtkrc-2.0"]="$DOTFILES_DIR/config/gtk/.gtkrc-2.0"
+  [".p10k.zsh"]="$DOTFILES_DIR/config/zsh/.p10k.zsh"
+  [".zshrc"]="$DOTFILES_DIR/config/zsh/.zshrc"
+  [".zprofile"]="$DOTFILES_DIR/config/zsh/.zprofile"
 )
 
 backup_and_link() {
@@ -53,13 +53,13 @@ backup_and_link() {
   local dest="$2"
 
   # If correct symlink exists, skip
-  if [[ -L "$dest" && "$(readlink "$dest")" == "$src" ]]; then
+  if [[ -L $dest && "$(readlink "$dest")" == "$src" ]]; then
     echo "  Skipping $dest (already linked)"
     return
   fi
 
   # Backup existing file
-  if [[ -e "$dest" || -L "$dest" ]]; then
+  if [[ -e $dest || -L $dest ]]; then
     mv "$dest" "$dest.bak-$(date +%Y%m%d-%H%M%S)"
     echo "  Backed up existing $dest -> $dest.bak-$(date +%Y%m%d-%H%M%S)"
   fi
@@ -141,7 +141,7 @@ finalize() {
 
   echo -e "${YELLOW}[*] Making App Launcher ${RESET}"
   TMP_DIR=$(mktemp -d)
-  git clone https://github.com/6carbon12/arka $TMP_DIR >/dev/null 2>&1
+  git clone https://github.com/6carbon12/arka $TMP_DIR > /dev/null 2>&1
   cd $TMP_DIR
   make > /dev/null 2>&1
   mv arka ~/.local/bin/arka

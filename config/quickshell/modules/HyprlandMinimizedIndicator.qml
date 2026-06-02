@@ -1,6 +1,6 @@
-import QtQuick 
+import QtQuick
 import QtQuick.Layouts
-import Quickshell 
+import Quickshell
 import Quickshell.Hyprland
 import "../globals"
 
@@ -16,7 +16,7 @@ Text {
 
   MouseArea {
     anchors.fill: parent
-    anchors.margins: -8 
+    anchors.margins: -8
     cursorShape: Qt.PointingHandCursor
     onClicked: {
       Quickshell.execDetached(["hyprctl", "dispatch", "hl.dsp.workspace.toggle_special('minimized')"])

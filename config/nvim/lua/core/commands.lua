@@ -1,7 +1,7 @@
 -- helper to delete then maybe show Alpha
 local function delete_and_alpha(cmd, args)
   vim.cmd(cmd .. (args == "" and "" or " " .. args))
-  if #vim.fn.getbufinfo({buflisted = 1}) == 1 then
+  if #vim.fn.getbufinfo({ buflisted = 1 }) == 1 then
     require("alpha").start(true)
   end
 end

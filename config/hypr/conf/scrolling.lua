@@ -4,5 +4,5 @@ hl.config({
     column_width = 0.5,
     focus_fit_method = 0,
     explicit_column_widths = 0,
-  }
+  },
 })

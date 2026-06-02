@@ -4,10 +4,9 @@ return {
     require("Comment").setup({
       sticky = true,
       toggler = {
-        line = '<leader>/'
-      }
+        line = "<leader>/",
+      },
     })
   end,
   lazy = false, -- Load on startup
 }
-

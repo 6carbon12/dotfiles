@@ -5,10 +5,17 @@ local i = ls.insert_node
 
 return {
   s("log", {
-    t("console.log("), i(1, "msg"), t(")")
+    t("console.log("),
+    i(1, "msg"),
+    t(")"),
   }),
   s("func", {
-    t("function "), i(1, "name"), t("("), i(2), t({") {", "\t"}), i(3), t({"", "}"})
+    t("function "),
+    i(1, "name"),
+    t("("),
+    i(2),
+    t({ ") {", "\t" }),
+    i(3),
+    t({ "", "}" }),
   }),
 }
-
