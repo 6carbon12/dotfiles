@@ -100,11 +100,9 @@ hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO
   locked = true,
 })
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), {
-  repeating = true,
   locked = true,
 })
 hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), {
-  repeating = true,
   locked = true,
 })
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), {
