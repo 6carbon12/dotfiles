@@ -12,10 +12,9 @@ Rectangle {
   property alias spacing: mainLayout.spacing
   property int innerHeight: height - (paddingY * 2)
 
-
   width: mainLayout.implicitWidth + (paddingX * 2)
   radius: 32
-  color: Theme.darkGray
+  color: Qt.alpha(Theme.darkGray, 0.7)
 
   RowLayout {
     id: mainLayout
