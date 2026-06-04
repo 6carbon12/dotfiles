@@ -1,3 +1,5 @@
+//@ pragma UseQApplication
+pragma ComponentBehavior: Bound
 import QtQuick
 import Quickshell
 import Quickshell.Services.UPower
@@ -38,7 +40,7 @@ Variants {
       }
 
       paddingX: 8
-      spacing: 12
+      spacing: 8
       height: parent.height - 2
 
       // TODO: Rewrite dashboard in Quickshell
@@ -63,6 +65,9 @@ Variants {
           }
         }
       }
+
+      Tray {}
+
       HyprlandMinimizedIndicator {}
     }
 
