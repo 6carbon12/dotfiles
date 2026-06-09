@@ -11,6 +11,8 @@ Singleton {
   property string ssid: "Searching..."
   property bool isConnected: ssid !== "" && ssid !== "Searching..." && ssid !== "Disconnected"
   property string rxSpeed: "  0.0 KB/s"
+  property int signalStrength: 0
+  property string signalStrengthIcon: "low"
 
   // Formatting function
   function formatSpeed(bytes) {
@@ -43,6 +45,44 @@ Singleton {
   }
 
   Process {
+    id: wifiIconProc
+    command: ["iw", "dev", "wlan0", "link"]
+    running: true
+
+    stdout: StdioCollector {
+      onStreamFinished: {
+        const output = this.text;
+
+        const match = output.match(/signal:\s+(-?\d+)\s+dBm/);
+
+        if (match && match[1]) {
+          // Convert the captured string to an integer
+          root.signalStrength = parseInt(match[1], 10);
+
+          // Categorize into High, Mid, or Low stages
+          if (root.signalStrength >= -60) {
+            root.signalStrengthIcon = "high";
+          } else if (root.signalStrength >= -75) {
+            root.signalStrengthIcon = "mid";
+          } else {
+            root.signalStrengthIcon = "low";
+          }
+
+          console.log("Processed Signal: " + root.signalStrength + " dBm (" + root.signalStrengthIcon + ")");
+        }
+      }
+    }
+  }
+
+  Timer {
+    interval: 5000
+    running: true
+    repeat: true
+    triggeredOnStart: true
+    onTriggered: wifiIconProc.running = true
+  }
+
+  Process {
     id: wifiMonitor
     command: ["iw", "event"]
     running: true
@@ -50,6 +90,7 @@ Singleton {
     stdout: SplitParser {
       onRead: (data) => {
         wifiProc.running = true;
+        wifiIconProc.running = true;
       }
     }
     onRunningChanged: {

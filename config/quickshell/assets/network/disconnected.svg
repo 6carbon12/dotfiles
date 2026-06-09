@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="24px"
+   viewBox="0 -960 960 960"
+   width="24px"
+   fill="#1a1b26"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="disconnected.svg"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="24.416667"
+     inkscape:cx="4.7098976"
+     inkscape:cy="15.645051"
+     inkscape:window-width="2392"
+     inkscape:window-height="1382"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <path
+     d="m 267.36842,-355.78948 -88.42105,-88.42105 q 25.26316,-24.21053 54.21052,-43.68421 28.94737,-19.47368 59.47369,-34.21053 L 176.84211,-603.1579 q -24.21053,14.73684 -45.26316,32.10527 -21.05263,17.36842 -42.105266,37.36842 L 0,-623.1579 Q 15.789474,-637.89474 32.631579,-652.10527 49.473684,-666.31578 67.368421,-680 l -61.0526315,-43.1579 59.9999995,-85.26316 827.368421,578.94737 -60,86.31579 -412.63158,-289.47368 q -43.15789,8.42105 -82.10526,27.36842 Q 300,-386.31579 267.36842,-355.78948 Z M 422.10526,-687.36843 280,-787.36843 q 48.42105,-14.73684 98.42105,-22.10526 50,-7.36842 101.57895,-7.36842 134.73684,0 258.94737,50 124.21052,50 221.05263,143.68421 l -89.47368,89.47368 Q 791.57895,-609.47369 690.52632,-650 589.47368,-690.52632 480,-690.52632 q -14.73684,0 -28.94737,0.52632 -14.21052,0.52631 -28.94737,2.63157 z m -1.57894,519.47369 q -24.73685,-24.73684 -24.73685,-59.47369 0,-34.73684 24.73685,-59.47368 24.73684,-24.73684 59.47368,-24.73684 34.73684,0 59.47368,24.73684 24.73685,24.73684 24.73685,59.47368 0,34.73685 -24.73685,59.47369 -24.73684,24.73684 -59.47368,24.73684 -34.73684,0 -59.47368,-24.73684 z"
+     id="path1"
+     style="stroke-width:1.05263" />
+</svg>
