@@ -36,7 +36,8 @@ PillModule {
     id: volIcon
     source: sound.icon
     cache: false
-    Layout.preferredWidth: 16
+    // Use different sizes of bluetooth and speaker since the SVGs of headset and speaker are of different sizes
+    Layout.preferredWidth: isBluetooth ? 18 : 16
     sourceSize.width: Layout.preferredWidth
     sourceSize.height: height
     fillMode: Image.PreserveAspectFit
