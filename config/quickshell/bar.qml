@@ -126,7 +126,7 @@ Variants {
 
       PillModule {
         id: battery
-        paddingX: 12
+        paddingX: 16
 
         function formatSeconds(secs) {
           let hours = Math.floor(secs / 3600);
@@ -181,7 +181,7 @@ Variants {
       // TODO: Show a custom made calender widget when clicked
       PillModule {
         id: clock
-        paddingX: 12
+        paddingX: 16
         displayText: Time.time
         color: Theme.colors.primary
       }
