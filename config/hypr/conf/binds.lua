@@ -165,7 +165,7 @@ hl.bind(mainMod .. "+ ALT + D", function()
   hl.exec_cmd("touch ~/.config/eww/eww.yuck")
 end)
 
--- Left SUPER will move the cursor to bottom right
+-- Left SUPER + U[nclutter] will move the cursor to bottom right
 hl.bind(mainMod .. "+ U", function()
   local width = hl.get_active_monitor().width
   local height = hl.get_active_monitor().height
@@ -176,16 +176,46 @@ end, { release = true })
 hl.bind(mainMod .. "+ SHIFT + B", hl.dsp.exec_cmd("~/.config/hypr/scripts/bkup.sh"))
 
 -- SUBMAPS:
--- Dashboard
 
+-- Arrow
+hl.bind(mainMod .. "+ A", hl.dsp.submap("arrow"))
+
+hl.define_submap("arrow", function()
+  hl.bind("H", function()
+    hl.dispatch(hl.dsp.send_key_state({ mods = "", key = "left", state = "down" }))
+    hl.dispatch(hl.dsp.send_key_state({ mods = "", key = "left", state = "up" }))
+  end, { repeating = true })
+  hl.bind("J", function()
+    hl.dispatch(hl.dsp.send_key_state({ mods = "", key = "down", state = "down" }))
+    hl.dispatch(hl.dsp.send_key_state({ mods = "", key = "down", state = "up" }))
+  end, { repeating = true })
+  hl.bind("K", function()
+    hl.dispatch(hl.dsp.send_key_state({ mods = "", key = "up", state = "down" }))
+    hl.dispatch(hl.dsp.send_key_state({ mods = "", key = "up", state = "up" }))
+  end, { repeating = true })
+  hl.bind("L", function()
+    hl.dispatch(hl.dsp.send_key_state({ mods = "", key = "right", state = "down" }))
+    hl.dispatch(hl.dsp.send_key_state({ mods = "", key = "right", state = "up" }))
+  end, { repeating = true })
+  hl.bind("Return", function()
+    hl.dispatch(hl.dsp.send_key_state({ mods = "", key = "Return", state = "down" }))
+    hl.dispatch(hl.dsp.send_key_state({ mods = "", key = "Return", state = "up" }))
+    hl.dispatch(hl.dsp.submap("reset"))
+  end)
+  hl.bind(mainMod .. "+ A", function()
+    hl.dispatch(hl.dsp.submap("reset"))
+  end)
+  hl.bind("Escape", function()
+    hl.dispatch(hl.dsp.pass({ window = hl.get_active_window() }))
+    hl.dispatch(hl.dsp.submap("reset"))
+  end)
+end)
+
+-- Dashboard
 hl.bind(mainMod .. "+ D", function()
   hl.dispatch(hl.dsp.submap("dashboard"))
   hl.dispatch(hl.dsp.exec_cmd("eww open-many dashboard-main dashboard-external --toggle"))
 end)
-
-local function is_inside(px, py, x, y, w, h)
-  return (x <= px and px <= x + w) and (y <= py and py <= y + h)
-end
 
 hl.define_submap("dashboard", function()
   hl.bind("Space", hl.dsp.exec_cmd("playerctl play-pause"))
@@ -203,27 +233,13 @@ hl.define_submap("dashboard", function()
   hl.bind("left", hl.dsp.exec_cmd("playerctl previous"))
   hl.bind("comma", hl.dsp.exec_cmd("playerctl previous"))
 
-  hl.bind("catchall", function()
+  hl.bind("Escape", function()
     hl.dispatch(hl.dsp.submap("reset"))
     hl.dispatch(hl.dsp.exec_cmd("eww open-many dashboard-main dashboard-external --toggle"))
   end)
 
-  hl.bind("mouse:272", function()
-    local layers = hl.get_layers()
-    for _, layer in ipairs(layers) do
-      local active_mon = hl.get_active_monitor()
-      -- hl.notification.create({text = "active mon: " .. active_mon.name .. "\nlayer monitor: " .. layer.monitor, timeout = 3000})
-      if layer.layer ~= 3 or (active_mon and layer.monitor.name ~= active_mon.name) then
-        goto continue
-      end
-
-      local cursor_pos = hl.get_cursor_pos()
-
-      if cursor_pos and (not is_inside(cursor_pos.x, cursor_pos.y, layer.x, layer.y, layer.w, layer.h)) then
-        hl.dispatch(hl.dsp.submap("reset"))
-        hl.dispatch(hl.dsp.exec_cmd("eww open-many dashboard-main dashboard-external --toggle"))
-      end
-      ::continue::
-    end
-  end, { mouse = true, non_consuming = true })
+  hl.bind(mainMod .. "+ D", function()
+    hl.dispatch(hl.dsp.submap("reset"))
+    hl.dispatch(hl.dsp.exec_cmd("eww open-many dashboard-main dashboard-external --toggle"))
+  end)
 end)
