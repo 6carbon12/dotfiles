@@ -1,17 +1,16 @@
 import QtQuick
 import QtQuick.Layouts
-import Quickshell
 import Quickshell.Hyprland
 import "../globals"
-import "../components"
 
 RowLayout {
   spacing: 8
 
   Repeater {
-    model: Hyprland.workspaces.values
+    model: Hyprland.workspaces
 
     Rectangle {
+      id: workspace
       property bool isSpecial: modelData.name.startsWith("special:")
       property bool isActive: modelData.focused
       property bool isHovered: mouseArea.containsMouse
@@ -20,11 +19,28 @@ RowLayout {
       visible: !isSpecial && isSameMon
       Layout.preferredHeight: 28
       Layout.preferredWidth: isActive ? 44 : 30
-      radius: 16 // Exactly half the height guarantees perfect rounded edges
+      radius: height / 2
 
       color: isHovered ? (Theme.colors.accent) : (isActive ? Theme.colors.primary : "transparent")
-      border.width: (isActive || isHovered) ? 0 : 1
-      border.color: (isActive || isHovered) ? "transparent" : Theme.colors.primary
+      border {
+        width: 1
+        color: isHovered ? Theme.colors.accent : Theme.colors.primary
+      }
+
+      Behavior on Layout.preferredWidth { NumberAnimation { duration: 150; } }
+      Behavior on color { ColorAnimation { duration: 150; } }
+
+      // Opening Animation
+      scale: 0
+      opacity: 0
+
+      ParallelAnimation {
+        id: entryAnim
+        NumberAnimation { target: workspace; property: "opacity"; to: 1.0; duration: 200 }
+        NumberAnimation { target: workspace; property: "scale"; to: 1.0; duration: 200 }
+      }
+
+      Component.onCompleted: entryAnim.start()
 
       Text {
         anchors.fill: parent
@@ -33,6 +49,7 @@ RowLayout {
         horizontalAlignment: Text.AlignHCenter
         color: isHovered ? (Theme.colors.background) : (isActive ? Theme.colors.background: Theme.colors.primary)
         font: Theme.mainFont.normal
+        Behavior on color { ColorAnimation {duration: 150; } }
       }
 
       MouseArea {
