@@ -7,6 +7,9 @@ Rectangle {
   Layout.preferredWidth: mainLayout.implicitWidth + (paddingX * 2)
   height: 28
   radius: height / 2
+  Behavior on Layout.preferredWidth {
+    NumberAnimation {duration: 150}
+  }
 
   default property alias innerContent: mainLayout.data
 
