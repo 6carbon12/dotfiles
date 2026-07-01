@@ -43,3 +43,9 @@ hl.window_rule({
   match = { float = false },
   no_shadow = true,
 })
+
+hl.window_rule({
+  name = "float-launcher",
+  match = { class = "arka" },
+  float = true,
+})
