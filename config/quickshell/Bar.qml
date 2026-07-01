@@ -1,6 +1,7 @@
 //@ pragma UseQApplication
 pragma ComponentBehavior: Bound
 import QtQuick
+import QtQuick.Layouts
 import Quickshell
 import Quickshell.Services.UPower
 import "globals"
@@ -182,8 +183,24 @@ Variants {
       PillModule {
         id: clock
         paddingX: 16
-        displayText: Time.time
+        hasText: false
         color: Theme.colors.primary
+
+        property bool clicked: false
+
+        Text {
+          text: clock.clicked ? Time.day + ', ' + Time.date : Time.time
+          font: Theme.mainFont.bold
+          color: Theme.colors.background
+          Layout.topMargin: 2
+
+          MouseArea {
+            anchors.fill: parent
+            onClicked: {
+              clock.clicked = !clock.clicked
+            }
+          }
+        }
       }
     }
   }
