@@ -84,7 +84,7 @@ Packages to give a GUI desktop to be built on top `SYSTEM_PKGS`.
 
 * **emote**: Emoji Picker.
 * **firefox**: Web Browser.
-* **mpv**: Media Player.
+* **celluloid**: Media Player.
 * **neovim**: Text editor
     * *telescope:* `fzf`, `ripgrep`, `fd`
     * *tree-sitter-manager:* **tree-sitter-cli**

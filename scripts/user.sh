@@ -23,6 +23,7 @@ declare -A DOTFILES_MAP=(
   ["Kvantum"]="$DOTFILES_DIR/config/Kvantum"
   ["mako"]="$DOTFILES_DIR/config/mako"
   ["nvim"]="$DOTFILES_DIR/config/nvim"
+  ["mpv"]="$DOTFILES_DIR/config/mpv"
   ["qpdfview"]="$DOTFILES_DIR/config/qpdfview"
   ["qt6ct"]="$DOTFILES_DIR/config/qt6ct"
   ["tmux"]="$DOTFILES_DIR/config/tmux"

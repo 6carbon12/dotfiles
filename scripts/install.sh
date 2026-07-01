@@ -68,6 +68,7 @@ PACKAGES=(hyprland
   7zip
   firefox
   mpv
+  celluloid
   qpdfview
   emote
   neovim
