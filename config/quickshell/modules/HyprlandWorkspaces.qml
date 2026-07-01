@@ -31,13 +31,12 @@ RowLayout {
       Behavior on color { ColorAnimation { duration: 150; } }
 
       // Opening Animation
-      scale: 0
       opacity: 0
 
       ParallelAnimation {
         id: entryAnim
         NumberAnimation { target: workspace; property: "opacity"; to: 1.0; duration: 200 }
-        NumberAnimation { target: workspace; property: "scale"; to: 1.0; duration: 200 }
+        NumberAnimation { target: workspace; property: "Layout.preferredWidth"; from: 0; to: workspace.isActive ? 44 : 30; duration: 150 }
       }
 
       Component.onCompleted: entryAnim.start()
