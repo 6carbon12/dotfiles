@@ -15,3 +15,6 @@ config/gtk/gtk-3.0/bookmarks
 config/waybar/scripts/minimized_dot
 
 config/quickshell/.qmlls.ini
+
+# Complied
+bin/arka
