@@ -91,15 +91,15 @@ hl.bind(mainMod .. "+ CTRL + 0", hl.dsp.window.move({ workspace = 10, follow = f
 hl.bind(mainMod .. "+ mouse:272", hl.dsp.window.drag(), { mouse = true })
 
 -- Multimedia
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"), {
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("qs ipc call volumeOSD volumeUp"), {
   repeating = true,
   locked = true,
 })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), {
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("qs ipc call volumeOSD volumeDown"), {
   repeating = true,
   locked = true,
 })
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), {
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd("qs ipc call volumeOSD mute"), {
   locked = true,
 })
 hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), {
