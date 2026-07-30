@@ -1,15 +1,19 @@
 [user]
 	name = Kiran S
 	email = 6carbon12.oss@proton.me
-	signingkey = 3D4F0EB801D93E1C
+	signingkey = ~/.ssh/oss.pub
 [init]
 	defaultBranch = master
 [color]
 	ui = auto
 [core]
 	editor = nvim
-  excludesfile = ~/.dotfiles/cli/git/.gitignore
+  excludesfile = ~/.gitignore
 [commit]
 	gpgSign = true
 [credential]
   helper = cache --timeout=3600
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = ~/.ssh/allowed_signers
