@@ -27,9 +27,8 @@ PACKAGES=(hyprland
   zram-generator
   xorg-xhost
   waybar
-  socat
   eww
-  mako
+  swaync
   libnotify
   nordzy-hyprcursors
   brightnessctl

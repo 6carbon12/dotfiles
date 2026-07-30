@@ -1,0 +1,246 @@
+@define-color bg-base #1a1b26;
+@define-color bg-surface #24283b;
+@define-color bg-surface-hover #2f334d;
+@define-color text-main #c0caf5;
+@define-color text-muted #565f89;
+@define-color accent-blue #7aa2f7;
+@define-color accent-blue-hover #8db0f8;
+@define-color shadow-color rgba(10, 10, 16, 0.6);
+@define-color drop-shadow rgba(0, 0, 0, 0.4);
+
+* {
+    font-family: "JetBrains Mono", "Nerd Font", sans-serif;
+    background-clip: padding-box;
+}
+
+/* Base Control Center */
+.control-center {
+    background-color: @bg-base;
+    color: @text-main;
+    border-radius: 12px;
+    border: 2px solid @bg-surface;
+    box-shadow: 0px 8px 24px 4px @shadow-color;
+}
+
+/* MPRIS Widget */
+.widget-mpris {
+    background-color: transparent;
+    margin: 12px 8px;
+    padding: 0;
+}
+
+.widget-mpris > box > button {
+    background-color: transparent;
+    color: @text-muted;
+    border-radius: 8px;
+    min-width: 24px;
+    margin: 12px 4px;
+    transition: all 0.2s ease-in-out;
+}
+
+.widget-mpris > box > button:hover {
+    background-color: @bg-surface;
+    color: @accent-blue;
+}
+
+.widget-mpris-player {
+    background-color: @bg-surface;
+    border-radius: 12px;
+    padding: 12px;
+    margin: 0px;
+}
+
+.widget-mpris-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: @accent-blue;
+}
+
+.widget-mpris-subtitle {
+    font-size: 0.9rem;
+    color: @text-main;
+}
+
+.widget-mpris-album-art {
+    border-radius: 8px;
+}
+
+/* Toggles Grid */
+.widget-buttons-grid {
+    margin: 0px 12px 12px 12px;
+    font-size: 1.5rem;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+    background-color: @bg-surface;
+    color: @text-main;
+    border-radius: 12px;
+    padding: 20px 0px;
+    margin: 4px;
+    min-width: 220px;
+    transition: all 0.2s ease-in-out;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+    background-color: @bg-surface-hover;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
+    background-color: @accent-blue;
+    color: @bg-base;
+}
+
+/* Header & Do Not Disturb */
+.widget-dnd {
+    margin: 4px 16px 12px 16px;
+    background-color: transparent;
+    color: @accent-blue;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.widget-dnd > switch {
+    background-color: @bg-surface;
+    border-radius: 12px;
+    border: 1px solid @text-muted;
+    margin-left: auto;
+}
+
+.widget-dnd > switch:checked {
+    background-color: @accent-blue;
+    border: 1px solid @accent-blue;
+}
+
+.widget-dnd > switch slider {
+    background-color: @text-main;
+    border-radius: 12px;
+}
+
+/* Notification Layout Reset */
+.widget-notifications > list,
+.widget-notifications > list > row,
+.widget-notifications > list > row:focus,
+.widget-notifications > list > row:hover,
+.widget-notifications > list > row:selected {
+    margin: 0px;
+    padding: 0px;
+    background-color: transparent;
+    border-radius: 0px;
+    box-shadow: none;
+    outline: none;
+}
+
+/* 1. Shift horizontal constraints to the root container */
+.widget-notifications {
+    margin: 0px 12px; /* Matches the 12px side margins of your top widgets */
+    padding: 0px;
+}
+
+/* 2. Strip all layout constraints from nested GTK layers */
+.widget-notifications list,
+.widget-notifications row,
+.widget-notifications row:focus,
+.widget-notifications row:hover,
+.notification-row,
+.notification-background {
+    margin: 0px;
+    padding: 0px;
+    background-color: transparent;
+    border-radius: 0px;
+    box-shadow: none;
+    outline: none;
+}
+
+/* 3. Apply ONLY vertical margins to the card itself */
+.notification-background .notification {
+    background-color: @bg-surface;
+    border-radius: 12px;
+    margin: 8px 0px; /* 0px side margin forces the card to stretch fully */
+    padding: 12px;
+    border: 1px solid transparent;
+    box-shadow: 0px 4px 8px @drop-shadow;
+    transition: all 0.2s ease;
+}
+
+.notification-background .notification:hover {
+    border: 1px solid @accent-blue;
+}
+
+.notification-content .summary {
+    color: @accent-blue;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-right: 1rem;
+}
+
+.notification-content .time {
+    color: @text-muted;
+    font-size: 0.9rem;
+}
+
+.notification-content .body {
+    color: @text-main;
+    font-size: 0.9rem;
+}
+
+/* Notification Actions */
+.notification-default-action,
+.notification-action {
+    background-color: transparent;
+    color: @text-main;
+    border-radius: 6px;
+}
+
+.notification-action:hover {
+    background-color: @bg-surface-hover;
+    color: @accent-blue;
+}
+
+/* Notification Close Button */
+.close-button {
+    background-color: @bg-surface-hover;
+    color: @text-main;
+    border-radius: 100px;
+    margin-top: 16px;   /* Pushes the button lower */
+    margin-right: 8px; /* Pulls the button inward from the right edge */
+    padding: 0px 0px;  /* Reduces the overall footprint of the button */
+}
+
+.close-button:hover {
+    background-color: @bg-surface-hover;
+    color: @accent-blue;
+}
+
+/* Bottom Power Buttons Override */
+.power {
+  margin: 0px 12px 12px 12px;
+}
+
+/* Let the flowbox naturally align left, we just control button geometry */
+.power > flowbox {
+  margin: 0px;
+  padding: 0px;
+}
+
+.power > flowbox > flowboxchild > button {
+  /* Set equal dimensions to create the squaricle shape */
+  min-width: 48px;
+  min-height: 48px;
+
+  /* Adjust border-radius for the squaricle look */
+  border-radius: 8px;
+
+  padding: 0px;
+  font-size: 1.2rem;
+  margin: 4px;
+
+  /* Ensure the button doesn't shrink regardless of container layout */
+  flex: none;
+}
+
+/* Shutdown button hover */
+.power > flowbox > flowboxchild:nth-child(3) > button:hover {
+  color: #f7768e;
+  background-color: #f7768e;
+  color: @bg-base;
+}

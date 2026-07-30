@@ -214,7 +214,7 @@ end)
 -- Dashboard
 hl.bind(mainMod .. "+ D", function()
   hl.dispatch(hl.dsp.submap("dashboard"))
-  hl.dispatch(hl.dsp.exec_cmd("eww open-many dashboard-main dashboard-external --toggle"))
+  hl.dispatch(hl.dsp.exec_cmd("swaync-client -t"))
 end)
 
 hl.define_submap("dashboard", function()
@@ -235,11 +235,11 @@ hl.define_submap("dashboard", function()
 
   hl.bind("Escape", function()
     hl.dispatch(hl.dsp.submap("reset"))
-    hl.dispatch(hl.dsp.exec_cmd("eww open-many dashboard-main dashboard-external --toggle"))
+    hl.dispatch(hl.dsp.exec_cmd("swaync-client -t"))
   end)
 
   hl.bind(mainMod .. "+ D", function()
     hl.dispatch(hl.dsp.submap("reset"))
-    hl.dispatch(hl.dsp.exec_cmd("eww open-many dashboard-main dashboard-external --toggle"))
+    hl.dispatch(hl.dsp.exec_cmd("swaync-client -t"))
   end)
 end)
