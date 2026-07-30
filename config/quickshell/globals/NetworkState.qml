@@ -67,8 +67,6 @@ Singleton {
           } else {
             root.signalStrengthIcon = "low";
           }
-
-          console.log("Processed Signal: " + root.signalStrength + " dBm (" + root.signalStrengthIcon + ")");
         }
       }
     }
