@@ -29,3 +29,6 @@ require("plugins.init")
 
 -- Keymaps
 require("core.keymaps")
+
+-- Theme
+require("core.theme")

@@ -38,10 +38,9 @@ return {
     })
 
     vim.lsp.config("qmlls", {
-      cmd = { "qmlls", "-I", "/usr/lib/qt6/qml", "-I", "/usr/lib/qt6/qml/Quickshell" },
+      cmd = { "/usr/lib/qt6/bin/qmlls" },
       filetypes = { "qml" },
       on_attach = function(client, _)
-        -- The correct, crash-free way to disable semantic highlighting
         client.server_capabilities.semanticTokensProvider = nil
       end,
     })

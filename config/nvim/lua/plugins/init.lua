@@ -15,4 +15,5 @@ require("lazy").setup({
   require("plugins.autopairs"),
   require("plugins.guess-indent"),
   require("plugins.tree-sitter-manager"),
+  require("plugins.gitsigns"),
 })
