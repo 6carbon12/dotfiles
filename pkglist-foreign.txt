@@ -1,10 +1,14 @@
 64gram-desktop-bin
+calculix-ccx
 clipse
 emote
 eww
 harmonymusic
 nordzy-hyprcursors
+orca-slicer-bin
+packettracer
 qpdfview
+sdkmanager
 snapper-rollback
 tokyonight-gtk-theme-git
 ttf-orbitron
