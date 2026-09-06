@@ -80,6 +80,12 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 # pyenv root (where all different python versions are stored)
 export PYENV_ROOT="$HOME/.local/share/pyenv"
 
+# Android
+export ANDROID_HOME="$HOME/android/sdk"
+export ANDROID_SDK="$ANDROID_HOME"
+export ANDROID_NDK="$ANDROID_HOME/ndk"
+export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools"
+
 ################
 # APP SPECIFIC #
 ################
@@ -89,7 +95,9 @@ eval "$(zoxide init zsh)"
 alias cd="z"
 
 # pyenv
-eval "$(pyenv init -)"
+if which pyenv > /dev/null; then
+  eval "$(pyenv init -)"
+fi
 
 # YAZI
 # Wrapper to update zoxide database when moving around in yazi
