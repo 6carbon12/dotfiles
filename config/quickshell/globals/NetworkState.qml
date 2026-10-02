@@ -33,19 +33,6 @@ Singleton {
 
   Process {
     id: wifiProc
-    command: ["iwgetid", "-r", "wlan0"]
-    running: true
-
-    stdout: StdioCollector {
-      onStreamFinished: {
-        let output = this.text.trim();
-        root.ssid = output !== "" ? output : "Disconnected";
-      }
-    }
-  }
-
-  Process {
-    id: wifiIconProc
     command: ["iw", "dev", "wlan0", "link"]
     running: true
 
@@ -53,20 +40,21 @@ Singleton {
       onStreamFinished: {
         const output = this.text;
 
-        const match = output.match(/signal:\s+(-?\d+)\s+dBm/);
+        const ssidMatch = output.match(/SSID:\s*(.+)/);
+        root.ssid = ssidMatch ? ssidMatch[1].trim() : "Disconnected";
+        const signalMatch = output.match(/signal:\s+(-?\d+)\s+dBm/);
 
-        if (match && match[1]) {
-          // Convert the captured string to an integer
-          root.signalStrength = parseInt(match[1], 10);
+        if (!signalMatch || !signalMatch[1])
+          return;
 
-          // Categorize into High, Mid, or Low stages
-          if (root.signalStrength >= -60) {
-            root.signalStrengthIcon = "high";
-          } else if (root.signalStrength >= -75) {
-            root.signalStrengthIcon = "mid";
-          } else {
-            root.signalStrengthIcon = "low";
-          }
+        root.signalStrength = parseInt(signalMatch[1], 10);
+
+        if (root.signalStrength >= -60) {
+          root.signalStrengthIcon = "high";
+        } else if (root.signalStrength >= -75) {
+          root.signalStrengthIcon = "mid";
+        } else {
+          root.signalStrengthIcon = "low";
         }
       }
     }
@@ -77,7 +65,7 @@ Singleton {
     running: true
     repeat: true
     triggeredOnStart: true
-    onTriggered: wifiIconProc.running = true
+    onTriggered: wifiProc.running = true
   }
 
   Process {
@@ -88,7 +76,6 @@ Singleton {
     stdout: SplitParser {
       onRead: (data) => {
         wifiProc.running = true;
-        wifiIconProc.running = true;
       }
     }
     onRunningChanged: {
