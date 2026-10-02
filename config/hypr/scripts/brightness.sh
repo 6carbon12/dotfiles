@@ -11,7 +11,7 @@ if [ -f "$CACHE_FILE" ]; then
   BUS=$(cat "$CACHE_FILE")
 else
   # Only runs the slow detect command if cache is missing
-  BUS=$(ddcutil detect --brief | grep "I2C bus:" | head -n 1 | awk -F'-' '{print $2}')
+  BUS=$(ddcutil detect | grep -A1 -E "Display\s+[0-9]+" | grep -E "I2C bus:" | awk -F'-' '{print $2}')
   echo "$BUS" > "$CACHE_FILE"
 fi
 
