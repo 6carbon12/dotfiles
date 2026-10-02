@@ -14,8 +14,7 @@ Packages to give a GUI desktop to be built on top `SYSTEM_PKGS`.
 * **ly**: Display manager
 * **zram-generator**: Systemd unit generator for zram devices
 * **xorg-xhost**: Lets GUI apps launched with `sudo` to run on user wayland session (used in `exec-once`)
-* **waybar**: Status bar.
-* **eww**: Widget system.
+* **quickshell**: Widgts and Bar.
 * **mako**: Notification daemon.
 * **libnotify**: Notification sending library used by `firefox`
 * **nordzy-hyprcursors**: Cursor theme.
@@ -97,6 +96,8 @@ Packages to give a GUI desktop to be built on top `SYSTEM_PKGS`.
 
 * **rsync**: Used in `scripts/root.sh` and other scripts
 * **jq**: Used in `hypr/script/screenshot.sh`
+* **upower**: Used by quickshell for power management.
+* **iw**: Used by quickshell wifi management.
 
 ## 8. Assets
 * **ttf-jetbrains-mono-nerd**
