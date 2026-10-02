@@ -16,8 +16,10 @@ error() { echo -e "${RED}✖ $*${RESET}"; }
 # -----------------------
 # Package Groups
 # -----------------------
-PACKAGES=(hyprland
+PACKAGES=(
   # Desktop Core
+  base-devel
+  hyprland
   awww
   hypridle
   hyprlock
@@ -26,12 +28,15 @@ PACKAGES=(hyprland
   ly
   zram-generator
   xorg-xhost
-  waybar
-  eww
   swaync
+  bluez
+  bluez-utils
+  quickshell
+  upower
   libnotify
   nordzy-hyprcursors
   brightnessctl
+  playerctl
   ddcutil
   tlp
   xdg-desktop-portal
@@ -62,6 +67,8 @@ PACKAGES=(hyprland
   slurp
   wl-clipboard
   clipse
+  tesseract
+  tesseract-data-eng
   # Applications
   yazi
   7zip
@@ -73,8 +80,7 @@ PACKAGES=(hyprland
   neovim
   # Script/Plugin Dependancies
   tree-sitter-cli
-  rsync
-  jq)
+  rsync)
 FONTS=(ttf-jetbrains-mono-nerd ttf-orbitron noto-fonts)
 
 # -----------------------
