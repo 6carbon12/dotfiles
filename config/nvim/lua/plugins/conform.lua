@@ -13,6 +13,7 @@ return {
         json = { "prettier" },
         markdown = { "prettier" },
         yaml = { "prettier" },
+        qml = { "qml" },
       },
       formatters = {
         prettier_tailwind = {
@@ -21,6 +22,17 @@ return {
             "--plugin",
             "prettier-plugin-tailwindcss",
             "--stdin-filepath",
+            "$FILENAME",
+          },
+          stdin = true,
+        },
+        qml = {
+          command = "/usr/lib/qt6/bin/qmlformat",
+          args = {
+            "--sort-imports",
+            "--normalize",
+            "--indent-width",
+            tostring(vim.o.shiftwidth),
             "$FILENAME",
           },
           stdin = true,
