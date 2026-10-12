@@ -21,9 +21,9 @@ hl.bind(mainMod .. "+ space", hl.dsp.exec_cmd(terminal .. " --class float-term c
 hl.bind(mainMod .. "+ PERIOD", hl.dsp.exec_cmd("emote"))
 
 -- Screenshoting
-hl.bind("Print", hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh"))
-hl.bind("ALT + SHIFT + S", hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh"))
-hl.bind("XF86Launch7", hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh"))
+hl.bind("Print", hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh"), { submap_universal = true })
+hl.bind("ALT + SHIFT + S", hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh"), { submap_universal = true })
+hl.bind("XF86Launch7", hl.dsp.exec_cmd("~/.config/hypr/scripts/screenshot.sh"), { submap_universal = true })
 
 -- Window actions
 hl.bind(mainMod .. "+ X", hl.dsp.window.close())
